@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-accent="blue">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#1648b0" id="themeColor">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="قرض‌الحسنه">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>قرض‌الحسنه حضرت جوادالائمه (ع)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --a1:#1648b0;--a2:#2f6fe0;--a3:#6c9df0;
+  --bg:#eef2f8;--sheet:#ffffff;--card:#ffffff;--ink:#18212f;--muted:#7a8699;--line:#e8ecf3;--rowbg:#f0f3f8;
+  --asoft:color-mix(in srgb,var(--a2) 11%,var(--sheet));--atxt:var(--a2);
+  --gold:#d4a62a;--gold2:#f2d070;--gold-soft:#fdf5da;
+  --danger:#d64533;--danger2:#f0705e;--danger-soft:#fdecea;--ok:#1e9560;--ok-soft:#e3f5ec;
+  --shadow:0 8px 24px rgba(20,40,90,.08);
+  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.08' stroke-width='1.2'%3E%3Cpath d='M32 4l7 15 15-7-7 15 15 7-15 7 7 15-15-7-7 15-7-15-15 7 7-15-15-7 15-7-7-15 15 7z'/%3E%3Ccircle cx='32' cy='32' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  --ease:cubic-bezier(.2,.9,.25,1.12);
+}
+[data-accent=emerald]{--a1:#0a5a3a;--a2:#14935f;--a3:#4fc79a}
+[data-accent=purple]{--a1:#43249a;--a2:#7a4fe0;--a3:#a98af0}
+[data-accent=orange]{--a1:#b8420c;--a2:#ee7a22;--a3:#f7a66a}
+[data-accent=rose]{--a1:#a3154a;--a2:#e8457f;--a3:#f48bae}
+[data-accent=teal]{--a1:#0a6272;--a2:#17b0c4;--a3:#6dd6e3}
+[data-accent=gold]{--a1:#7c5a06;--a2:#c99a1d;--a3:#e8c767}
+[data-accent=graphite]{--a1:#161d2b;--a2:#3b4b66;--a3:#7f90ad}
+[data-theme=dark]{
+  --bg:#0a0e16;--sheet:#111925;--card:#162131;--ink:#e8eef7;--muted:#8b99af;--line:#223046;--rowbg:#1a2738;
+  --atxt:var(--a3);--gold-soft:#2b2712;--danger-soft:#3a1f1c;--ok-soft:#14352a;--shadow:0 8px 24px rgba(0,0,0,.35);
+}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Vazirmatn',Tahoma,system-ui,sans-serif;color:var(--ink);background:#0a0e16;overscroll-behavior:none}
+button,input,select{font-family:inherit}
+button{color:inherit}
+.ic{display:block;flex:none;stroke-linecap:round;stroke-linejoin:round}
+.app{height:100dvh;max-width:520px;margin:0 auto;display:flex;flex-direction:column;background:var(--sheet);position:relative;overflow:hidden;box-shadow:0 0 70px rgba(0,0,0,.5)}
+main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;position:relative;background:var(--sheet)}
+.page{display:none}
+.page.active{display:flex;flex-direction:column;min-height:100%}
+.rise{animation:riseIn .55s var(--ease) both;animation-delay:calc(var(--i,0)*55ms)}
+.no-anim .rise,.no-anim.rise{animation:none}
+@keyframes riseIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes popIn{from{transform:scale(.5);opacity:0}to{transform:none;opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bell{0%,100%{transform:rotate(0)}8%{transform:rotate(18deg)}16%{transform:rotate(-16deg)}24%{transform:rotate(12deg)}32%{transform:rotate(-8deg)}40%{transform:rotate(0)}}
+@keyframes ripRing{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.8);opacity:0}}
+@keyframes blob{to{transform:translate(50px,34px) scale(1.25)}}
+@keyframes shine{0%,50%{left:-80%}100%{left:130%}}
+
+/* ===== Header (gradient) ===== */
+.hd{position:relative;overflow:hidden;color:#fff;padding:calc(8px + env(safe-area-inset-top)) 16px 52px;
+  background-image:var(--pattern),linear-gradient(172deg,var(--a1) 0%,var(--a2) 100%)}
+.hd::before,.hd::after{content:'';position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.2),transparent 70%);animation:blob 10s ease-in-out infinite alternate;pointer-events:none}
+.hd::before{width:280px;height:280px;top:-130px;left:-90px}
+.hd::after{width:220px;height:220px;bottom:-70px;right:-70px;animation-delay:-5s}
+.hd>*{position:relative;z-index:1}
+.bar{display:flex;align-items:center;gap:2px;height:50px}
+.bar .bt{flex:1;text-align:center;font-weight:800;font-size:1rem}
+.bar .sp{flex:1}
+.bb{position:relative;width:44px;height:44px;border:none;background:none;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;transition:background .2s,transform .25s var(--ease);overflow:hidden}
+.bb:active{background:rgba(255,255,255,.2);transform:scale(.88)}
+.bell.ring svg{animation:bell 1.8s ease-in-out infinite;transform-origin:50% 10%}
+.badge-n{position:absolute;top:4px;left:4px;min-width:18px;height:18px;border-radius:99px;background:var(--danger);color:#fff;font-size:.64rem;font-weight:800;display:none;align-items:center;justify-content:center;padding:0 4px;border:2px solid var(--a1)}
+.bell.ring .badge-n{display:flex;animation:pulseDot 1.6s infinite}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(240,112,94,.7)}70%{box-shadow:0 0 0 8px rgba(240,112,94,0)}100%{box-shadow:0 0 0 0 rgba(240,112,94,0)}}
+.avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex:none;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#3b2d00;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.8)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar.sm{width:38px;height:38px;font-size:.85rem}
+.bal{text-align:center;margin-top:10px}
+.amt{font-size:2.15rem;font-weight:800;letter-spacing:.2px;text-shadow:0 2px 14px rgba(0,0,0,.18);line-height:1.5}
+.amt small{font-size:1.1rem;font-weight:700;margin-right:6px;opacity:.95}
+.eye{display:inline-flex;align-items:center;gap:10px;border:none;background:none;color:#fff;font-size:.95rem;font-weight:600;cursor:pointer;padding:4px 8px;margin-top:4px}
+.sub-l{font-size:.78rem;opacity:.8;margin-top:2px}
+.quick{display:flex;justify-content:center;align-items:flex-start;gap:28px;margin-top:22px}
+.q{border:none;background:none;color:#fff;display:flex;flex-direction:column;align-items:center;gap:9px;font-size:.84rem;font-weight:600;cursor:pointer;width:84px}
+.qc{position:relative;overflow:hidden;width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;transition:transform .3s var(--ease),background .2s;border:1px solid rgba(255,255,255,.14)}
+.q:active .qc{transform:scale(.88)}
+.q.main .qc{background:#fff;color:var(--a2);box-shadow:0 10px 22px rgba(0,0,0,.22);animation:mainPulse 3s ease-in-out infinite}
+@keyframes mainPulse{50%{box-shadow:0 10px 30px rgba(255,255,255,.45)}}
+.q:disabled{opacity:.45;cursor:not-allowed}
+.hd-chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);padding:4px 11px;border-radius:999px;font-size:.7rem;font-weight:600}
+.hd .progress{background:rgba(255,255,255,.25);margin:14px 6px 6px}
+.hd .prog-text{font-size:.76rem;opacity:.92;text-align:center}
+.pf-av{display:flex;flex-direction:column;align-items:center;margin-top:6px}
+.pf-av .avatar{width:96px;height:96px;font-size:1.8rem;border:4px solid rgba(255,255,255,.85);box-shadow:0 12px 30px rgba(0,0,0,.25);position:relative;cursor:pointer}
+.pf-edit{position:absolute;bottom:-2px;left:-2px;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#3b2d00;display:flex;align-items:center;justify-content:center;border:3px solid var(--a2)}
+.pf-wrap{position:relative}
+.name-pill{margin-top:14px;display:inline-flex;align-items:center;gap:8px;border:none;background:var(--sheet);color:var(--atxt);font-weight:800;font-size:1rem;padding:9px 18px;border-radius:16px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.pf-sub{opacity:.85;font-size:.85rem;margin-top:8px}
+
+/* ===== Sheet ===== */
+.sheet{flex:1;position:relative;background:var(--sheet);border-radius:30px 30px 0 0;margin-top:-30px;padding:26px 18px 30px;z-index:2;box-shadow:0 -12px 30px rgba(0,0,0,.1)}
+.sheet::before{content:'';position:absolute;top:9px;left:50%;transform:translateX(-50%);width:46px;height:5px;border-radius:9px;background:var(--line)}
+.sec{display:flex;align-items:center;justify-content:space-between;font-size:1.12rem;font-weight:800;margin:20px 2px 6px;color:var(--ink)}
+.sec:first-child{margin-top:4px}
+.sec a{font-size:.78rem;font-weight:600;color:var(--atxt);cursor:pointer}
+.muted{color:var(--muted)}
+
+/* ===== Rows ===== */
+.row{position:relative;display:flex;align-items:center;gap:14px;padding:13px 2px;cursor:pointer;transition:background .2s,transform .25s var(--ease);border-radius:16px}
+.row:active{background:var(--rowbg);transform:scale(.985)}
+.row+.row{border-top:1px solid var(--line)}
+.ric{width:52px;height:52px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:var(--rowbg);color:var(--muted)}
+.ric.fill{background:var(--a2);color:#fff;box-shadow:0 8px 16px color-mix(in srgb,var(--a2) 35%,transparent)}
+.ric.green{background:var(--ok-soft);color:var(--ok)}
+.ric.gold{background:var(--gold-soft);color:#a77b00}
+.ric.red{background:var(--danger-soft);color:var(--danger)}
+.ric.soft{background:var(--asoft);color:var(--atxt)}
+.rmain{flex:1;min-width:0}
+.rmain b{display:block;font-size:.98rem;font-weight:700;line-height:1.7}
+.rmain small{display:block;font-size:.78rem;color:var(--muted);line-height:1.8}
+.rend{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;color:var(--muted)}
+.rend.h{flex-direction:row;align-items:center;gap:6px}
+.rend b{font-size:.92rem;color:var(--ink);font-weight:700;white-space:nowrap}
+.rend small{font-size:.68rem;color:var(--muted)}
+.mprog{height:5px;border-radius:9px;background:var(--line);margin-top:7px;overflow:hidden}
+.mprog i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--a2),var(--gold2));transition:width 1s var(--ease)}
+.tag{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:99px;font-size:.66rem;font-weight:700;white-space:nowrap}
+.tag.late{background:var(--danger-soft);color:var(--danger)}.tag.soon{background:var(--gold-soft);color:#9a6b00}.tag.done{background:var(--ok-soft);color:var(--ok)}
+.tag.acc{background:var(--asoft);color:var(--atxt)}
+.tag.warn{background:var(--danger-soft);color:var(--danger);animation:pulseTag 1.6s infinite}
+@keyframes pulseTag{50%{opacity:.5}}
+.empty{text-align:center;color:var(--muted);padding:30px 10px;font-size:.88rem}
+.empty .eico{width:76px;height:76px;border-radius:50%;background:var(--asoft);color:var(--atxt);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;animation:float 3.5s ease-in-out infinite}
+
+/* ===== Promo banner ===== */
+.hadith{margin-top:16px;padding:13px 16px;border-radius:20px;text-align:center;font-size:.84rem;line-height:2;font-weight:500;background:var(--asoft);display:flex;align-items:center;justify-content:center;gap:8px}
+.hadith svg{color:var(--atxt)}
+.tList>.sec:first-child{margin-top:24px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2px}
+.stat{position:relative;overflow:hidden;border:none;text-align:right;cursor:pointer;border-radius:24px;padding:14px 14px 13px;background:var(--tbg);color:var(--ink);transition:transform .3s var(--ease);display:flex;flex-direction:column;gap:2px;min-height:98px}
+.stat:active{transform:scale(.96)}
+.stat .si{width:36px;height:36px;border-radius:12px;background:var(--tc);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 16px color-mix(in srgb,var(--tc) 35%,transparent);margin-bottom:4px}
+.stat b{font-size:1.55rem;font-weight:800;line-height:1.3;color:var(--tc)}
+.stat small{font-size:.78rem;color:var(--muted);font-weight:600}
+.stat .bgi{position:absolute;left:-14px;bottom:-16px;color:var(--tc);opacity:.1;transform:rotate(-12deg);transition:transform .6s var(--ease)}
+.stat:hover .bgi{transform:rotate(0) scale(1.1)}
+.stat.a{--tc:var(--a2);--tbg:var(--asoft)}
+.stat.g{--tc:var(--ok);--tbg:var(--ok-soft)}
+.stat.o{--tc:#c98a10;--tbg:var(--gold-soft)}
+.stat.b{--tc:#5b6f94;--tbg:color-mix(in srgb,#5b6f94 12%,var(--sheet))}
+[data-theme=dark] .stat.a{--tc:var(--a3)}[data-theme=dark] .stat.o{--tc:#f2c14e}[data-theme=dark] .stat.b{--tc:#9bb0d6}
+.promo{position:relative;overflow:hidden;margin-top:16px;border-radius:22px;padding:18px 18px;color:#fff;min-height:104px;display:flex;align-items:center;
+  background-image:var(--pattern),linear-gradient(120deg,var(--a1),var(--a2) 70%,var(--a3))}
+.promo::after{content:'';position:absolute;top:0;bottom:0;width:50%;left:-80%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.2),transparent);transform:skewX(-18deg);animation:shine 5s ease-in-out infinite}
+.promo .pt{position:relative;z-index:1;max-width:62%}
+.promo b{display:block;font-size:1rem;line-height:1.9}.promo small{opacity:.88;font-size:.76rem}
+.promo svg.art{position:absolute;left:10px;bottom:-6px;width:128px;height:110px;animation:float 4s ease-in-out infinite}
+.pills{display:flex;gap:8px;overflow-x:auto;margin:2px -18px 0;padding:4px 18px 8px;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pill{flex:none;display:flex;align-items:center;gap:8px;background:var(--rowbg);border-radius:16px;padding:9px 14px 9px 16px;font-size:.78rem;color:var(--muted)}
+.pill b{color:var(--ink);font-size:1rem;font-weight:800}
+.pill svg{color:var(--atxt)}
+
+/* ===== Alarm ===== */
+.alarm{position:relative;overflow:hidden;margin-bottom:12px;display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:22px;color:#fff;cursor:pointer;background:linear-gradient(135deg,#e2882b,var(--danger));box-shadow:0 14px 30px rgba(214,69,51,.3)}
+.alarm.late{background:linear-gradient(135deg,#b3261e,#e5483a)}
+.alarm.soon{background:linear-gradient(135deg,#d99a1c,#e0702a)}
+.alarm::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent,rgba(255,255,255,.22),transparent);transform:translateX(120%);animation:alarmShine 3.2s infinite}
+@keyframes alarmShine{to{transform:translateX(-120%)}}
+.alarm .a-ico{position:relative;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex:none}
+.alarm .a-ico::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.6);animation:ripRing 1.8s infinite}
+.alarm .a-ico svg{animation:bell 1.8s ease-in-out infinite;transform-origin:50% 10%}
+.alarm .a-txt{flex:1;min-width:0;position:relative;z-index:1}
+.alarm .a-txt b{display:block;font-size:.9rem}.alarm .a-txt small{display:block;font-size:.72rem;opacity:.92;line-height:1.7}
+.alarm .a-btn{position:relative;z-index:1;border:none;border-radius:13px;padding:9px 13px;font-weight:800;font-size:.76rem;cursor:pointer;background:#fff;color:#a13425}
+
+/* ===== Buttons / forms ===== */
+.btn{position:relative;overflow:hidden;width:100%;border:none;border-radius:16px;padding:15px 16px;font-size:.98rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;background:linear-gradient(135deg,var(--a2),var(--a1));box-shadow:0 10px 22px color-mix(in srgb,var(--a2) 30%,transparent);transition:transform .25s var(--ease);margin-top:12px}
+.btn:active{transform:scale(.97)}
+.btn:disabled{background:var(--line);color:var(--muted);box-shadow:none;cursor:not-allowed}
+.btn.soft{background:var(--asoft);color:var(--atxt);box-shadow:none}
+.btn.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#3b2d00;box-shadow:0 10px 22px rgba(212,166,42,.32)}
+.btn.ghost{background:transparent;color:var(--atxt);border:1.5px solid var(--atxt);box-shadow:none}
+.btn.danger{background:linear-gradient(135deg,var(--danger2),var(--danger));box-shadow:0 10px 22px rgba(214,69,51,.3)}
+.btn.outline-danger{background:transparent;color:var(--danger);border:1.5px solid var(--danger);box-shadow:none}
+.btn.small{width:auto;display:inline-flex;padding:9px 15px;font-size:.78rem;margin:0;border-radius:13px}
+.ripple{position:absolute;border-radius:50%;background:currentColor;opacity:.22;transform:scale(0);animation:rip .65s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+.field{margin-bottom:14px}
+.field label{display:flex;align-items:center;gap:6px;font-weight:700;font-size:.82rem;margin-bottom:7px;color:var(--atxt)}
+.field input,.field select{width:100%;padding:14px;border-radius:16px;border:1.5px solid transparent;background:var(--rowbg);color:var(--ink);font-size:.95rem;transition:.25s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--a2);box-shadow:0 0 0 4px color-mix(in srgb,var(--a2) 16%,transparent)}
+.field input[readonly]{opacity:.65}
+.field .hint{font-size:.72rem;color:var(--muted);margin-top:6px;line-height:1.8}.field .hint.warn{color:#c2610c}
+.slider-box{background:var(--asoft);border-radius:22px;padding:16px;margin-bottom:14px}
+.slider-head{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.85rem;margin-bottom:14px;color:var(--atxt)}
+.slider-val{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#3b2d00;padding:2px 15px;border-radius:999px;font-weight:800;min-width:42px;text-align:center}
+.slider-val.bump{animation:bump .3s var(--ease)}@keyframes bump{50%{transform:scale(1.3)}}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:12px;border-radius:99px;outline:none;direction:rtl;--p:0%;background:linear-gradient(to left,var(--a2) var(--p),var(--line) var(--p))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;cursor:pointer;background:radial-gradient(circle,#fff 35%,var(--gold) 36%);border:3px solid var(--a2);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--a2)}
+.slider-box small{display:block;margin-top:12px;color:var(--muted);font-size:.74rem;text-align:center}
+.summary{background:var(--gold-soft);border:1px solid var(--gold);border-radius:20px;padding:14px;font-size:.84rem;line-height:2.1;margin-bottom:6px}
+.big-box{text-align:center;background:var(--asoft);border-radius:22px;padding:14px;margin-bottom:14px}
+.big-box small{color:var(--muted);font-size:.78rem}.big-box b{display:block;font-size:1.5rem;color:var(--atxt);margin-top:2px}
+.init-box{background:var(--gold-soft);border:1px dashed var(--gold);border-radius:22px;padding:14px;margin-bottom:14px}
+.init-box h4{margin-bottom:10px;font-size:.9rem;display:flex;align-items:center;gap:6px}.init-box input{text-align:center}
+.sw{position:relative;width:50px;height:30px;flex:none;display:block}
+.sw input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;z-index:2}
+.sw i{position:absolute;inset:0;border-radius:99px;background:var(--line);transition:.3s}
+.sw i::after{content:'';position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.3);transition:transform .35s var(--ease)}
+.sw input:checked+i{background:var(--a2)}.sw input:checked+i::after{transform:translateX(-20px)}
+
+/* ===== Detail timeline ===== */
+.inst.done .ric{background:var(--ok);color:#fff}
+.inst.next .ric{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#3b2d00;animation:nodePulse 2s infinite;font-weight:800}
+@keyframes nodePulse{0%{box-shadow:0 0 0 0 rgba(212,166,42,.6)}70%{box-shadow:0 0 0 12px rgba(212,166,42,0)}100%{box-shadow:0 0 0 0 rgba(212,166,42,0)}}
+.pay-btn{position:relative;overflow:hidden;display:flex;align-items:center;gap:6px;border:none;border-radius:14px;padding:10px 13px;font-weight:800;font-size:.76rem;cursor:pointer;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#3b2d00;box-shadow:0 6px 14px rgba(212,166,42,.4);animation:payGlow 2.2s infinite}
+@keyframes payGlow{50%{box-shadow:0 6px 24px rgba(212,166,42,.75)}}
+.progress{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.progress i{display:block;width:0;height:100%;border-radius:99px;background:linear-gradient(90deg,#fff,var(--gold2));transition:width 1s var(--ease)}
+
+/* ===== Donut ===== */
+.donut-card{display:flex;align-items:center;gap:16px;background:var(--rowbg);border-radius:24px;padding:16px;margin-top:6px}
+.donut{position:relative;width:128px;height:128px;flex:none}
+.donut svg{transform:rotate(-90deg) scaleX(-1)}
+.donut .seg{fill:none;stroke-width:14;stroke-linecap:round;stroke-dasharray:0 339.3;transition:stroke-dasharray 1.2s var(--ease)}
+.donut .track{fill:none;stroke:var(--line);stroke-width:14}
+.donut .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.donut .mid b{font-size:1.5rem;font-weight:800;color:var(--atxt)}.donut .mid small{font-size:.68rem;color:var(--muted)}
+.legend{flex:1}.legend div{display:flex;align-items:center;gap:8px;font-size:.82rem;padding:6px 0}.legend i{width:12px;height:12px;border-radius:5px;flex:none}
+.mini-del{border:none;background:var(--danger-soft);color:var(--danger);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+
+/* ===== Bottom nav ===== */
+.bottom{flex:none;display:flex;background:var(--sheet);border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom));z-index:15;position:relative}
+.bottom.hide{display:none}
+.nav-item{position:relative;overflow:hidden;flex:1;border:none;background:none;color:var(--muted);font-size:.64rem;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 0;cursor:pointer;transition:color .25s}
+.nav-item .nb{width:52px;height:32px;border-radius:16px;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .4s var(--ease)}
+.nav-item.active{color:var(--a2)}
+.nav-item.active .nb{background:var(--asoft);transform:translateY(-2px) scale(1.06)}
+.nav-item.active svg{fill:color-mix(in srgb,var(--a2) 22%,transparent)}
+[data-theme=dark] .nav-item.active{color:var(--a3)}
+
+/* ===== Bottom sheet ===== */
+.scrim2{position:absolute;inset:0;background:rgba(5,10,20,.55);z-index:60;opacity:0;pointer-events:none;transition:.35s;backdrop-filter:blur(2px)}
+.scrim2.on{opacity:1;pointer-events:auto}
+.bsheet{position:absolute;left:0;right:0;bottom:0;max-height:86%;overflow-y:auto;background:var(--sheet);z-index:61;border-radius:30px 30px 0 0;padding:12px 18px calc(24px + env(safe-area-inset-bottom));transform:translateY(130%);visibility:hidden;transition:transform .5s cubic-bezier(.2,.9,.25,1),visibility 0s .5s}
+.bsheet.on{transform:none;visibility:visible;transition-delay:0s;box-shadow:0 -16px 40px rgba(0,0,0,.3)}
+.grab{width:46px;height:5px;border-radius:9px;background:var(--line);margin:0 auto 14px}
+.bs-title{font-size:1.1rem;font-weight:800;margin:0 2px 8px}
+.themes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 8px;margin:10px 0 6px}
+.th{border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:.72rem;font-weight:600;color:var(--ink);cursor:pointer}
+.th i{position:relative;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 16px rgba(0,0,0,.2);transition:transform .35s var(--ease);border:3px solid transparent}
+.th i svg{transform:scale(0);transition:transform .35s var(--ease)}
+.th.on i{transform:scale(1.12);border-color:var(--sheet);outline:3px solid var(--ink)}
+.th.on i svg{transform:scale(1)}
+.seg3{display:flex;background:var(--rowbg);border-radius:16px;padding:4px;margin-top:8px}
+.seg3 button{flex:1;border:none;background:none;border-radius:12px;padding:10px;font-weight:700;font-size:.82rem;color:var(--muted);cursor:pointer;transition:.3s}
+.seg3 button.on{background:var(--sheet);color:var(--atxt);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:14px 2px;border-bottom:1px solid var(--line);font-size:.9rem}
+.info-row:last-child{border:none}.info-row span:first-child{color:var(--muted)}
+
+/* ===== Modal / toast / welcome / confetti ===== */
+.modal{position:absolute;inset:0;background:rgba(5,10,20,.55);z-index:120;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s;padding:20px;backdrop-filter:blur(3px)}
+.modal.active{opacity:1;pointer-events:auto}
+.m-box{background:var(--sheet);border-radius:30px;padding:24px 20px 20px;width:100%;max-width:350px;text-align:center;transform:scale(.8) translateY(20px);transition:transform .45s var(--ease);box-shadow:0 26px 60px rgba(0,0,0,.4)}
+.modal.active .m-box{transform:none}
+.m-badge{position:relative;width:74px;height:74px;border-radius:50%;margin:-54px auto 10px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,var(--a2),var(--a1));border:5px solid var(--sheet);box-shadow:0 12px 24px color-mix(in srgb,var(--a2) 40%,transparent)}
+.m-box.warn .m-badge{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#3b2d00}
+.m-box.danger .m-badge{background:linear-gradient(135deg,var(--danger2),var(--danger))}
+.m-box.alarm .m-badge{background:linear-gradient(135deg,#ef8a3a,var(--danger))}
+.m-box.alarm .m-badge::before{content:'';position:absolute;inset:-5px;border-radius:50%;border:3px solid var(--danger2);animation:ripRing 1.6s infinite}
+.m-box.alarm .m-badge svg{animation:bell 1.6s ease-in-out infinite;transform-origin:50% 10%}
+.draw path,.draw circle{stroke-dasharray:60;stroke-dashoffset:60;animation:draw .7s .25s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.m-title{font-weight:800;margin:6px 0;font-size:1.05rem}
+.m-text{font-size:.86rem;color:var(--muted);line-height:2;white-space:pre-line}
+.m-btns{display:flex;gap:8px;margin-top:16px}.m-btns .btn{margin:0;padding:13px 8px;font-size:.88rem}
+#toasts{position:absolute;top:70px;left:0;right:0;z-index:250;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none;padding:0 16px}
+.toast{display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--sheet);padding:10px 18px 10px 14px;border-radius:99px;font-size:.8rem;font-weight:600;box-shadow:0 12px 28px rgba(0,0,0,.3);animation:tIn .45s var(--ease)}
+.toast svg{color:var(--ok)}.toast.warn svg{color:var(--gold2)}.toast.err svg{color:var(--danger2)}
+.toast.out{opacity:0;transform:translateY(-12px) scale(.9);transition:.35s}
+@keyframes tIn{from{opacity:0;transform:translateY(-22px) scale(.8)}to{opacity:1;transform:none}}
+#welcome{position:absolute;top:calc(12px + env(safe-area-inset-top));left:14px;right:14px;z-index:260;display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:24px;color:#fff;overflow:hidden;
+  background-image:var(--pattern),linear-gradient(120deg,var(--a1),var(--a2));box-shadow:0 20px 44px rgba(0,0,0,.35);transform:translateY(-160%);transition:transform .7s var(--ease)}
+#welcome.on{transform:none}
+#welcome::after{content:'';position:absolute;top:0;bottom:0;width:50%;left:-80%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-18deg);animation:shine 2.2s ease-in-out .5s 2}
+#welcome .wk{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex:none}
+#welcome b{display:block;font-size:1rem}#welcome small{opacity:.9;font-size:.78rem}
+#confetti{position:absolute;inset:0;pointer-events:none;z-index:200;overflow:hidden}
+#confetti i{position:absolute;top:-20px;width:9px;height:15px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.85}}
+
+/* ===== Splash ===== */
+#splash,#gate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;color:#fff;overflow:hidden;
+  background-image:var(--pattern),linear-gradient(170deg,var(--a1),var(--a2))}
+#splash{z-index:500;justify-content:center;transition:opacity .6s,transform .6s}
+#splash.out{opacity:0;transform:scale(1.12);pointer-events:none}
+.orb{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.28),transparent 70%);animation:blob 7s ease-in-out infinite alternate}
+.orb.o1{width:340px;height:340px;top:-120px;left:-120px}.orb.o2{width:300px;height:300px;bottom:-110px;right:-100px;animation-delay:-3s}
+.sp-logo{position:relative;width:130px;height:130px;display:flex;align-items:center;justify-content:center;animation:logoIn 1s var(--ease) both}
+@keyframes logoIn{from{transform:scale(.2) rotate(-120deg);opacity:0}to{transform:none;opacity:1}}
+.sp-core{position:relative;z-index:2;width:96px;height:96px;border-radius:32px;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.5);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.sp-core .leaf{animation:leafGrow 1.2s .5s var(--ease) both}
+@keyframes leafGrow{from{transform:scale(0) rotate(-40deg)}to{transform:none}}
+.sp-ring{position:absolute;inset:-6px;border-radius:50%;border:2px dashed rgba(255,255,255,.45);animation:spin 9s linear infinite}
+.sp-ring.r2{inset:-26px;border-style:dotted;animation-duration:14s;animation-direction:reverse;opacity:.7}
+.sp-dot{position:absolute;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff2b8,var(--gold2) 40%,var(--gold));top:-7px;left:50%;margin-left:-7px;box-shadow:0 0 14px var(--gold2)}
+.sp-pulse{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.55);animation:ripRing 2.2s infinite}.sp-pulse.p2{animation-delay:1.1s}
+.sp-title{margin-top:38px;font-size:1.28rem;font-weight:800;text-align:center;line-height:2;animation:riseIn .8s .6s both}
+.sp-sub{font-size:.82rem;opacity:.85;animation:riseIn .8s .9s both}
+.sp-load{position:absolute;bottom:calc(60px + env(safe-area-inset-bottom));width:min(260px,70%);text-align:center;animation:riseIn .8s 1s both}
+.sp-bar{height:6px;border-radius:9px;background:rgba(255,255,255,.25);overflow:hidden}
+.sp-bar i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,#fff,var(--gold2));animation:load 2.5s .2s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes load{to{width:100%}}
+.sp-load small{display:block;margin-top:10px;font-size:.76rem;opacity:.85}
+
+/* ===== Gate (login) ===== */
+#gate{z-index:450;display:none;padding:calc(30px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom));overflow-y:auto}
+#gate.on{display:flex;animation:gateIn .6s var(--ease)}
+@keyframes gateIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+#gate>*:not(.orb){position:relative;z-index:1;flex:none}
+#gate>.orb{pointer-events:none}
+.g-logo{width:84px;height:84px;border-radius:28px;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;margin-top:18px;animation:float 4s ease-in-out infinite;box-shadow:0 16px 36px rgba(0,0,0,.25)}
+.g-title{margin-top:16px;font-weight:800;font-size:1.1rem;text-align:center;line-height:2}
+.g-av{width:104px;height:104px;border-radius:50%;margin-top:30px;overflow:hidden;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#3b2d00;font-size:2rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:4px solid rgba(255,255,255,.85);box-shadow:0 16px 36px rgba(0,0,0,.3);position:relative}
+.g-av img{width:100%;height:100%;object-fit:cover}
+.g-av::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:3px solid rgba(255,255,255,.6);animation:ripRing 2s infinite}
+.g-name{font-weight:800;font-size:1.25rem;margin-top:14px}.g-sub{opacity:.8;font-size:.85rem}
+.g-btn{width:100%;max-width:360px;margin-top:34px;border:none;border-radius:18px;padding:16px;font-size:1.02rem;font-weight:800;background:#fff;color:var(--a1);display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;box-shadow:0 14px 30px rgba(0,0,0,.28);position:relative;overflow:hidden;transition:transform .25s var(--ease)}
+.g-btn:active{transform:scale(.96)}
+.g-btn.ghost{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.35);box-shadow:none;margin-top:12px}
+.g-link{margin-top:18px;border:none;background:none;color:#fff;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:underline;text-underline-offset:6px;opacity:.9}
+.g-hadith{margin-top:auto;padding-top:26px;text-align:center;font-size:.82rem;opacity:.85;line-height:2}
+.g-ver{font-size:.7rem;opacity:.6;margin-top:6px}
+.g-list{width:100%;max-width:380px;margin-top:22px}
+.g-user{width:100%;display:flex;align-items:center;gap:12px;padding:10px 12px;margin-top:10px;border-radius:20px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.13);color:#fff;cursor:pointer;text-align:right;backdrop-filter:blur(6px);animation:riseIn .5s var(--ease) both}
+.g-user .avatar{width:44px;height:44px}.g-user b{display:block;font-size:.92rem}.g-user small{opacity:.8;font-size:.74rem}
+.g-feats{width:100%;max-width:380px;margin-top:26px;display:grid;gap:10px}
+.g-feat{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:12px;animation:riseIn .6s var(--ease) both}
+.g-feat .fi{width:42px;height:42px;border-radius:14px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex:none}
+.g-feat b{display:block;font-size:.88rem}.g-feat small{opacity:.8;font-size:.74rem}
+
+/* ===== Auth fields ===== */
+.ltr{text-align:left}
+.field input.ltr::placeholder{direction:rtl;text-align:right}
+.pw{position:relative}.pw input{padding-left:50px}
+.pw-eye{position:absolute;left:4px;top:50%;transform:translateY(-50%);width:42px;height:42px;border:none;background:none;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.meter{height:5px;border-radius:9px;background:var(--line);margin-top:9px;overflow:hidden}.meter i{display:block;height:100%;width:0;border-radius:9px;transition:width .35s var(--ease),background .3s}
+.hint.ok{color:var(--ok)}.hint.bad{color:var(--danger)}
+.cloud-note{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:18px;font-size:.78rem;line-height:2;background:var(--asoft);margin-bottom:6px;color:var(--ink)}
+.cloud-note svg{color:var(--atxt);margin-top:5px}.cloud-note.warn{background:var(--gold-soft)}.cloud-note.warn svg{color:#a77b00}
+.cloud-note a{color:var(--atxt);font-weight:800;text-decoration:underline;cursor:pointer}
+.g-pw{position:relative;width:100%;max-width:360px;margin-top:14px}
+.g-in{width:100%;padding:15px 16px 15px 50px;border-radius:16px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);color:#fff;font-size:1rem;text-align:left;font-family:inherit;direction:ltr;transition:.25s}
+.g-in::placeholder{color:rgba(255,255,255,.7);direction:rtl;text-align:right}
+.g-in:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.22);box-shadow:0 0 0 4px rgba(255,255,255,.14)}
+.g-in.plain{padding:15px 16px;text-align:left}
+.g-eye{position:absolute;left:4px;top:50%;transform:translateY(-50%);border:none;background:none;color:#fff;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.g-err{min-height:24px;margin-top:10px;font-size:.82rem;font-weight:700;color:#ffe1dc;text-align:center;max-width:360px;line-height:1.9}
+.g-err.shake{animation:shake .4s}@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.g-btn:disabled{opacity:.75;cursor:wait}
+.g-btn.sm{margin-top:14px}
+.sync-dot{width:9px;height:9px;border-radius:50%;background:var(--muted);display:inline-block;margin-left:6px}
+.sync-dot.ok{background:var(--ok)}.sync-dot.pending{background:var(--gold);animation:pulseTag 1s infinite}.sync-dot.err,.sync-dot.conflict{background:var(--danger)}
+/* ===== Tour ===== */
+#tour{position:absolute;inset:0;z-index:300;display:none}
+#tour.on{display:block}
+#tHole{position:absolute;border-radius:24px;box-shadow:0 0 0 9999px rgba(6,12,26,.76);transition:all .5s var(--ease);pointer-events:none;outline:2px solid rgba(255,255,255,.75);outline-offset:3px;animation:holePulse 1.8s infinite}
+@keyframes holePulse{50%{outline-color:rgba(255,255,255,.25);outline-offset:8px}}
+#tTip{position:absolute;left:16px;right:16px;background:var(--sheet);color:var(--ink);border-radius:26px;padding:18px 18px 14px;box-shadow:0 24px 54px rgba(0,0,0,.45);transition:top .5s var(--ease),opacity .3s}
+#tTip .tt{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem}
+#tTip .tt i{width:38px;height:38px;border-radius:13px;background:var(--asoft);color:var(--atxt);display:flex;align-items:center;justify-content:center;flex:none}
+#tTip p{margin:10px 0 14px;font-size:.88rem;line-height:2;color:var(--muted)}
+.t-foot{display:flex;align-items:center;gap:10px}
+.dots{display:flex;gap:5px;flex:1}.dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.3s}.dots i.on{width:22px;border-radius:9px;background:var(--a2)}
+.t-skip{border:none;background:none;color:var(--muted);font-weight:700;font-size:.82rem;cursor:pointer;padding:8px}
+.t-next{border:none;border-radius:14px;background:linear-gradient(135deg,var(--a2),var(--a1));color:#fff;font-weight:800;font-size:.86rem;padding:10px 22px;cursor:pointer}
+
+/* ===== Install banner ===== */
+#install{position:absolute;left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:90;display:none;align-items:center;gap:12px;padding:12px 14px;border-radius:24px;background:var(--sheet);box-shadow:0 18px 44px rgba(0,0,0,.35);border:1px solid var(--line)}
+#install.on{display:flex;animation:installIn .7s var(--ease)}
+@keyframes installIn{from{transform:translateY(140%);opacity:0}to{transform:none;opacity:1}}
+#install .ii{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--a2),var(--a1));color:#fff;display:flex;align-items:center;justify-content:center;flex:none;animation:float 3s ease-in-out infinite}
+#install .it{flex:1;min-width:0}#install b{display:block;font-size:.9rem}#install small{color:var(--muted);font-size:.72rem;line-height:1.7;display:block}
+#install .ib{border:none;border-radius:13px;padding:10px 16px;font-weight:800;font-size:.82rem;background:linear-gradient(135deg,var(--a2),var(--a1));color:#fff;cursor:pointer}
+#install .ix{border:none;background:none;color:var(--muted);cursor:pointer;padding:4px}
+.steps{counter-reset:s;margin:6px 0}.steps li{list-style:none;counter-increment:s;display:flex;gap:12px;align-items:flex-start;padding:10px 0;font-size:.88rem;line-height:1.9}
+.steps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--a2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex:none}
+
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff}.app{height:auto;max-width:none;box-shadow:none;overflow:visible}
+  .bar,.quick,.bottom,.scrim2,.bsheet,.modal,#toasts,#confetti,#splash,#gate,#tour,#install,#welcome,.no-print,.pay-btn{display:none!important}
+  main{overflow:visible}.page{display:none!important}#p-detail{display:flex!important}.hd{padding-bottom:30px}.rise{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <main id="main">
+    <section class="page active" id="p-home"></section>
+    <section class="page" id="p-loans"></section>
+    <section class="page" id="p-savings"></section>
+    <section class="page" id="p-history"></section>
+    <section class="page" id="p-profile"></section>
+    <section class="page" id="p-detail"></section>
+
+    <section class="page" id="p-openAcc">
+      <div class="hd" id="hd-openAcc"></div>
+      <div class="sheet">
+        <div class="field rise"><label><i data-ic="user" data-s="16"></i>نام صاحب حساب</label><input type="text" id="accOwner" readonly></div>
+        <div class="slider-box rise">
+          <div class="slider-head"><span>تعداد حساب‌های جدید</span><span class="slider-val" id="newAccVal">۱</span></div>
+          <input type="range" id="newAccSlider" min="1" max="14" value="1" oninput="updNewSlider()">
+          <small id="newAccHint"></small>
+        </div>
+        <div class="big-box rise"><small>پس‌انداز ماهیانه کل</small><b id="monthlySavTotal">۰ ریال</b></div>
+        <div class="init-box rise">
+          <h4><i data-ic="gem" data-s="18"></i>پس‌انداز اولیه (اختیاری)</h4>
+          <div class="field" style="margin:0">
+            <input type="text" inputmode="numeric" id="initSav" placeholder="مبلغ به ریال، مثلاً ۱۰٬۰۰۰٬۰۰۰" oninput="fmtInit()">
+            <div class="hint" id="initPreview"></div>
+            <div class="hint warn">مبلغ را به <b>ریال</b> وارد کنید (۱۰ میلیون ریال = ۱ میلیون تومان)</div>
+          </div>
+        </div>
+        <button class="btn rise" onclick="submitOpenAcc()"><i data-ic="check" data-s="20"></i>افتتاح حساب</button>
+      </div>
+    </section>
+
+    <section class="page" id="p-newLoan">
+      <div class="hd" id="hd-newLoan"></div>
+      <div class="sheet">
+        <div class="big-box rise"><small>حساب‌های آزاد</small><b id="freeBox">۰</b></div>
+        <div class="field rise"><label><i data-ic="user" data-s="16"></i>نام وام‌دهنده</label><input type="text" id="lenderName" readonly></div>
+        <div class="field rise"><label><i data-ic="user" data-s="16"></i>نام وام‌گیرنده</label><input type="text" id="borrowerName" readonly></div>
+        <div class="field rise"><label><i data-ic="pencil" data-s="16"></i>عنوان وام</label><input type="text" id="loanTitle" maxlength="40" placeholder="مثلاً: وام ازدواج، تعمیر منزل…"></div>
+        <div class="slider-box rise">
+          <div class="slider-head"><span>تعداد حساب‌های مورد استفاده</span><span class="slider-val" id="actVal">۱</span></div>
+          <input type="range" id="actSlider" min="1" max="1" value="1" oninput="updActSlider()">
+          <small id="actHint"></small>
+        </div>
+        <div class="field rise"><label><i data-ic="wallet" data-s="16"></i>مبلغ وام برای هر حساب</label><select id="loanAmount" onchange="updLoanSummary()"></select></div>
+        <div class="field rise"><label><i data-ic="calendar" data-s="16"></i>تعداد اقساط</label><select id="instCount" onchange="updLoanSummary()"></select></div>
+        <div class="summary rise" id="loanSummary"></div>
+        <button class="btn rise" onclick="saveNewLoan()"><i data-ic="check" data-s="20"></i>ثبت نهایی وام</button>
+      </div>
+    </section>
+
+    <section class="page" id="p-register">
+      <div class="hd" id="hd-register"></div>
+      <div class="sheet">
+        <div class="field rise"><label>نام</label><input type="text" id="regFirst" maxlength="30" autocomplete="off"></div>
+        <div class="field rise"><label>نام خانوادگی</label><input type="text" id="regLast" maxlength="40" autocomplete="off"></div>
+        <div class="field rise"><label><i data-ic="user" data-s="16"></i>نام کاربری (انگلیسی)</label>
+          <input type="text" id="regUser" dir="ltr" class="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="username" maxlength="20" placeholder="مثلاً: hadi_h" oninput="chkUser()">
+          <div class="hint" id="userHint">فقط حروف کوچک انگلیسی، عدد و _ · ۳ تا ۲۰ کاراکتر · با حرف شروع شود</div></div>
+        <div class="field rise"><label><i data-ic="lock" data-s="16"></i>رمز عبور</label>
+          <div class="pw"><input type="password" id="regPw" dir="ltr" class="ltr" autocomplete="new-password" maxlength="64" placeholder="حداقل ۶ کاراکتر" oninput="chkPw()"><button type="button" class="pw-eye" onclick="togglePw('regPw',this)"><i data-ic="eye" data-s="20"></i></button></div>
+          <div class="meter"><i id="pwBar"></i></div><div class="hint" id="pwHint">رمز قوی: ترکیب حرف، عدد و نماد</div></div>
+        <div class="field rise"><label><i data-ic="lock" data-s="16"></i>تکرار رمز عبور</label>
+          <div class="pw"><input type="password" id="regPw2" dir="ltr" class="ltr" autocomplete="new-password" maxlength="64"><button type="button" class="pw-eye" onclick="togglePw('regPw2',this)"><i data-ic="eye" data-s="20"></i></button></div></div>
+        <div class="cloud-note rise" id="cloudNote"></div>
+        <button class="btn rise" id="regBtn" onclick="submitRegister()"><i data-ic="check" data-s="20"></i>ایجاد حساب و ورود</button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom hide" id="bottomNav">
+    <button class="nav-item active" id="navHome" data-nav="home" onclick="goRoot('home')"><span class="nb"><i data-ic="home" data-s="23"></i></span>خانه</button>
+    <button class="nav-item" id="navLoans" data-nav="loans" onclick="goRoot('loans')"><span class="nb"><i data-ic="file" data-s="23"></i></span>وام‌ها</button>
+    <button class="nav-item" id="navSavings" data-nav="savings" onclick="goRoot('savings')"><span class="nb"><i data-ic="coins" data-s="23"></i></span>پس‌انداز</button>
+    <button class="nav-item" id="navHistory" data-nav="history" onclick="goRoot('history')"><span class="nb"><i data-ic="history" data-s="23"></i></span>تاریخچه</button>
+    <button class="nav-item" id="navProfile" data-nav="profile" onclick="goRoot('profile')"><span class="nb"><i data-ic="gear" data-s="23"></i></span>تنظیمات</button>
+  </nav>
+
+  <div id="install"><div class="ii"></div><div class="it"><b>نصب برنامه روی گوشی</b><small>دسترسی سریع از صفحهٔ اصلی و استفادهٔ آفلاین</small></div><button class="ib" onclick="doInstall()">نصب</button><button class="ix" onclick="dismissInstall()" aria-label="بستن"></button></div>
+
+  <div class="scrim2" id="sheetScrim" onclick="closeSheet()"></div>
+  <div class="bsheet" id="bsheet"><div class="grab"></div><div class="bs-title" id="bsTitle"></div><div id="bsBody"></div></div>
+
+  <div class="modal" id="modal"><div class="m-box" id="mBox">
+    <div class="m-badge" id="mIcon"></div><div class="m-title" id="mTitle"></div><div class="m-text" id="mText"></div>
+    <div class="m-btns"><button class="btn ghost" id="mNo" onclick="closeModal(false)">انصراف</button><button class="btn" id="mYes" onclick="closeModal(true)">تأیید</button></div>
+  </div></div>
+
+  <div id="tour"><div id="tHole"></div><div id="tTip"></div></div>
+  <div id="welcome"></div>
+  <div id="toasts"></div>
+  <div id="confetti"></div>
+
+  <div id="gate"></div>
+
+  <div id="splash">
+    <div class="orb o1"></div><div class="orb o2"></div>
+    <div class="sp-logo">
+      <div class="sp-pulse"></div><div class="sp-pulse p2"></div>
+      <div class="sp-ring"><div class="sp-dot"></div></div><div class="sp-ring r2"></div>
+      <div class="sp-core"><span class="leaf" id="splashLeaf"></span></div>
+    </div>
+    <div class="sp-title">قرض‌الحسنه حضرت جوادالائمه (ع)</div>
+    <div class="sp-sub">سامانه وام و پس‌انداز</div>
+    <div class="sp-load"><div class="sp-bar"><i></i></div><small id="spPct">در حال آماده‌سازی… ۰٪</small></div>
+  </div>
+
+  <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="handlePhoto(event)">
+  <input type="file" id="restoreInput" accept="application/json,.json" style="display:none" onchange="restoreBackup(event)">
+</div>
+
+<script>
+/* ================= آیکون‌ها ================= */
+const ICONS = {
+  home:'<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/>',
+  coins:'<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>',
+  history:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/>',
+  gear:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
+  back:'<path d="m9 6 6 6-6 6"/>', chev:'<path d="m15 6-6 6 6 6"/>', chevd:'<path d="m6 9 6 6 6-6"/>',
+  bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  bank:'<path d="m3 10 9-6 9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"/><path d="M3 21h18"/>',
+  filePlus:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 12v6M9 15h6"/>',
+  file:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  card:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h3"/>',
+  check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>', checkCircle:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/>',
+  trash:'<path d="M4 7h16M10 11v6M14 11v6"/><path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/>',
+  moon:'<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/>',
+  sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+  help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/>',
+  send:'<path d="m21 4-9 17-2-7-7-2z"/><path d="m10 14 11-10"/>',
+  download:'<path d="M12 4v11M7 11l5 5 5-5"/><path d="M5 20h14"/>', upload:'<path d="M12 16V5M7 9l5-5 5 5"/><path d="M5 20h14"/>',
+  logout:'<path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4"/><path d="M15 8l4 4-4 4M19 12H9"/>',
+  calendar:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  alert:'<path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/>', flag:'<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+  table:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/>',
+  printer:'<path d="M7 9V3h10v6"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
+  gem:'<path d="M6 4h12l3 5-9 11L3 9z"/><path d="M3 9h18M9 4l-2 5 5 11 5-11-2-5"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+  pencil:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>',
+  leaf:'<path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-5 6-8 10-10"/>',
+  switch:'<path d="M4 9h13l-3-3M20 15H7l3 3"/>',
+  inbox:'<path d="M4 13l2-8h12l2 8"/><path d="M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6h-5a3 3 0 0 1-6 0z"/>',
+  wallet:'<path d="M3 7a2 2 0 0 1 2-2h13v4"/><path d="M3 7v11a2 2 0 0 0 2 2h14a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1H5a2 2 0 0 1-2-2z"/><circle cx="16.5" cy="14.5" r="1.2"/>',
+  phone:'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
+  sparkles:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>',
+  shield:'<path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
+  trend:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+  eye:'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  eyeOff:'<path d="M3 3l18 18"/><path d="M10.6 5.1A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4M6.5 6.7C3.9 8.4 2 12 2 12s3.6 7 10 7c1.7 0 3.2-.4 4.5-1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>',
+  finger:'<path d="M12 11v3c0 3-1 5-2 6"/><path d="M8 14c0-2.2 1.8-4 4-4s4 1.8 4 4c0 2-.3 4-1.2 5.5"/><path d="M5 12a7 7 0 0 1 14 0c0 1.5 0 3-.4 4.5"/><path d="M4 17c.6-1.6 1-3.2 1-5"/><path d="M8.7 3.6A9 9 0 0 1 21 12"/>',
+  palette:'<path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H17a4 4 0 0 0 4-4c0-4.4-4-8.2-9-8.2z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="14.5" cy="7" r="1"/>',
+  volume:'<path d="M4 10v4h4l5 4V6l-5 4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/>',
+  book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M9 8h6"/>',
+  cloud:'<path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4 4 0 0 1-.5 8.5z"/><path d="M12 12v5M9.5 14.5 12 12l2.5 2.5"/>',
+  x:'<path d="M6 6l12 12M18 6 6 18"/>', app:'<rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M12 8v6M9.5 11.5 12 14l2.5-2.5"/>'
+};
+const ic = (n, s=22, cls='') => `<svg class="ic ${cls}" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${ICONS[n] || ''}</svg>`;
+function hydrateIcons(root=document){ root.querySelectorAll('i[data-ic]').forEach(e => { e.outerHTML = ic(e.dataset.ic, +e.dataset.s || 22); }); }
+
+/* ================= ابزارها ================= */
+const $ = id => document.getElementById(id);
+const FA = '۰۱۲۳۴۵۶۷۸۹';
+const fa = n => String(n).replace(/\d/g, d => FA[d]);
+const normDigits = s => String(s).replace(/[۰-۹]/g, d => FA.indexOf(d)).replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+const fnum = n => new Intl.NumberFormat('fa-IR').format(Math.round(n));
+const fmt = n => fnum(n) + ' ریال';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function readJSON(k, f){ try { const v = JSON.parse(localStorage.getItem(k)); return v ?? f; } catch { return f; } }
+function writeJSON(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { toast('حافظه مرورگر پر است یا در دسترس نیست','err'); return false; } }
+function lget(k, f){ try { const v = localStorage.getItem(k); return v === null ? f : v; } catch { return f; } }
+function lset(k, v){ try { localStorage.setItem(k, v); } catch {} }
+const QN = ['اول','دوم','سوم','چهارم','پنجم','ششم','هفتم','هشتم','نهم','دهم','یازدهم','دوازدهم','سیزدهم','چهاردهم','پانزدهم','شانزدهم','هفدهم','هجدهم','نوزدهم','بیستم'];
+const qn = i => QN[i] || fa(i + 1);
+const MAX_ACCOUNTS = 14, MONTHLY_SAVING = 500000, LENDER = 'محمدحسن حججی';
+const HADITH = 'قرض‌الحسنه در اسلام، معامله با خداست';
+
+/* ===== تاریخ شمسی ===== */
+const jf = new Intl.DateTimeFormat('en-US-u-ca-persian', {year:'numeric', month:'numeric', day:'numeric'});
+function jparts(d){ const o = {}; jf.formatToParts(d).forEach(p => { if (['year','month','day'].includes(p.type)) o[p.type] = parseInt(p.value); }); return {y:o.year, m:o.month, d:o.day}; }
+function addJMonths(date, n){
+  const s = jparts(date), idx = s.y*12 + (s.m-1) + n, ty = Math.floor(idx/12), tm = idx%12 + 1;
+  let c = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12);
+  c.setDate(c.getDate() + Math.round(n*30.4));
+  for (let i=0; i<150; i++){ const p = jparts(c), diff = (p.y*12+p.m) - (ty*12+tm); if (!diff) break; c.setDate(c.getDate() + (diff<0 ? 1 : -1)); }
+  let p = jparts(c);
+  while (p.d < s.d){ const nx = new Date(c); nx.setDate(nx.getDate()+1); if (jparts(nx).m !== tm) break; c = nx; p = jparts(c); }
+  while (p.d > s.d){ c.setDate(c.getDate()-1); p = jparts(c); }
+  return c;
+}
+const fmtDate = d => new Date(d).toLocaleDateString('fa-IR', {year:'numeric', month:'long', day:'numeric'});
+const todayStr = () => fmtDate(new Date());
+const monthKey = () => { const p = jparts(new Date()); return p.y + '-' + p.m; };
+const dayMid = d => { const x = new Date(d); x.setHours(0,0,0,0); return x; };
+const daysUntil = d => Math.round((dayMid(d) - dayMid(new Date())) / 864e5);
+
+/* ================= صدا (ساخته‌شده با WebAudio) ================= */
+let AC = null, master = null;
+const soundOn = () => lget('sound', '1') === '1';
+function audio(){
+  if (!AC){
+    try {
+      AC = new (window.AudioContext || window.webkitAudioContext)();
+      master = AC.createGain(); master.gain.value = .9;
+      const dl = AC.createDelay(); dl.delayTime.value = .24; const fb = AC.createGain(); fb.gain.value = .32; const wet = AC.createGain(); wet.gain.value = .45;
+      master.connect(AC.destination); master.connect(dl); dl.connect(fb); fb.connect(dl); dl.connect(wet); wet.connect(AC.destination);
+    } catch { AC = null; }
+  }
+  if (AC && AC.state === 'suspended') AC.resume();
+  return AC;
+}
+function tone(f, t0, dur, vol=.15, type='sine', attack=.03){
+  const o = AC.createOscillator(), g = AC.createGain(); o.type = type; o.frequency.value = f;
+  g.gain.setValueAtTime(0.0001, t0); g.gain.linearRampToValueAtTime(vol, t0 + attack); g.gain.exponentialRampToValueAtTime(.0001, t0 + dur);
+  o.connect(g); g.connect(master); o.start(t0); o.stop(t0 + dur + .05);
+}
+function playStartup(){
+  if (!soundOn() || !audio()) return;
+  const t = AC.currentTime + .05;
+  [130.81, 196, 261.63, 329.63].forEach((f, i) => tone(f, t, 3.2, .06, 'sine', .6 + i*.05));         // پد نرم
+  [[523.25,0],[659.25,.15],[783.99,.3],[987.77,.47],[1318.5,.66]].forEach(([f, d]) => { tone(f, t + d, 1.8, .12, 'triangle'); tone(f*2, t + d, 1.2, .03, 'sine'); });
+  tone(1567.98, t + 1, 2, .05, 'sine', .1);
+}
+function playSuccess(){ if (!soundOn() || !audio()) return; const t = AC.currentTime + .02; tone(880, t, .5, .13, 'triangle'); tone(1318.5, t + .12, .8, .12, 'triangle'); }
+function playAlarm(){ if (!soundOn() || !audio()) return; const t = AC.currentTime + .02; [0,.22,.44].forEach(d => tone(988, t + d, .18, .09, 'square')); }
+function setSound(v){ lset('sound', v ? '1' : '0'); if (v) playSuccess(); }
+
+/* ================= داده ================= */
+let allUsers = readJSON('users', []);
+allUsers.forEach(u => { if (!u.id){ u.id = u.phone; u.legacy = true; } });
+let currentUser = null;
+let currentLoan = null, viewingHistory = false, locked = true;
+let stack = ['home'];
+const ROOTS = ['home','loans','savings','history','profile'];
+const getLoans = () => currentUser ? readJSON('loans_' + currentUser.id, []) : [];
+const putLoans = l => { if (currentUser){ writeJSON('loans_' + currentUser.id, l); markDirty(); } };
+const getHist  = () => currentUser ? readJSON('history_' + currentUser.id, []) : [];
+const putHist  = h => { if (currentUser){ writeJSON('history_' + currentUser.id, h); markDirty(); } };
+const getFree  = () => currentUser ? (readJSON('freeSavings', {})[currentUser.id] || []) : [];
+const putFree  = a => { const o = readJSON('freeSavings', {}); o[currentUser.id] = a; writeJSON('freeSavings', o); markDirty(); };
+const getSettled = () => currentUser ? (readJSON('settledSavings', {})[currentUser.id] || []) : [];
+const putSettled = a => { const o = readJSON('settledSavings', {}); o[currentUser.id] = a; writeJSON('settledSavings', o); markDirty(); };
+const getPhoto = u => u ? (readJSON('userPhotos', {})[u.id] || null) : null;
+const uname = u => u.username ? '@' + u.username : fa(u.phone || u.id);
+function saveUser(){ const i = allUsers.findIndex(u => u.id === currentUser.id); if (i > -1) allUsers[i] = currentUser; writeJSON('users', allUsers); lset('lastUser', currentUser.id); markDirty(); }
+const payAmt = (l, i) => l.payments[i].amount ?? l.installmentAmount;
+const paidSum = l => l.payments.reduce((s, p, i) => s + (p.paid ? payAmt(l, i) : 0), 0);
+const remaining = l => l.payments.every(p => p.paid) ? 0 : Math.max(0, l.totalLoanAmount - paidSum(l));
+const dueDate = (l, i) => addJMonths(new Date(l.id), i + 1);
+function stats(){
+  const loans = getLoans(), used = loans.reduce((s, l) => s + l.activeAccounts, 0), free = (currentUser.loanAccounts || 0) - used;
+  const active = loans.reduce((s, l) => s + l.payments.filter(p => p.paid).length * l.totalMonthlySaving, 0);
+  const settled = getSettled().reduce((s, x) => s + (x.amount || 0), 0), freeS = getFree().reduce((s, x) => s + (x.amount || 0), 0);
+  return {loans, used, free, active, settled, freeS, total: active + settled + freeS};
+}
+
+/* ================= تم ================= */
+const THEMES = [
+  {id:'blue', name:'آبی', c:'#2f6fe0'}, {id:'emerald', name:'زمردی', c:'#14935f'}, {id:'purple', name:'بنفش', c:'#7a4fe0'}, {id:'orange', name:'نارنجی', c:'#ee7a22'},
+  {id:'rose', name:'صورتی', c:'#e8457f'}, {id:'teal', name:'فیروزه‌ای', c:'#17b0c4'}, {id:'gold', name:'طلایی', c:'#c99a1d'}, {id:'graphite', name:'گرافیت', c:'#3b4b66'}
+];
+const accent = () => lget('accent', 'blue');
+const mode = () => lget('mode', 'auto');
+function applyLook(){
+  const dark = mode() === 'dark' || (mode() === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  document.documentElement.dataset.accent = accent();
+  $('themeColor').content = getComputedStyle(document.documentElement).getPropertyValue('--a1').trim() || '#1648b0';
+}
+function setAccent(id){ lset('accent', id); applyLook(); openThemeSheet(true); }
+function setMode(m){ lset('mode', m); applyLook(); openThemeSheet(true); }
+function openThemeSheet(keep){
+  const a = accent(), m = mode();
+  openSheet('نمایش و تم برنامه', `
+    <div class="muted" style="font-size:.8rem;margin:0 2px">رنگ برنامه را انتخاب کنید</div>
+    <div class="themes">${THEMES.map(t => `<button class="th ${t.id === a ? 'on' : ''}" onclick="setAccent('${t.id}')"><i style="background:linear-gradient(135deg,${t.c},${t.c}cc)">${ic('check',24)}</i>${t.name}</button>`).join('')}</div>
+    <div class="muted" style="font-size:.8rem;margin:14px 2px 0">حالت نمایش</div>
+    <div class="seg3"><button class="${m==='light'?'on':''}" onclick="setMode('light')">روز</button><button class="${m==='auto'?'on':''}" onclick="setMode('auto')">خودکار</button><button class="${m==='dark'?'on':''}" onclick="setMode('dark')">شب</button></div>`, keep);
+}
+
+/* ================= رابط: اعلان‌ها و مودال ================= */
+function toast(msg, type='ok'){
+  const t = document.createElement('div'); t.className = 'toast ' + type;
+  t.innerHTML = ic(type === 'ok' ? 'checkCircle' : 'alert', 20) + `<span>${esc(msg)}</span>`;
+  $('toasts').appendChild(t); setTimeout(() => t.classList.add('out'), 2600); setTimeout(() => t.remove(), 3000);
+}
+let modalResolve = null;
+function ask({icon='help', title='', text='', yes='تأیید', no='انصراف', kind='', single=false}){
+  return new Promise(res => {
+    if (modalResolve) modalResolve(false);
+    modalResolve = res;
+    $('mIcon').innerHTML = ic(icon, 34, icon === 'check' ? 'draw' : '');
+    $('mTitle').textContent = title; $('mText').textContent = text; $('mYes').textContent = yes; $('mNo').textContent = no; $('mNo').style.display = single ? 'none' : '';
+    $('mBox').className = 'm-box ' + kind;
+    $('mYes').className = 'btn' + (kind === 'danger' || kind === 'alarm' ? ' danger' : kind === 'warn' ? ' gold' : '');
+    $('modal').classList.add('active');
+  });
+}
+const info = o => ask({...o, single:true, yes:o.yes || 'باشه'});
+function closeModal(v){ $('modal').classList.remove('active'); const r = modalResolve; modalResolve = null; if (r) r(v); }
+function openSheet(title, html, keep){ $('bsTitle').textContent = title; $('bsBody').innerHTML = html; $('bsheet').classList.add('on'); $('sheetScrim').classList.add('on'); if (!keep) $('bsheet').scrollTop = 0; }
+function closeSheet(){ $('bsheet').classList.remove('on'); $('sheetScrim').classList.remove('on'); }
+function confetti(){
+  const box = $('confetti'), cols = ['#f2d070','#ffffff','#2f6fe0','#14935f','#d4a62a'];
+  for (let i=0; i<80; i++){ const s = document.createElement('i'); s.style.cssText = `left:${Math.random()*100}%;background:${cols[i%5]};animation-duration:${1.8+Math.random()*1.6}s;animation-delay:${Math.random()*.5}s;transform:rotate(${Math.random()*360}deg)`; box.appendChild(s); }
+  setTimeout(() => box.innerHTML = '', 4200);
+}
+function countUp(el, to, hidden){
+  if (!el) return; const small = '<small>ریال</small>';
+  if (hidden){ el.innerHTML = '••••••' + small; return; }
+  const t0 = performance.now(), dur = 900;
+  const step = t => { const k = Math.min(1, (t-t0)/dur), e = 1 - Math.pow(1-k, 3); el.innerHTML = fnum(to*e) + small; if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+function animateIn(){
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    document.querySelectorAll('.page.active [data-w]').forEach(i => i.style.width = i.dataset.w + '%');
+    document.querySelectorAll('.page.active .seg[data-d]').forEach(s => s.style.strokeDasharray = s.dataset.d);
+  }));
+}
+function stagger(id){ document.querySelectorAll('#p-' + id + ' .rise').forEach((e, i) => e.style.setProperty('--i', Math.min(i, 14))); }
+document.addEventListener('pointerdown', e => {
+  const b = e.target.closest('.btn,.pay-btn,.nav-item,.bb,.q .qc,.g-btn,.a-btn,.ib');
+  if (!b || b.disabled) return;
+  const r = b.getBoundingClientRect(), s = Math.max(r.width, r.height) * 1.4, el = document.createElement('span');
+  el.className = 'ripple'; el.style.cssText = `width:${s}px;height:${s}px;left:${e.clientX - r.left - s/2}px;top:${e.clientY - r.top - s/2}px`;
+  if (getComputedStyle(b).position === 'static') b.style.position = 'relative';
+  b.appendChild(el); setTimeout(() => el.remove(), 650);
+});
+
+/* ================= آلارم ================= */
+const remindDays = () => +lget('remindDays', 1);
+function getAlerts(){
+  if (!currentUser) return [];
+  const out = [], lim = remindDays();
+  getLoans().forEach(l => { const i = l.payments.findIndex(p => !p.paid); if (i < 0) return; const d = dueDate(l, i), left = daysUntil(d); if (left <= lim) out.push({l, i, d, left, amount: payAmt(l, i) + l.totalMonthlySaving}); });
+  return out.sort((a, b) => a.left - b.left);
+}
+const alertWhen = a => a.left < 0 ? `${fa(-a.left)} روز معوق شده` : a.left === 0 ? 'امروز سررسید است' : a.left === 1 ? 'فردا سررسید است' : `${fa(a.left)} روز دیگر سررسید است`;
+const alertKind = a => a.left < 0 ? 'late' : a.left <= 1 ? '' : 'soon';
+function updateBell(){
+  const n = currentUser ? getAlerts().length : 0;
+  document.querySelectorAll('.bell').forEach(b => { b.classList.toggle('ring', n > 0); const bd = b.querySelector('.badge-n'); if (bd) bd.textContent = fa(n); });
+}
+function pushNotify(title, body){
+  try { if ('Notification' in window && Notification.permission === 'granted') new Notification(title, {body, tag:'qarz-due', dir:'rtl', lang:'fa', icon:'icon-192.png'}); } catch {}
+  try { if (navigator.vibrate) navigator.vibrate([200,100,200,100,300]); } catch {}
+}
+function checkAlarms(){
+  updateBell();
+  if (!currentUser || locked || modalResolve) return;
+  const alerts = getAlerts(); if (!alerts.length) return;
+  const seen = readJSON('alarmSeen', {}), today = new Date().toDateString();
+  const fresh = alerts.filter(a => seen[`${currentUser.id}|${a.l.id}|${a.i}`] !== today);
+  if (!fresh.length) return;
+  fresh.forEach(a => seen[`${currentUser.id}|${a.l.id}|${a.i}`] = today); writeJSON('alarmSeen', seen);
+  pushNotify('یادآوری پرداخت قسط', fresh.map(a => `${a.l.title || 'وام'}: ${alertWhen(a)}`).join('، ')); playAlarm();
+  ask({icon:'bell', kind:'alarm', title:'آلارم پرداخت قسط', text:fresh.map(a => `• ${a.l.title || 'وام'}، قسط ${qn(a.i)}: ${alertWhen(a)}\n   مبلغ ${fmt(a.amount)}`).join('\n'), yes:'مشاهده و پرداخت', no:'بعداً'}).then(ok => { if (ok){ stack = ['home']; openLoan(fresh[0].l.id); } });
+}
+function showAlerts(){
+  if (!currentUser) return; const alerts = getAlerts();
+  if (!alerts.length){ info({icon:'shield', title:'همه‌چیز مرتب است', text:`قسطی در ${fa(remindDays())} روز آینده سررسید نمی‌شود.`}); return; }
+  ask({icon:'bell', kind:'alarm', title:'اقساط نزدیک', text:alerts.map(a => `• ${a.l.title || 'وام'}، قسط ${qn(a.i)}: ${alertWhen(a)}\n   ${fmt(a.amount)}`).join('\n'), yes:'رفتن به وام', no:'بستن'}).then(ok => { if (ok){ stack = ['home']; openLoan(alerts[0].l.id); } });
+}
+const notifState = () => !('Notification' in window) ? 'پشتیبانی نمی‌شود' : ({granted:'فعال', denied:'مسدود (از تنظیمات مرورگر)', default:'غیرفعال'})[Notification.permission];
+async function enableNotif(){
+  if (!('Notification' in window)) return toast('مرورگر شما اعلان را پشتیبانی نمی‌کند','warn');
+  const p = await Notification.requestPermission(); openReminderSheet(true); toast(p === 'granted' ? 'اعلان‌ها فعال شد' : 'اجازه داده نشد', p === 'granted' ? 'ok' : 'warn');
+}
+function setRemind(v){ lset('remindDays', v); updateBell(); toast(`یادآوری ${fa(v)} روز قبل از سررسید`); }
+function openReminderSheet(keep){
+  const rd = remindDays();
+  openSheet('یادآوری اقساط', `
+    <div class="info-row"><span>زمان یادآوری</span><select onchange="setRemind(this.value)" style="padding:9px 12px;border-radius:12px;border:none;background:var(--rowbg);color:var(--ink);font-family:inherit"><option value="1" ${rd===1?'selected':''}>۱ روز قبل</option><option value="2" ${rd===2?'selected':''}>۲ روز قبل</option><option value="3" ${rd===3?'selected':''}>۳ روز قبل</option></select></div>
+    <div class="info-row"><span>اعلان مرورگر: ${notifState()}</span><button class="btn small ghost" onclick="enableNotif()">فعال‌سازی</button></div>
+    <div class="muted" style="font-size:.76rem;line-height:2;margin-top:10px">آلارم هنگام باز بودن برنامه نمایش داده می‌شود. برای اعلان وقتی برنامه بسته است، به سرور و Push نیاز است.</div>`, keep);
+}
+
+/* ================= ناوبری و هدر ================= */
+const FORM_TITLES = {openAcc:'افتتاح حساب وامی', newLoan:'ثبت وام جدید', register:'ایجاد حساب کاربری'};
+const avatarHTML = u => { const p = getPhoto(u); return p ? `<img src="${p}" alt="">` : (u ? esc((u.firstName[0]||'') + (u.lastName[0]||'')) : ic('user', 24)); };
+function bar({back=false, title='', extra='', bell=true}={}){
+  return `<div class="bar">${back ? `<button class="bb" onclick="back()" aria-label="برگشت">${ic('back',26)}</button>` : `<button class="bb" onclick="goRoot('profile')" aria-label="حساب"><div class="avatar sm">${avatarHTML(currentUser)}</div></button>`}
+    ${title ? `<div class="bt">${title}</div>` : '<div class="sp"></div>'}${extra}
+    <button class="bb" onclick="openHelp()" aria-label="راهنما">${ic('help',26)}</button>${bell && currentUser ? `<button class="bb bell" onclick="showAlerts()" aria-label="یادآوری">${ic('bell',26)}<b class="badge-n"></b></button>` : ''}</div>`;
+}
+function render(id, soft){
+  document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === 'p-' + id));
+  closeSheet();
+  $('bottomNav').classList.toggle('hide', !ROOTS.includes(id) || !currentUser);
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.toggle('active', b.dataset.nav === id));
+  if (FORM_TITLES[id]) $('hd-' + id).innerHTML = bar({back:true, title:FORM_TITLES[id], bell: id !== 'register'});
+  if (id === 'home') renderHome(); if (id === 'loans') renderLoans(); if (id === 'savings') renderSavings(); if (id === 'history') renderHistory(); if (id === 'profile') renderProfile(); if (id === 'detail') renderDetail(soft);
+  const pg = $('p-' + id); pg.classList.toggle('no-anim', !!soft);
+  stagger(id); animateIn(); updateBell();
+  if (!soft) $('main').scrollTop = 0;
+}
+function needUser(){ if (!currentUser){ toast('ابتدا وارد شوید','warn'); return false; } return true; }
+function go(id){ if (stack[stack.length-1] !== id){ stack.push(id); history.pushState({}, ''); } render(id); }
+function goRoot(id){ if (!needUser()) return; stack = id === 'home' ? ['home'] : ['home', id]; history.pushState({}, ''); render(id); }
+function back(){
+  if ($('bsheet').classList.contains('on')){ closeSheet(); return; }
+  if (stack.length > 1){ stack.pop(); render(stack[stack.length-1]); } else if (!currentUser) showGate();
+}
+window.addEventListener('popstate', () => { if (!locked) back(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+document.addEventListener('visibilitychange', () => { if (!document.hidden){ checkAlarms(); if (currentUser && !locked) syncNow(); } });
+function openHelp(){
+  openSheet('راهنما', `<div class="row" onclick="closeSheet();setTimeout(startTour,350)"><div class="ric fill">${ic('book',24)}</div><div class="rmain"><b>راهنمای گام‌به‌گام برنامه</b><small>آشنایی با بخش‌های مهم</small></div><div class="rend">${ic('chev',18)}</div></div>
+    <div class="row" onclick="closeSheet();about()"><div class="ric soft">${ic('info',24)}</div><div class="rmain"><b>دربارهٔ ما</b><small>قرض‌الحسنه حضرت جوادالائمه (ع)</small></div><div class="rend">${ic('chev',18)}</div></div>`);
+}
+function about(){ info({icon:'leaf', title:'قرض‌الحسنه حضرت جوادالائمه (ع)', text:'سامانه مدیریت حساب‌های وامی، اقساط و صندوق پس‌انداز.\n«' + HADITH + '»'}); }
+
+/* ================= صفحه خانه ================= */
+const eyeHidden = () => lget('eyeHidden', '0') === '1';
+function toggleEye(){ lset('eyeHidden', eyeHidden() ? '0' : '1'); render('home', true); }
+function promoArt(){ return `<svg class="art" viewBox="0 0 130 110" fill="none"><ellipse cx="62" cy="96" rx="48" ry="9" fill="#000" opacity=".18"/><g><ellipse cx="62" cy="84" rx="34" ry="10" fill="#f0cf6e"/><rect x="28" y="66" width="68" height="18" fill="#d4a62a"/><ellipse cx="62" cy="66" rx="34" ry="10" fill="#f6dc8a"/><rect x="34" y="46" width="56" height="18" fill="#d4a62a"/><ellipse cx="62" cy="46" rx="28" ry="8" fill="#f6dc8a"/><circle cx="62" cy="22" r="17" fill="#f6dc8a" stroke="#c99a1d" stroke-width="3"/><path d="M62 12c-5 7-5 14 0 20 5-6 5-13 0-20z" fill="#c99a1d"/></g></svg>`; }
+function renderHome(){
+  const s = stats(), canOpen = (currentUser.loanAccounts || 0) < MAX_ACCOUNTS, alerts = getAlerts(), hid = eyeHidden();
+  const upcoming = [];
+  s.loans.forEach(l => { const i = l.payments.findIndex(p => !p.paid); if (i > -1){ const d = dueDate(l, i); upcoming.push({l, i, d, left: daysUntil(d), amount: payAmt(l, i) + l.totalMonthlySaving}); } });
+  upcoming.sort((a, b) => a.d - b.d);
+  let alertHTML = '';
+  if (alerts.length) alertHTML = alerts.map(a => `<div class="alarm ${alertKind(a)} rise" onclick="openLoan(${a.l.id})"><div class="a-ico">${ic('bell',24)}</div><div class="a-txt"><b>${esc(a.l.title || 'وام')} · قسط ${qn(a.i)}</b><small>${alertWhen(a)} · ${fmtDate(a.d)}<br>${fmt(a.amount)}</small></div><button class="a-btn">پرداخت</button></div>`).join('');
+  $('p-home').innerHTML = `
+    <div class="hd">${bar()}
+      <div class="bal tHero rise"><div class="amt" id="heroAmount"></div>
+        <button class="eye" onclick="toggleEye()">${ic(hid ? 'eyeOff' : 'eye', 22)}<span>موجودی صندوق پس‌انداز</span>${ic('chevd',18)}</button>
+        <div class="sub-l">پس‌انداز ماهیانه همه حساب‌ها: ${hid ? '••••' : fmt((currentUser.loanAccounts || 0) * MONTHLY_SAVING)}</div></div>
+      <div class="quick tQuick rise">
+        <button class="q main" onclick="openLoanForm()" ${s.free > 0 ? '' : 'disabled'}><span class="qc">${ic('plus',26)}</span>ثبت وام</button>
+        <button class="q" onclick="openAccForm()" ${canOpen ? '' : 'disabled'}><span class="qc">${ic('bank',26)}</span>افتتاح حساب</button>
+        <button class="q" onclick="goRoot('savings')"><span class="qc">${ic('coins',26)}</span>پس‌انداز</button>
+      </div></div>
+    <div class="sheet">
+      ${alertHTML}
+      <div class="stats tStats">
+        <button class="stat a rise" onclick="goRoot('savings')"><span class="si">${ic('bank',22)}</span><b data-n="${s.used}">${fa(s.used)}</b><small>حساب فعال</small>${ic('bank',78,'bgi')}</button>
+        <button class="stat g rise" onclick="goRoot('savings')"><span class="si">${ic('wallet',22)}</span><b data-n="${s.free}">${fa(s.free)}</b><small>حساب آزاد</small>${ic('wallet',78,'bgi')}</button>
+        <button class="stat o rise" onclick="goRoot('loans')"><span class="si">${ic('file',22)}</span><b data-n="${s.loans.length}">${fa(s.loans.length)}</b><small>وام جاری</small>${ic('file',78,'bgi')}</button>
+        <button class="stat b rise" onclick="goRoot('history')"><span class="si">${ic('flag',22)}</span><b data-n="${getHist().length}">${fa(getHist().length)}</b><small>وام تسویه‌شده</small>${ic('flag',78,'bgi')}</button>
+      </div>
+      <div class="tList">
+        <div class="sec rise">اقساط پیش‌رو</div>
+        ${upcoming.length ? upcoming.slice(0, 5).map(installRow).join('') : `<div class="empty rise"><div class="eico">${ic('inbox',34)}</div>${(currentUser.loanAccounts||0) ? 'قسط فعالی وجود ندارد' : 'برای شروع، یک حساب وامی افتتاح کنید'}</div>`}
+        ${s.loans.length ? `<div class="sec rise">وام‌های جاری<a onclick="goRoot('loans')">همه</a></div>${s.loans.slice(0, 3).map(loanRow).join('')}` : ''}
+      </div>
+      <div class="hadith rise">${ic('sparkles',18)}${HADITH}</div>
+    </div>`;
+  countUp($('heroAmount'), s.total, hid); countInts();
+}
+function countInts(){
+  document.querySelectorAll('.page.active .stat b[data-n]').forEach(b => { const to = +b.dataset.n; if (!to) return; const t0 = performance.now(); const f = t => { const k = Math.min(1, (t - t0 - 250) / 700); b.textContent = fa(Math.round(to * Math.max(0, 1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(f); }; requestAnimationFrame(f); });
+}
+function installRow(a){
+  const late = a.left < 0, near = a.left >= 0 && a.left <= 1;
+  return `<div class="row rise" onclick="openLoan(${a.l.id})"><div class="ric ${late ? 'red' : near ? 'gold' : 'soft'}">${ic(late ? 'alert' : near ? 'bell' : 'calendar', 24)}</div>
+    <div class="rmain"><b>قسط ${qn(a.i)} · ${esc(a.l.title || 'وام')}</b><small>${fmtDate(a.d)}</small></div>
+    <div class="rend"><b>${fnum(a.amount)}</b>${late ? `<span class="tag late">${ic('alert',12)}معوق</span>` : near ? `<span class="tag warn">${ic('bell',12)}${a.left === 0 ? 'امروز' : 'فردا'}</span>` : `<span class="tag acc">${fa(a.left)} روز دیگر</span>`}</div></div>`;
+}
+function loanRow(l){
+  const n = l.payments.length, paid = l.payments.filter(p => p.paid).length, i = l.payments.findIndex(p => !p.paid);
+  let tag = '', sub = '';
+  if (i > -1){ const d = dueDate(l, i), left = daysUntil(d); sub = 'قسط بعدی: ' + fmtDate(d); tag = left < 0 ? `<span class="tag late">${ic('alert',12)}معوق</span>` : left <= 1 ? `<span class="tag warn">${ic('bell',12)}${left === 0 ? 'امروز' : 'فردا'}</span>` : ''; }
+  return `<div class="row rise" onclick="openLoan(${l.id})"><div class="ric soft">${ic('file',24)}</div>
+    <div class="rmain"><b>${esc(l.title || 'وام')}</b><small>${esc(l.borrower)} · ${sub}</small><div class="mprog"><i data-w="${paid/n*100}"></i></div></div>
+    <div class="rend"><b>${fnum(remaining(l))}</b><small>ریال مانده · ${fa(paid)}/${fa(n)}</small>${tag}</div></div>`;
+}
+
+/* ================= وام‌ها ================= */
+function renderLoans(){
+  const s = stats(), canOpen = (currentUser.loanAccounts || 0) < MAX_ACCOUNTS, hid = eyeHidden(), rest = s.loans.reduce((t, l) => t + remaining(l), 0);
+  $('p-loans').innerHTML = `
+    <div class="hd">${bar({title:'وام‌های من'})}
+      <div class="bal rise"><div class="amt">${hid ? '••••••' : fnum(rest)}<small>ریال</small></div><div class="eye" style="cursor:default">${ic('wallet',22)}<span>مانده کل وام‌های جاری</span></div></div></div>
+    <div class="sheet">
+      ${s.loans.length ? s.loans.map(loanRow).join('') : `<div class="empty rise"><div class="eico">${ic('inbox',34)}</div>هنوز وامی ثبت نشده است</div>`}
+      <button class="btn rise" onclick="openLoanForm()" ${s.free > 0 ? '' : 'disabled'}>${ic('filePlus',20)}ثبت وام جدید${s.free > 0 ? '' : ' (حساب آزاد ندارید)'}</button>
+      <button class="btn ghost rise" onclick="openAccForm()" ${canOpen ? '' : 'disabled'}>${ic('bank',20)}افتتاح حساب وامی</button>
+    </div>`;
+}
+
+/* ================= پس‌انداز ================= */
+function renderSavings(){
+  const s = stats(), C = 339.29, accTotal = currentUser.loanAccounts || 0, fR = accTotal ? s.free / accTotal : 0, aR = accTotal ? s.used / accTotal : 0, hid = eyeHidden();
+  const freeList = getFree().map((x, i) => `<div class="row" style="cursor:default"><div class="ric green">${ic('wallet',22)}</div><div class="rmain"><b>${fmt(x.amount)}</b><small>${esc(x.date)} · ${esc(x.note || '')}</small></div><button class="mini-del" onclick="deleteFree(${i})">${ic('trash',16)}</button></div>`).join('');
+  const actList = s.loans.filter(l => l.payments.some(p => p.paid)).map(l => { const c = l.payments.filter(p => p.paid).length; return `<div class="row" style="cursor:default"><div class="ric gold">${ic('bank',22)}</div><div class="rmain"><b>${esc(l.title || 'وام')}</b><small>${esc(l.borrower)} · ${fa(c)} قسط</small></div><div class="rend"><b>${fnum(c * l.totalMonthlySaving)}</b><small>ریال</small></div></div>`; }).join('');
+  const setList = getSettled().map(x => `<div class="row" style="cursor:default"><div class="ric green">${ic('checkCircle',22)}</div><div class="rmain"><b>${esc(x.title || '')}</b><small>${esc(x.borrower)} · تسویه ${esc(x.settledAt)}</small></div><div class="rend"><b>${fnum(x.amount)}</b><small>ریال</small></div></div>`).join('');
+  $('p-savings').innerHTML = `
+    <div class="hd">${bar({title:'پس‌انداز'})}
+      <div class="bal rise"><div class="amt" id="savAmt"></div><div class="eye" style="cursor:default">${ic('coins',22)}<span>جمع کل پس‌انداز</span></div></div>
+      <div class="quick rise"><button class="q main" onclick="openAccForm()"><span class="qc">${ic('bank',26)}</span>افتتاح حساب</button><button class="q" onclick="goRoot('loans')"><span class="qc">${ic('file',26)}</span>وام‌ها</button></div></div>
+    <div class="sheet">
+      <div class="donut-card rise"><div class="donut"><svg width="128" height="128" viewBox="0 0 128 128"><circle class="track" cx="64" cy="64" r="54"/>
+        <circle class="seg" cx="64" cy="64" r="54" stroke="var(--a2)" data-d="${Math.max(0, fR*C - (aR && fR ? 4 : 0))} ${C}"/>
+        <circle class="seg" cx="64" cy="64" r="54" stroke="#f2d070" style="stroke-dashoffset:${-fR*C}" data-d="${Math.max(0, aR*C - (aR && fR ? 4 : 0))} ${C}"/></svg>
+        <div class="mid"><b>${fa(accTotal)}</b><small>حساب وامی</small></div></div>
+        <div class="legend"><div><i style="background:var(--a2)"></i>آزاد: <b>${fa(s.free)}</b></div><div><i style="background:#f2d070"></i>فعال: <b>${fa(s.used)}</b></div><div class="muted" style="font-size:.72rem">آزاد: ${hid ? '••••' : fmt(s.freeS)}<br>فعال: ${hid ? '••••' : fmt(s.active + s.settled)}</div></div></div>
+      <div class="sec rise">حساب‌های آزاد · ${hid ? '••••' : fmt(s.freeS)}</div>
+      <button class="btn soft rise" style="margin-top:4px" onclick="registerFree()" ${s.free > 0 ? '' : 'disabled'}>${ic(s.free > 0 ? 'plus' : 'lock', 19)}${s.free > 0 ? 'ثبت پس‌انداز این ماه' : 'حساب آزادی وجود ندارد'}</button>
+      ${freeList || '<div class="empty" style="padding:16px">هنوز ثبت نشده</div>'}
+      <div class="sec rise">حساب‌های فعال · ${hid ? '••••' : fmt(s.active + s.settled)}</div>${actList + setList || '<div class="empty" style="padding:16px">هنوز پرداختی ثبت نشده</div>'}
+    </div>`;
+  countUp($('savAmt'), s.total, hid);
+}
+async function registerFree(){
+  const s = stats(); if (s.free <= 0){ toast('حساب آزادی وجود ندارد','warn'); return; }
+  const mk = monthKey();
+  if (getFree().some(x => x.type === 'monthly' && x.month === mk)){ const ok = await ask({icon:'alert', kind:'warn', title:'قبلاً ثبت شده', text:'پس‌انداز حساب‌های آزاد برای این ماه قبلاً ثبت شده است. دوباره ثبت شود؟', yes:'بله، ثبت شود'}); if (!ok) return; }
+  const amount = s.free * MONTHLY_SAVING, arr = getFree(); arr.push({date: todayStr(), amount, note: fa(s.free) + ' حساب آزاد', type:'monthly', month: mk});
+  putFree(arr); render('savings', true); playSuccess(); toast('پس‌انداز ' + fmt(amount) + ' ثبت شد');
+}
+async function deleteFree(i){ const arr = getFree(); const ok = await ask({icon:'trash', kind:'danger', title:'حذف ردیف پس‌انداز', text:'این ردیف حذف شود؟', yes:'حذف'}); if (!ok) return; arr.splice(i, 1); putFree(arr); render('savings', true); }
+
+/* ================= تنظیمات / حساب ================= */
+function renderProfile(){
+  const u = currentUser, th = THEMES.find(t => t.id === accent()) || THEMES[0], standalone = isStandalone();
+  const R = (icon, title, sub, on, fill=true, end='') => `<div class="row rise" ${on ? `onclick="${on}"` : ''}><div class="ric ${fill ? 'fill' : fill}">${ic(icon,24)}</div><div class="rmain"><b>${title}</b><small>${sub}</small></div><div class="rend h">${end || (on ? ic('chev',18) : '')}</div></div>`;
+  $('p-profile').innerHTML = `
+    <div class="hd">${bar({title:'تنظیمات'})}
+      <div class="pf-av rise"><div class="pf-wrap"><div class="avatar" onclick="$('photoInput').click()">${avatarHTML(u)}</div><div class="pf-edit">${ic('pencil',14)}</div></div>
+        <button class="name-pill" onclick="openAccounts()">${ic('chevd',20)}${esc(u.firstName)} ${esc(u.lastName)}</button><div class="pf-sub">${uname(u)}</div></div></div>
+    <div class="sheet">
+      <div class="promo rise" style="margin-top:0"><div class="pt"><b>تم ${th.name} فعال است</b><small>رنگ و حالت برنامه را از «نمایش و تم» تغییر دهید</small></div>${promoArt()}</div>
+      <div class="sec rise">تنظیمات</div>
+      ${R('book','راهنمای برنامه','آموزش گام‌به‌گام بخش‌ها','startTour()')}
+      ${standalone ? '' : R('app','نصب برنامه','افزودن به صفحهٔ اصلی گوشی','doInstall()')}
+      ${R('user','جزئیات حساب','اطلاعات شخصی و حساب‌ها','openDetails()')}
+      ${R('palette','نمایش و تم','رنگ برنامه، حالت روز و شب','openThemeSheet()')}
+      ${R('bell','یادآوری اقساط','آلارم و اعلان سررسید','openReminderSheet()')}
+      ${R('volume','افکت صدا','صدای ورود و پرداخت','', true, `<label class="sw"><input type="checkbox" ${soundOn() ? 'checked' : ''} onchange="setSound(this.checked)"><i></i></label>`)}
+      ${R('cloud','همگام‌سازی ابری', `<span class="sync-dot ${cloudOn() && u.username ? lget('syncState','off') : ''}"></span>${syncText()}`,'openCloud()')}
+      ${R('shield','پشتیبان‌گیری','دریافت و بازیابی اطلاعات','openBackup()')}
+      ${R('info','دربارهٔ ما','قرض‌الحسنه حضرت جوادالائمه (ع)','about()')}
+      ${R('logout','خروج از حساب','اطلاعات حفظ می‌شود','logout()', 'red')}
+    </div>`;
+}
+function openDetails(){
+  const u = currentUser;
+  openSheet('جزئیات حساب', `<div class="info-row"><span>نام</span><b>${esc(u.firstName)}</b></div><div class="info-row"><span>نام خانوادگی</span><b>${esc(u.lastName)}</b></div><div class="info-row"><span>نام کاربری</span><b dir="ltr">${u.username ? esc(u.username) : 'تعیین نشده'}</b></div><div class="info-row"><span>حساب‌های وامی</span><b>${fa(u.loanAccounts || 0)}</b></div><div class="info-row"><span>عضویت</span><b>${esc(u.createdAt || '—')}</b></div>
+    ${u.username ? '' : `<div class="cloud-note warn" style="margin-top:12px">${ic('alert',20)}<div>این حساب هنوز نام کاربری و رمز ندارد و فقط روی همین دستگاه است. برای ورود از دستگاه‌های دیگر آن‌ها را تعیین کنید.</div></div><button class="btn" onclick="openCred()">${ic('lock',19)}تعیین نام کاربری و رمز</button>`}
+    <button class="btn danger" onclick="deleteAccount()">${ic('trash',19)}حذف حساب</button>`);
+}
+function openBackup(){
+  openSheet('پشتیبان‌گیری', `<div class="muted" style="font-size:.8rem;line-height:2;margin:0 2px 6px">نسخهٔ پشتیبان یک فایل از اطلاعات همین دستگاه است. برای ورود از دستگاه‌های دیگر از «همگام‌سازی ابری» استفاده کنید.</div>
+    <button class="btn" onclick="exportBackup()">${ic('download',19)}دریافت نسخه پشتیبان</button><button class="btn ghost" onclick="$('restoreInput').click()">${ic('upload',19)}بازیابی از نسخه پشتیبان</button>`);
+}
+function openAccounts(){
+  openSheet('حساب‌های کاربری', allUsers.map(u => `<div class="row" onclick="switchUser('${u.id}')"><div class="avatar" style="border-color:var(--line)">${avatarHTML(u)}</div><div class="rmain"><b>${esc(u.firstName)} ${esc(u.lastName)}</b><small dir="auto">${uname(u)}</small></div><div class="rend">${currentUser && currentUser.id === u.id ? `<span class="tag done">${ic('check',12)}فعال</span>` : ic('chev',18)}</div></div>`).join('')
+    + `<button class="btn ghost" onclick="closeSheet();openRegister()">${ic('plus',19)}افزودن حساب کاربری</button>`);
+}
+async function switchUser(id){
+  const u = allUsers.find(x => x.id === id); if (!u) return;
+  if (currentUser && currentUser.id === id){ closeSheet(); return; }
+  closeSheet(); await flushSync(); currentUser = null; stack = ['home']; gateUser = u; showGate('known');
+}
+function openRegister(){ ['regFirst','regLast','regUser','regPw','regPw2'].forEach(i => $(i).value = ''); $('pwBar').style.width = '0'; $('userHint').className = 'hint'; $('pwHint').className = 'hint'; cloudNote(); go('register'); }
+function cloudNote(){
+  $('cloudNote').className = 'cloud-note rise' + (cloudOn() ? '' : ' warn');
+  $('cloudNote').innerHTML = cloudOn() ? `${ic('cloud',20)}<div>همگام‌سازی ابری فعال است؛ با همین نام کاربری و رمز از دستگاه‌های دیگر هم وارد می‌شوید.</div>` : `${ic('alert',20)}<div>همگام‌سازی ابری تنظیم نشده است و حساب فعلاً فقط روی همین دستگاه می‌ماند. <a onclick="openCloud()">تنظیم همگام‌سازی</a></div>`;
+}
+function togglePw(id, btn){ const el = $(id), show = el.type === 'password'; el.type = show ? 'text' : 'password'; btn.innerHTML = ic(show ? 'eyeOff' : 'eye', 20); }
+function chkUser(){
+  const el = $('regUser'); el.value = el.value.toLowerCase().replace(/[^a-z0-9_]/g, ''); const v = el.value, h = $('userHint');
+  if (!v){ h.className = 'hint'; h.textContent = 'فقط حروف کوچک انگلیسی، عدد و _ · ۳ تا ۲۰ کاراکتر · با حرف شروع شود'; }
+  else if (!USER_RE.test(v)){ h.className = 'hint bad'; h.textContent = v.length < 3 ? 'حداقل ۳ کاراکتر' : 'نام کاربری باید با حرف انگلیسی شروع شود'; }
+  else { h.className = 'hint ok'; h.textContent = 'نام کاربری معتبر است'; }
+}
+function pwScore(v){ let n = 0; if (v.length >= 6) n++; if (v.length >= 9) n++; if (/[a-z]/.test(v) && /[A-Z]/.test(v)) n++; if (/\d/.test(v)) n++; if (/[^A-Za-z0-9]/.test(v)) n++; return Math.min(4, n); }
+function chkPw(){
+  const v = $('regPw').value, sc = v ? pwScore(v) : 0, bar = $('pwBar'), h = $('pwHint');
+  bar.style.width = (sc * 25) + '%'; bar.style.background = ['var(--danger)','var(--danger)','var(--gold)','var(--ok)','var(--ok)'][sc];
+  h.className = 'hint ' + (v.length && v.length < 6 ? 'bad' : sc >= 3 ? 'ok' : ''); h.textContent = !v ? 'حداقل ۶ کاراکتر' : v.length < 6 ? 'حداقل ۶ کاراکتر لازم است' : ['','ضعیف','متوسط','خوب','عالی'][sc];
+}
+async function submitRegister(){
+  const fn = $('regFirst').value.trim(), ln = $('regLast').value.trim(), un = $('regUser').value.trim().toLowerCase(), pw = $('regPw').value, pw2 = $('regPw2').value, btn = $('regBtn');
+  if (!fn || !ln) return toast('نام و نام خانوادگی را وارد کنید','warn');
+  if (!USER_RE.test(un)) return toast('نام کاربری انگلیسی معتبر وارد کنید','warn');
+  if (pw.length < 6) return toast('رمز عبور حداقل ۶ کاراکتر باشد','warn');
+  if (pw !== pw2) return toast('تکرار رمز با رمز یکسان نیست','warn');
+  if (allUsers.some(u => u.id === un)) return toast('این نام کاربری قبلاً گرفته شده است','warn');
+  if (!hasCrypto()) return toast('این مرورگر از رمزنگاری پشتیبانی نمی‌کند','err');
+  audio(); btn.disabled = true;
+  try {
+    let offline = false;
+    if (cloudOn()){ try { if (await cloudGet(un)){ toast('این نام کاربری قبلاً گرفته شده است','warn'); return; } } catch { offline = true; } }
+    const salt = newSalt(), d = await derive(pw, salt);
+    const u = {id: un, username: un, firstName: fn, lastName: ln, salt, verifier: d.verifier, loanAccounts: 0, createdAt: todayStr()};
+    allUsers.push(u); currentUser = u; lset('sk_' + un, d.key); saveUser(); enterApp(true);
+    if (offline) setTimeout(() => toast('ارتباط با سرور برقرار نشد؛ بعداً همگام می‌شود','warn'), 3500);
+  } catch { toast('ایجاد حساب انجام نشد','err'); } finally { btn.disabled = false; }
+}
+function openCred(){
+  openSheet('نام کاربری و رمز', `<div class="field"><label>نام کاربری (انگلیسی)</label><input type="text" id="crUser" class="ltr" dir="ltr" autocapitalize="none" maxlength="20" placeholder="مثلاً: hadi_h" oninput="this.value=this.value.toLowerCase().replace(/[^a-z0-9_]/g,'')"></div>
+    <div class="field"><label>رمز عبور</label><div class="pw"><input type="password" id="crPw" class="ltr" dir="ltr" maxlength="64" placeholder="حداقل ۶ کاراکتر"><button type="button" class="pw-eye" onclick="togglePw('crPw',this)">${ic('eye',20)}</button></div></div>
+    <button class="btn" id="crBtn" onclick="submitCred()">${ic('check',19)}ذخیره</button>`);
+}
+function migrateId(a, b){
+  ['loans_','history_','tour_'].forEach(p => { const v = localStorage.getItem(p + a); if (v !== null){ localStorage.setItem(p + b, v); localStorage.removeItem(p + a); } });
+  ['freeSavings','settledSavings','userPhotos','syncmeta'].forEach(k => { const o = readJSON(k, {}); if (o[a] !== undefined){ o[b] = o[a]; delete o[a]; writeJSON(k, o); } });
+}
+async function submitCred(){
+  const un = $('crUser').value.trim().toLowerCase(), pw = $('crPw').value;
+  if (!USER_RE.test(un)) return toast('نام کاربری انگلیسی معتبر وارد کنید','warn');
+  if (pw.length < 6) return toast('رمز عبور حداقل ۶ کاراکتر باشد','warn');
+  if (allUsers.some(u => u.id === un)) return toast('این نام کاربری قبلاً گرفته شده است','warn');
+  if (!hasCrypto()) return toast('این مرورگر از رمزنگاری پشتیبانی نمی‌کند','err');
+  $('crBtn').disabled = true;
+  try {
+    if (cloudOn()){ try { if (await cloudGet(un)){ toast('این نام کاربری قبلاً گرفته شده است','warn'); return; } } catch {} }
+    const salt = newSalt(), d = await derive(pw, salt), old = currentUser.id;
+    migrateId(old, un);
+    currentUser = {...currentUser, id: un, username: un, salt, verifier: d.verifier}; delete currentUser.legacy;
+    allUsers = allUsers.map(x => x.id === old ? currentUser : x); lset('sk_' + un, d.key); saveUser();
+    closeSheet(); render(stack[stack.length-1], true); toast('نام کاربری و رمز ذخیره شد');
+  } catch { toast('ذخیره انجام نشد','err'); } finally { const b = $('crBtn'); if (b) b.disabled = false; }
+}
+function handlePhoto(e){
+  const f = e.target.files[0]; e.target.value = ''; if (!f || !currentUser) return;
+  const r = new FileReader();
+  r.onload = ev => { const img = new Image(); img.onload = () => {
+      const S = 256, c = document.createElement('canvas'), m = Math.min(img.width, img.height); c.width = c.height = S;
+      c.getContext('2d').drawImage(img, (img.width-m)/2, (img.height-m)/2, m, m, 0, 0, S, S);
+      const o = readJSON('userPhotos', {}); o[currentUser.id] = c.toDataURL('image/jpeg', .8);
+      if (writeJSON('userPhotos', o)){ markDirty(); render('profile', true); toast('عکس پروفایل به‌روز شد'); } };
+    img.onerror = () => toast('فایل تصویر معتبر نیست','err'); img.src = ev.target.result; };
+  r.readAsDataURL(f);
+}
+async function logout(){
+  const ok = await ask({icon:'logout', kind:'warn', title:'خروج از حساب', text:'اطلاعات شما حفظ می‌شود و با نام کاربری و رمز می‌توانید دوباره وارد شوید.', yes:'خروج'}); if (!ok) return;
+  await flushSync(); gateUser = currentUser; currentUser = null; stack = ['home']; showGate('known');
+}
+async function deleteAccount(){
+  closeSheet(); const cloudToo = cloudOn() && currentUser.username && lget('sk_' + currentUser.id, '');
+  let ok = await ask({icon:'alert', kind:'danger', title:'حذف حساب', text:'تمام وام‌ها، تاریخچه و پس‌اندازهای این حساب برای همیشه پاک می‌شود' + (cloudToo ? ' و نسخهٔ ابری آن هم حذف خواهد شد.' : '.'), yes:'ادامه'}); if (!ok) return;
+  ok = await ask({icon:'alert', kind:'danger', title:'آخرین اخطار', text:'این کار قابل بازگشت نیست. مطمئنید؟', yes:'بله، مطمئنم', no:'منصرف شدم'}); if (!ok) return;
+  const id = currentUser.id, un = currentUser.username;
+  if (cloudToo){ try { await cloudDel(un); } catch { toast('حذف نسخهٔ ابری انجام نشد','warn'); } }
+  ['loans_','history_','tour_','sk_'].forEach(pf => localStorage.removeItem(pf + id));
+  ['freeSavings','settledSavings','userPhotos','syncmeta'].forEach(k => { const o = readJSON(k, {}); delete o[id]; writeJSON(k, o); });
+  allUsers = allUsers.filter(u => u.id !== id); writeJSON('users', allUsers); if (lget('lastUser','') === id) localStorage.removeItem('lastUser');
+  currentUser = null; gateUser = null; stack = ['home']; showGate(); toast('حساب حذف شد','warn');
+}
+const BACKUP_KEY = /^(users|lastUser|userPhotos|freeSavings|settledSavings|syncmeta|accent|mode|sound|remindDays|eyeHidden|cloudUrl|loans_[a-z0-9_]+|history_[a-z0-9_]+|tour_[a-z0-9_]+)$/;
+function exportBackup(){
+  const data = {}; for (let i=0; i<localStorage.length; i++){ const k = localStorage.key(i); if (BACKUP_KEY.test(k)) data[k] = localStorage.getItem(k); }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(data)], {type:'application/json'})); a.download = 'qarz-backup-' + new Date().toISOString().slice(0,10) + '.json'; a.click(); toast('نسخه پشتیبان دریافت شد');
+}
+function restoreBackup(e){
+  const f = e.target.files[0]; e.target.value = ''; if (!f) return; const r = new FileReader();
+  r.onload = async ev => {
+    let data; try { data = JSON.parse(ev.target.result); } catch { return toast('فایل پشتیبان معتبر نیست','err'); }
+    const keys = Object.keys(data).filter(k => BACKUP_KEY.test(k)); if (!keys.includes('users')) return toast('فایل پشتیبان معتبر نیست','err');
+    const ok = await ask({icon:'upload', kind:'warn', title:'بازیابی اطلاعات', text:'اطلاعات فعلی با نسخه پشتیبان جایگزین می‌شود. ادامه می‌دهید؟', yes:'بازیابی'}); if (!ok) return;
+    keys.forEach(k => localStorage.setItem(k, data[k])); location.reload();
+  }; r.readAsText(f);
+}
+
+/* ================= افتتاح حساب / وام ================= */
+function setSliderFill(el){ const mn = +el.min, mx = +el.max; el.style.setProperty('--p', ((el.value - mn) / ((mx - mn) || 1) * 100) + '%'); }
+function bump(id){ const e = $(id); e.classList.remove('bump'); void e.offsetWidth; e.classList.add('bump'); }
+const INIT_HINT = 'آیا هنگام افتتاح حساب مبلغی به‌عنوان پس‌انداز پرداخت شده است؟';
+function openAccForm(){
+  if (!needUser()) return; const rem = MAX_ACCOUNTS - (currentUser.loanAccounts || 0);
+  if (rem <= 0) return toast('به حداکثر ۱۴ حساب رسیده‌اید','warn');
+  $('accOwner').value = currentUser.firstName + ' ' + currentUser.lastName; $('initSav').value = ''; $('initSav').dataset.raw = ''; $('initPreview').textContent = INIT_HINT;
+  const sl = $('newAccSlider'); sl.min = 1; sl.max = rem; sl.value = 1; updNewSlider(); go('openAcc');
+}
+function updNewSlider(){
+  const sl = $('newAccSlider'), v = +sl.value, rem = MAX_ACCOUNTS - (currentUser ? currentUser.loanAccounts || 0 : 0);
+  $('newAccVal').textContent = fa(v); bump('newAccVal'); $('monthlySavTotal').textContent = fmt(v * MONTHLY_SAVING); $('newAccHint').textContent = `می‌توانید تا ${fa(rem)} حساب دیگر باز کنید`; setSliderFill(sl);
+}
+function fmtInit(){
+  const el = $('initSav'), raw = normDigits(el.value).replace(/\D/g, '').slice(0, 13); el.dataset.raw = raw; el.value = raw ? fnum(+raw) : '';
+  $('initPreview').textContent = raw ? `معادل ${fnum(Math.floor(+raw / 10))} تومان` : INIT_HINT;
+}
+function submitOpenAcc(){
+  if (!currentUser) return; const n = +$('newAccSlider').value || 0, init = +($('initSav').dataset.raw || 0);
+  if (n <= 0) return toast('تعداد حساب نمی‌تواند صفر باشد','warn');
+  if ((currentUser.loanAccounts || 0) + n > MAX_ACCOUNTS) return toast('حداکثر ۱۴ حساب مجاز است','warn');
+  if (init > 0){ const arr = getFree(); arr.push({date: todayStr(), amount: init, note: 'پس‌انداز اولیه افتتاح حساب', type:'initial'}); putFree(arr); }
+  currentUser.loanAccounts = (currentUser.loanAccounts || 0) + n; saveUser(); confetti(); playSuccess();
+  info({icon:'check', title:'حساب‌ها افتتاح شد', text:`${fa(n)} حساب وامی با موفقیت افتتاح شد.` + (init > 0 ? `\nپس‌انداز اولیه ${fmt(init)} ثبت شد.` : '')}).then(() => goRoot('home'));
+}
+function initLoanSelects(){
+  $('loanAmount').innerHTML = [10,20,30,40,50,60,70,80].map(m => `<option value="${m*1000000}" ${m===50?'selected':''}>${fa(m)} میلیون ریال</option>`).join('');
+  $('instCount').innerHTML = Array.from({length:20}, (_, i) => `<option value="${i+1}" ${i===11?'selected':''}>${fa(i+1)} قسط</option>`).join('');
+}
+function openLoanForm(){
+  if (!needUser()) return; const s = stats(); if (s.free <= 0) return toast('تمامی حساب‌ها درگیر وام هستند','warn');
+  $('lenderName').value = LENDER; $('borrowerName').value = currentUser.firstName + ' ' + currentUser.lastName; $('loanTitle').value = ''; $('freeBox').textContent = fa(s.free) + ' حساب';
+  const sl = $('actSlider'); sl.min = 1; sl.max = s.free; sl.value = 1; updActSlider(); go('newLoan');
+}
+function updActSlider(){ const sl = $('actSlider'); $('actVal').textContent = fa(sl.value); bump('actVal'); $('actHint').textContent = `از ${fa(sl.max)} حساب آزاد، ${fa(sl.value)} حساب را به وام اختصاص می‌دهید`; setSliderFill(sl); updLoanSummary(); }
+function updLoanSummary(){
+  const a = +$('actSlider').value, amt = +$('loanAmount').value, n = +$('instCount').value, total = a * amt, each = Math.floor(total / n), sav = a * MONTHLY_SAVING;
+  $('loanSummary').innerHTML = `<b>خلاصه درخواست</b><br>وام <b>${fmt(total)}</b> با <b>${fa(a)}</b> حساب<br>${fa(n)} قسط ماهیانه · هر قسط حدود <b>${fmt(each)}</b><br>پس‌انداز ماهیانه: <b>${fmt(sav)}</b><br>مجموع پرداخت ماهیانه: <b>${fmt(each + sav)}</b>`;
+}
+function saveNewLoan(){
+  if (!currentUser) return; const a = +$('actSlider').value, amt = +$('loanAmount').value, n = +$('instCount').value;
+  if (a > stats().free) return toast('حساب آزاد کافی نیست','warn');
+  const total = amt * a, each = Math.floor(total / n);
+  const loan = { id: Date.now(), lender: LENDER, borrower: currentUser.firstName + ' ' + currentUser.lastName, title: $('loanTitle').value.trim() || 'وام', activeAccounts: a, totalLoanAmount: total, installmentsCount: n, installmentAmount: each, totalMonthlySaving: a * MONTHLY_SAVING, createdAt: fmtDate(new Date()), status: 'active',
+    payments: Array.from({length:n}, (_, i) => ({index: i+1, paid: false, date: null, amount: i === n-1 ? total - each*(n-1) : each})) };
+  const all = getLoans(); all.push(loan); putLoans(all); playSuccess();
+  info({icon:'check', title:'وام ثبت شد', text:'وام شما ثبت شد. یک روز قبل از هر سررسید آلارم دریافت می‌کنید.'}).then(() => goRoot('home'));
+}
+
+/* ================= جزئیات و پرداخت ================= */
+function openLoan(id){ const l = getLoans().find(x => x.id === id); if (!l) return; currentLoan = l; viewingHistory = false; go('detail'); }
+function openHistoryLoan(id){ const l = getHist().find(x => x.id === id); if (!l) return; currentLoan = l; viewingHistory = true; go('detail'); }
+function renderDetail(){
+  const l = currentLoan, el = $('p-detail'); if (!l) return;
+  const n = l.payments.length, paid = l.payments.filter(p => p.paid).length, nextI = l.payments.findIndex(p => !p.paid); let paidTotal = 0;
+  const rows = l.payments.map((p, i) => {
+    if (p.paid) paidTotal += payAmt(l, i);
+    const due = dueDate(l, i), isNext = i === nextI, isLast = i === n - 1, left = daysUntil(due), late = !p.paid && left < 0, near = !p.paid && left >= 0 && left <= 1;
+    const rest = l.payments.every(q => q.paid) ? 0 : Math.max(0, l.totalLoanAmount - paidTotal);
+    const end = p.paid ? `<span class="tag done">${ic('check',12)}پرداخت شد</span>` : (isNext && !viewingHistory ? `<button class="pay-btn" onclick="payInstallment(${i})">${ic('card',16)}${isLast ? 'پرداخت و تسویه' : 'پرداخت'}</button>` : `<span class="tag soon">${ic('lock',12)}در انتظار</span>`);
+    return `<div class="row inst rise ${p.paid ? 'done' : ''} ${isNext && !viewingHistory ? 'next' : ''}" style="cursor:default"><div class="ric">${p.paid ? ic('check',24) : fa(i+1)}</div>
+      <div class="rmain"><b>قسط ${qn(i)} · ${fnum(payAmt(l, i) + l.totalMonthlySaving)}</b><small>سررسید ${fmtDate(due)}${p.paid ? ' · پرداخت ' + esc(p.date) : ''}</small><small>${p.paid ? 'مانده وام: ' + fmt(rest) : 'قسط + پس‌انداز ماهیانه'}</small></div>
+      <div class="rend">${end}${late ? `<span class="tag late">${ic('alert',12)}معوق</span>` : near ? `<span class="tag warn">${ic('bell',12)}${left === 0 ? 'امروز' : 'فردا'}</span>` : ''}</div></div>`;
+  }).join('');
+  el.innerHTML = `
+    <div class="hd">${bar({back:true, title:'جزئیات وام', extra: viewingHistory ? '' : `<button class="bb no-print" onclick="deleteLoan(${l.id})" aria-label="حذف">${ic('trash',24)}</button>`})}
+      <div class="bal rise"><div class="amt">${fnum(remaining(l))}<small>ریال</small></div><div class="eye" style="cursor:default">${ic('wallet',22)}<span>مانده وام «${esc(l.title || 'وام')}»</span></div></div>
+      <div class="hd-chips rise"><span class="chip">${ic('user',14)}${esc(l.borrower)}</span><span class="chip">${ic('bank',14)}${fa(l.activeAccounts)} حساب</span><span class="chip">${ic('calendar',14)}${esc(l.createdAt)}</span>${viewingHistory ? `<span class="chip">${ic('flag',14)}${esc(l.settledAt || '')}</span>` : ''}</div>
+      <div class="progress rise"><i data-w="${paid/n*100}"></i></div><div class="prog-text">${fa(paid)} از ${fa(n)} قسط پرداخت شده · وام کل ${fmt(l.totalLoanAmount)}</div>
+      <div class="quick rise" style="margin-top:16px;gap:20px">
+        ${(!viewingHistory && paid < n) ? `<button class="q" onclick="settleAll()"><span class="qc" style="width:54px;height:54px">${ic('flag',24)}</span>تسویه کامل</button>` : ''}
+        <button class="q" onclick="exportCSV()"><span class="qc" style="width:54px;height:54px">${ic('table',24)}</span>Excel</button>
+        <button class="q" onclick="window.print()"><span class="qc" style="width:54px;height:54px">${ic('printer',24)}</span>چاپ / PDF</button></div></div>
+    <div class="sheet"><div class="sec rise">اقساط</div>${rows}</div>`;
+}
+function persistLoan(l){ const all = getLoans(), i = all.findIndex(x => x.id === l.id); if (i > -1){ all[i] = l; putLoans(all); } }
+async function payInstallment(i){
+  const l = currentLoan; if (!l || viewingHistory) return;
+  if (i !== l.payments.findIndex(p => !p.paid)) return toast('ابتدا قسط‌های قبلی را پرداخت کنید','warn');
+  const isLast = i === l.payments.length - 1, amount = payAmt(l, i) + l.totalMonthlySaving;
+  const ok = await ask({icon:'card', kind:'warn', title:`پرداخت قسط ${qn(i)}`, text:`مبلغ ${fmt(amount)} (قسط + پس‌انداز)` + (isLast ? '\nاین آخرین قسط است و وام تسویه می‌شود.' : ''), yes: isLast ? 'پرداخت و تسویه' : 'پرداخت'}); if (!ok) return;
+  l.payments[i].paid = true; l.payments[i].date = todayStr();
+  if (isLast) settleLoan(l); else { persistLoan(l); render('detail', true); playSuccess(); toast('قسط ثبت شد'); }
+}
+async function settleAll(){
+  const l = currentLoan; if (!l) return; const left = l.payments.map((p, i) => p.paid ? null : i).filter(i => i !== null);
+  if (!left.length) return toast('همه اقساط پرداخت شده‌اند','warn');
+  const sum = left.reduce((s, i) => s + payAmt(l, i) + l.totalMonthlySaving, 0);
+  const ok = await ask({icon:'flag', kind:'warn', title:'تسویه کامل', text:`${fa(left.length)} قسط باقی‌مانده\nمبلغ کل: ${fmt(sum)}\nهمه یکجا تسویه شود؟`, yes:'بله، تسویه کامل'}); if (!ok) return;
+  left.forEach(i => { l.payments[i].paid = true; l.payments[i].date = todayStr(); }); settleLoan(l);
+}
+function settleLoan(l){
+  const paid = l.payments.filter(p => p.paid).length, sv = getSettled();
+  sv.push({loanId: l.id, borrower: l.borrower, title: l.title || 'وام', amount: paid * l.totalMonthlySaving, accounts: l.activeAccounts, settledAt: todayStr(), createdAt: l.createdAt}); putSettled(sv);
+  l.status = 'settled'; l.settledAt = todayStr(); const h = getHist(); h.push(l); putHist(h); putLoans(getLoans().filter(x => x.id !== l.id));
+  currentLoan = null; confetti(); playSuccess(); info({icon:'check', title:'وام تسویه شد', text:'تبریک! وام به تاریخچه منتقل گردید.'}).then(() => goRoot('home'));
+}
+async function deleteLoan(id){
+  const l = getLoans().find(x => x.id === id); if (!l) return; const paid = l.payments.filter(p => p.paid).length;
+  const ok = await ask({icon:'trash', kind:'danger', title:'حذف وام', text:`وام «${l.title || 'وام'}» حذف شود؟` + (paid ? `\nپس‌انداز ${fmt(paid * l.totalMonthlySaving)} مربوط به ${fa(paid)} قسط پرداخت‌شده نیز از صندوق کم می‌شود.` : ''), yes:'حذف'}); if (!ok) return;
+  putLoans(getLoans().filter(x => x.id !== id)); toast('وام حذف شد','warn'); goRoot('home');
+}
+function exportCSV(){
+  const l = currentLoan; if (!l) return; let csv = 'قسط,سررسید,مبلغ قسط,پس‌انداز,جمع,وضعیت,تاریخ پرداخت\n';
+  l.payments.forEach((p, i) => { csv += `${i+1},${fmtDate(dueDate(l, i))},${payAmt(l, i)},${l.totalMonthlySaving},${payAmt(l, i) + l.totalMonthlySaving},${p.paid ? 'پرداخت شد' : 'در انتظار'},${p.date || ''}\n`; });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + csv], {type:'text/csv;charset=utf-8'})); a.download = 'اقساط-' + (l.title || 'وام') + '.csv'; a.click();
+}
+function renderHistory(){
+  const h = getHist().slice().reverse();
+  $('p-history').innerHTML = `<div class="hd">${bar({title:'تاریخچه'})}<div class="bal rise"><div class="amt">${fa(h.length)}<small>وام</small></div><div class="eye" style="cursor:default">${ic('history',22)}<span>وام‌های تسویه‌شده</span></div></div></div>
+    <div class="sheet">${h.length ? h.map(l => `<div class="row rise" onclick="openHistoryLoan(${l.id})"><div class="ric green">${ic('checkCircle',24)}</div><div class="rmain"><b>${esc(l.title || 'وام')}</b><small>${esc(l.borrower)} · تسویه ${esc(l.settledAt || '')}</small></div><div class="rend"><b>${fnum(l.totalLoanAmount)}</b><small>ریال · ${fa(l.activeAccounts)} حساب</small></div></div>`).join('') : `<div class="empty rise"><div class="eico">${ic('inbox',34)}</div>هنوز وامی تسویه نشده است</div>`}</div>`;
+}
+
+/* ================= رمزنگاری و همگام‌سازی ابری ================= */
+// آدرس پایگاه‌دادهٔ ابری (Firebase Realtime Database) را اینجا بگذارید تا برای همهٔ دستگاه‌ها پیش‌فرض شود؛
+// یا از «تنظیمات ← همگام‌سازی ابری» (و در صفحهٔ ورود) وارد کنید.
+const CLOUD_DEFAULT = '';
+const cloudUrl = () => (lget('cloudUrl', '') || CLOUD_DEFAULT).trim().replace(/\/+$/, '');
+const cloudOn = () => !!cloudUrl();
+const USER_RE = /^[a-z][a-z0-9_]{2,19}$/;
+const hasCrypto = () => !!(window.crypto && crypto.subtle);
+const TE = new TextEncoder(), TD = new TextDecoder();
+function b64(buf){ const u = new Uint8Array(buf); let s = ''; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(s); }
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+const newSalt = () => b64(crypto.getRandomValues(new Uint8Array(16)));
+async function derive(pw, salt){
+  const km = await crypto.subtle.importKey('raw', TE.encode(pw), 'PBKDF2', false, ['deriveBits']);
+  const bits = new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2', hash:'SHA-256', salt: unb64(salt), iterations: 150000}, km, 512));
+  return {verifier: b64(bits.slice(0, 32)), key: b64(bits.slice(32))};   // نیمهٔ اول: تأیید رمز · نیمهٔ دوم: کلید رمزنگاری داده
+}
+const aesKey = (k, use) => crypto.subtle.importKey('raw', unb64(k), 'AES-GCM', false, [use]);
+async function encJSON(obj, k){ const iv = crypto.getRandomValues(new Uint8Array(12)); const ct = await crypto.subtle.encrypt({name:'AES-GCM', iv}, await aesKey(k, 'encrypt'), TE.encode(JSON.stringify(obj))); return {iv: b64(iv), ct: b64(ct)}; }
+async function decJSON(bl, k){ return JSON.parse(TD.decode(await crypto.subtle.decrypt({name:'AES-GCM', iv: unb64(bl.iv)}, await aesKey(k, 'decrypt'), unb64(bl.ct)))); }
+async function cfetch(path, opt={}){
+  const ac = new AbortController(), t = setTimeout(() => ac.abort(), 9000);
+  try { const r = await fetch(cloudUrl() + path, {cache:'no-store', ...opt, signal: ac.signal}); if (!r.ok) throw new Error('http ' + r.status); return r; } finally { clearTimeout(t); }
+}
+const cloudGet = async u => (await cfetch(`/accounts/${u}.json`)).json();
+const cloudPut = (u, o) => cfetch(`/accounts/${u}.json`, {method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify(o)});
+const cloudDel = u => cfetch(`/accounts/${u}.json`, {method:'DELETE'});
+
+const metaAll = () => readJSON('syncmeta', {});
+const metaGet = id => metaAll()[id || currentUser.id] || {};
+function metaSet(m, id){ id = id || currentUser.id; const o = metaAll(); o[id] = {...(o[id] || {}), ...m}; writeJSON('syncmeta', o); }
+function snapshot(){ const u = currentUser; return {profile:{firstName:u.firstName, lastName:u.lastName, loanAccounts:u.loanAccounts || 0, createdAt:u.createdAt}, loans:getLoans(), hist:getHist(), free:getFree(), settled:getSettled(), photo:getPhoto(u)}; }
+function applySnapshot(id, sn){
+  writeJSON('loans_' + id, sn.loans || []); writeJSON('history_' + id, sn.hist || []);
+  const setMap = (k, v) => { const o = readJSON(k, {}); if (v === null || v === undefined) delete o[id]; else o[id] = v; writeJSON(k, o); };
+  setMap('freeSavings', sn.free || []); setMap('settledSavings', sn.settled || []); setMap('userPhotos', sn.photo || null);
+}
+let syncTimer = null, syncBusy = false;
+function syncReady(){ return currentUser && cloudOn() && currentUser.username && hasCrypto() && lget('sk_' + currentUser.id, ''); }
+function setSync(st, at){ lset('syncState', st); if (at) lset('syncAt', at); if (currentUser && $('p-profile').classList.contains('active')) render('profile', true); }
+function markDirty(){ if (!currentUser) return; metaSet({updatedAt: Date.now(), dirty: true}); clearTimeout(syncTimer); syncTimer = setTimeout(() => syncNow(), 1500); }
+async function flushSync(){ clearTimeout(syncTimer); if (currentUser && syncReady() && metaGet().dirty) await syncNow(); }
+async function pushCloud(key){
+  const u = currentUser, upd = metaGet().updatedAt || Date.now();
+  await cloudPut(u.username, {u: u.username, salt: u.salt, verifier: u.verifier, v: 2, updatedAt: upd, blob: await encJSON(snapshot(), key)});
+  metaSet({dirty: false, updatedAt: upd});
+}
+async function syncNow(manual){
+  if (!syncReady()){ if (manual) toast(!cloudOn() ? 'ابتدا آدرس همگام‌سازی را وارد کنید' : 'ابتدا برای حساب نام کاربری و رمز تعیین کنید', 'warn'); return; }
+  if (syncBusy) return; syncBusy = true; let changed = false; const me = currentUser.id;
+  try {
+    setSync('pending'); const key = lget('sk_' + me), rec = await cloudGet(currentUser.username), m = metaGet();
+    if (rec && rec.verifier !== currentUser.verifier){ setSync('conflict'); if (manual) toast('این نام کاربری در سرور متعلق به حساب دیگری است','err'); return; }
+    if (!rec){ if (!m.updatedAt) metaSet({updatedAt: Date.now()}); await pushCloud(key); }
+    else if (rec.updatedAt > (m.updatedAt || 0)){
+      const sn = await decJSON(rec.blob, key); applySnapshot(me, sn);
+      const u = {...currentUser, ...sn.profile}; currentUser = u; allUsers = allUsers.map(x => x.id === me ? u : x); writeJSON('users', allUsers);
+      metaSet({updatedAt: rec.updatedAt, dirty: false}); changed = true;
+    } else if (m.dirty || (m.updatedAt || 0) > rec.updatedAt) await pushCloud(key);
+    setSync('ok', Date.now()); if (manual) toast('همگام‌سازی انجام شد');
+  } catch (e){ setSync('err'); if (manual) toast('اتصال به سرور برقرار نشد','err'); }
+  finally { syncBusy = false; }
+  if (changed && currentUser && currentUser.id === me){ render(stack[stack.length-1], true); toast('اطلاعات از سرور به‌روز شد'); }
+}
+const syncText = () => {
+  if (!cloudOn()) return 'غیرفعال · برای ورود از چند دستگاه فعال کنید';
+  if (!currentUser.username) return 'ابتدا نام کاربری و رمز تعیین کنید';
+  const st = lget('syncState', 'off'), at = +lget('syncAt', 0), t = at ? new Date(at).toLocaleTimeString('fa-IR', {hour:'2-digit', minute:'2-digit'}) : '';
+  return ({ok:'فعال · آخرین همگام‌سازی ' + t, pending:'در حال همگام‌سازی…', err:'خطا در اتصال · دوباره تلاش می‌شود', conflict:'تعارض نام کاربری با سرور', off:'فعال'})[st] || 'فعال';
+};
+function openCloud(){
+  const u = currentUser;
+  openSheet('همگام‌سازی ابری', `
+    <div class="cloud-note ${cloudOn() && (!u || u.username) ? '' : 'warn'}">${ic('cloud',20)}<div>${cloudOn() ? (u ? syncText() : 'آدرس تنظیم شده است') : 'اطلاعات حساب (به‌صورت رمزنگاری‌شده) روی یک پایگاه‌دادهٔ ابری ذخیره می‌شود تا با نام کاربری و رمز از هر دستگاه وارد شوید.'}</div></div>
+    <div class="field" style="margin-top:12px"><label>آدرس Firebase Realtime Database</label><input type="text" id="cloudIn" class="ltr" dir="ltr" autocapitalize="none" placeholder="https://your-project-default-rtdb.firebaseio.com" value="${esc(cloudUrl())}"></div>
+    <button class="btn" onclick="saveCloud()">${ic('check',19)}ذخیره و آزمایش اتصال</button>
+    ${u && cloudOn() ? `<button class="btn ghost" onclick="syncNow(true)">${ic('upload',19)}همگام‌سازی همین حالا</button>` : ''}
+    <div class="muted" style="font-size:.76rem;line-height:2.1;margin-top:14px"><b style="color:var(--ink)">راه‌اندازی (یک‌بار، رایگان):</b><br>۱. در console.firebase.google.com یک پروژه بسازید.<br>۲. Build ← Realtime Database ← Create database.<br>۳. در تب Rules مسیر <span dir="ltr">accounts</span> را برای خواندن و نوشتن باز کنید.<br>۴. آدرس پایگاه‌داده را بالا وارد کنید. روی دستگاه جدید هم همین آدرس را در صفحهٔ ورود بزنید.<br>اطلاعات پیش از ارسال با رمز شما رمزنگاری می‌شوند.</div>`);
+}
+async function testCloud(url){
+  const r = await fetch(url.replace(/\/+$/, '') + '/accounts.json?shallow=true', {cache:'no-store'}); if (!r.ok) throw new Error(r.status); return true;
+}
+async function saveCloud(){
+  const url = $('cloudIn').value.trim();
+  if (url && !/^https:\/\/|^http:\/\/localhost|^http:\/\/127\./.test(url)) return toast('آدرس باید با https شروع شود','warn');
+  if (url){ try { await testCloud(url); } catch { return toast('اتصال به این آدرس برقرار نشد','err'); } }
+  lset('cloudUrl', url.replace(/\/+$/, '')); toast(url ? 'اتصال برقرار شد' : 'همگام‌سازی غیرفعال شد');
+  if (currentUser){ setSync('off'); if (url) syncNow(true); render(stack[stack.length-1], true); } closeSheet();
+  if (gateMode === 'cloud') showGate(gateBack);
+}
+
+/* ================= صفحه ورود (Gate) ================= */
+let gateUser = null, gateMode = 'welcome', gateBack = 'welcome';
+const eyeBtn = id => `<button type="button" class="g-eye" onclick="togglePw('${id}',this)">${ic('eye',20)}</button>`;
+function gateErr(msg){ const e = $('gErr'); if (!e) return; e.textContent = msg; e.classList.remove('shake'); void e.offsetWidth; e.classList.add('shake'); }
+function showGate(mode){
+  locked = true; closeSheet(); $('bottomNav').classList.add('hide'); $('install').classList.remove('on');
+  if (!mode){ gateUser = allUsers.find(u => u.id === lget('lastUser', '')) || null; mode = gateUser ? 'known' : (allUsers.length ? 'full' : 'welcome'); }
+  if (mode === 'known' && !gateUser) mode = allUsers.length ? 'full' : 'welcome';
+  gateMode = mode; if (mode !== 'cloud') gateBack = mode;
+  const g = $('gate'), logo = `<div class="g-logo">${ic('leaf',46)}</div><div class="g-title">قرض‌الحسنه حضرت جوادالائمه (ع)</div>`;
+  const foot = `<div class="g-hadith">${HADITH}<div class="g-ver">نسخه ۵٫۰</div></div>`;
+  const enter = 'onkeydown="if(event.key===\'Enter\')gateLogin()"';
+  const cloudLink = `<button class="g-link" style="margin-top:12px;font-size:.8rem" onclick="showGate('cloud')">${cloudOn() ? 'تغییر آدرس همگام‌سازی' : 'تنظیم همگام‌سازی ابری'}</button>`;
+  let body;
+  if (mode === 'known'){
+    const u = gateUser, needPw = !!u.verifier;
+    body = `${logo}<div class="g-av">${avatarHTML(u)}</div><div class="g-name">${esc(u.firstName)} ${esc(u.lastName)}</div><div class="g-sub" dir="auto">${uname(u)}</div>
+      ${needPw ? `<div class="g-pw"><input class="g-in" type="password" id="gPw" placeholder="رمز عبور" autocomplete="current-password" ${enter}>${eyeBtn('gPw')}</div>` : ''}
+      <div class="g-err" id="gErr"></div>
+      <button class="g-btn sm" id="gBtn" onclick="gateLogin()">${ic('finger',26)}ورود به حساب</button>
+      <button class="g-link" onclick="showGate('full')">ورود با حساب دیگر</button><button class="g-link" style="margin-top:10px" onclick="gateRegister()">ایجاد حساب جدید</button>`;
+  } else if (mode === 'full'){
+    body = `${logo}<div style="height:22px"></div>
+      <div class="g-pw"><input class="g-in plain" type="text" id="gUser" dir="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="نام کاربری" autocomplete="username" maxlength="20" oninput="this.value=this.value.toLowerCase().replace(/[^a-z0-9_]/g,'')" ${enter}></div>
+      <div class="g-pw"><input class="g-in" type="password" id="gPw" placeholder="رمز عبور" autocomplete="current-password" ${enter}>${eyeBtn('gPw')}</div>
+      <div class="g-err" id="gErr"></div>
+      <button class="g-btn sm" id="gBtn" onclick="gateLogin()">${ic('finger',26)}ورود</button>
+      <button class="g-link" onclick="gateRegister()">ایجاد حساب جدید</button>${cloudLink}
+      ${allUsers.length && gateUser ? `<button class="g-link" style="margin-top:10px" onclick="showGate('known')">بازگشت</button>` : ''}`;
+  } else if (mode === 'cloud'){
+    body = `${logo}<div class="g-sub" style="margin-top:22px;text-align:center;max-width:340px;line-height:2">آدرس پایگاه‌دادهٔ همگام‌سازی را وارد کنید تا حساب شما از این دستگاه هم در دسترس باشد.</div>
+      <div class="g-pw"><input class="g-in plain" type="text" id="cloudIn" dir="ltr" autocapitalize="none" placeholder="https://xxxx-default-rtdb.firebaseio.com" value="${esc(cloudUrl())}"></div>
+      <div class="g-err" id="gErr"></div>
+      <button class="g-btn sm" onclick="saveCloudGate()">${ic('check',22)}ذخیره و آزمایش</button><button class="g-link" onclick="showGate(gateBack)">بازگشت</button>`;
+  } else {
+    body = `${logo}<div class="g-feats">
+      <div class="g-feat" style="animation-delay:.1s"><div class="fi">${ic('bank',22)}</div><div><b>حساب‌های وامی</b><small>تا ۱۴ حساب با پس‌انداز ماهیانه</small></div></div>
+      <div class="g-feat" style="animation-delay:.2s"><div class="fi">${ic('bell',22)}</div><div><b>آلارم اقساط</b><small>یادآوری یک روز قبل از سررسید</small></div></div>
+      <div class="g-feat" style="animation-delay:.3s"><div class="fi">${ic('cloud',22)}</div><div><b>ورود از هر دستگاه</b><small>با نام کاربری و رمز عبور</small></div></div></div>
+      <button class="g-btn" onclick="gateRegister()" style="margin-top:26px">${ic('plus',22)}ایجاد حساب کاربری</button>
+      <button class="g-btn ghost" onclick="showGate('full')">${ic('user',22)}ورود با نام کاربری</button>${cloudLink}`;
+  }
+  g.innerHTML = `<div class="orb o1"></div><div class="orb o2"></div>${body}${foot}`; g.classList.add('on');
+}
+function hideGate(){ $('gate').classList.remove('on'); }
+async function saveCloudGate(){
+  const url = $('cloudIn').value.trim();
+  if (!url){ lset('cloudUrl', ''); return showGate(gateBack); }
+  if (!/^https:\/\/|^http:\/\/localhost|^http:\/\/127\./.test(url)) return gateErr('آدرس باید با https شروع شود');
+  try { await testCloud(url); } catch { return gateErr('اتصال به این آدرس برقرار نشد'); }
+  lset('cloudUrl', url.replace(/\/+$/, '')); toast('اتصال برقرار شد'); showGate(gateBack);
+}
+async function gateLogin(){
+  const btn = $('gBtn'); if (!btn || btn.disabled) return; audio();
+  const label = btn.innerHTML; btn.disabled = true; btn.textContent = 'در حال بررسی…';
+  try {
+    let u;
+    if (gateMode === 'known'){
+      u = gateUser;
+      if (u.verifier){
+        const pw = $('gPw').value; if (!pw) throw 'رمز عبور را وارد کنید';
+        const d = await derive(pw, u.salt); if (d.verifier !== u.verifier) throw 'رمز عبور اشتباه است';
+        lset('sk_' + u.id, d.key);
+      }
+    } else {
+      const un = $('gUser').value.trim().toLowerCase(), pw = $('gPw').value;
+      if (!un || !pw) throw 'نام کاربری و رمز عبور را وارد کنید';
+      u = await authLogin(un, pw);
+    }
+    currentUser = u; lset('lastUser', u.id); enterApp(false);
+  } catch (e){ gateErr(typeof e === 'string' ? e : 'ورود انجام نشد'); btn.disabled = false; btn.innerHTML = label; }
+}
+async function authLogin(un, pw){
+  if (!USER_RE.test(un)) throw 'نام کاربری معتبر نیست';
+  if (!hasCrypto()) throw 'این مرورگر از رمزنگاری پشتیبانی نمی‌کند';
+  let u = allUsers.find(x => x.id === un);
+  if (u && u.verifier){ const d = await derive(pw, u.salt); if (d.verifier !== u.verifier) throw 'نام کاربری یا رمز اشتباه است'; lset('sk_' + u.id, d.key); return u; }
+  if (!cloudOn()) throw 'این حساب روی این دستگاه نیست. برای ورود از دستگاه جدید، «تنظیم همگام‌سازی ابری» را بزنید.';
+  let rec; try { rec = await cloudGet(un); } catch { throw 'اتصال به سرور برقرار نشد'; }
+  if (!rec) throw 'نام کاربری یا رمز اشتباه است';
+  const d = await derive(pw, rec.salt); if (d.verifier !== rec.verifier) throw 'نام کاربری یا رمز اشتباه است';
+  let sn; try { sn = await decJSON(rec.blob, d.key); } catch { throw 'خواندن اطلاعات حساب ممکن نشد'; }
+  u = {id: un, username: un, salt: rec.salt, verifier: rec.verifier, ...sn.profile};
+  allUsers = allUsers.filter(x => x.id !== un); allUsers.push(u); writeJSON('users', allUsers); lset('sk_' + un, d.key);
+  applySnapshot(un, sn); metaSet({updatedAt: rec.updatedAt, dirty: false}, un);
+  return u;
+}
+function gateRegister(){ hideGate(); stack = ['register']; openRegisterFromGate(); }
+function openRegisterFromGate(){ ['regFirst','regLast','regUser','regPw','regPw2'].forEach(i => $(i).value = ''); $('pwBar').style.width = '0'; cloudNote(); render('register'); }
+
+/* ================= ورود، پیام خوش‌آمد، صدا ================= */
+const tourDone = () => currentUser && lget('tour_' + currentUser.id, '0') === '1';
+function enterApp(first){
+  audio(); hideGate(); stack = ['home']; history.pushState({}, ''); render('home');
+  playStartup(); showWelcome(); setTimeout(() => syncNow(), 900);
+  setTimeout(() => {
+    if (first || !tourDone()) startTour(afterTour);
+    else { locked = false; checkAlarms(); setTimeout(() => maybeShowInstall(), 2200); }
+  }, 2800);
+  locked = true;
+}
+function afterTour(){ locked = false; setTimeout(checkAlarms, 500); setTimeout(() => maybeShowInstall(), 1800); }
+function showWelcome(){
+  const w = $('welcome'); const h = new Date().getHours(), greet = h < 5 ? 'شب بخیر' : h < 12 ? 'صبح بخیر' : h < 17 ? 'ظهر بخیر' : h < 20 ? 'عصر بخیر' : 'شب بخیر';
+  w.innerHTML = `<div class="wk">${ic('checkCircle',30,'draw')}</div><div><b>ورود موفق · ${greet}</b><small>${esc(currentUser.firstName)} ${esc(currentUser.lastName)} عزیز، خوش آمدید</small></div>`;
+  w.classList.add('on'); clearTimeout(showWelcome.t); showWelcome.t = setTimeout(() => w.classList.remove('on'), 3200);
+}
+
+/* ================= راهنمای اولیه (Tour) ================= */
+const TOUR = [
+  {sel:null, icon:'sparkles', title:'به برنامه خوش آمدید', text:'در چند قدم کوتاه با بخش‌های مهم برنامه آشنا می‌شوید. هر زمان خواستید می‌توانید «رد کردن» را بزنید.'},
+  {sel:'#p-home .tHero', icon:'wallet', title:'موجودی صندوق', text:'مجموع پس‌انداز شما اینجا نمایش داده می‌شود. با آیکن چشم می‌توانید مبلغ را مخفی کنید.'},
+  {sel:'#p-home .tQuick', icon:'bank', title:'دکمه‌های اصلی', text:'ابتدا «افتتاح حساب» را بزنید و حساب وامی بسازید؛ سپس با دکمهٔ بزرگ «ثبت وام» وام جدید ثبت کنید.'},
+  {sel:'#p-home .tStats', icon:'bank', title:'کادرهای وضعیت', text:'تعداد حساب‌های فعال و آزاد، وام‌های جاری و تسویه‌شده را اینجا می‌بینید. با لمس هر کادر به بخش مربوط می‌روید.'},
+  {sel:'#p-home .bell', icon:'bell', title:'آلارم اقساط', text:'یک روز قبل از سررسید هر قسط، زنگ تکان می‌خورد و آلارم پرداخت دریافت می‌کنید.'},
+  {sel:'#p-home .tList', icon:'file', title:'وام‌های جاری', text:'وام‌های شما اینجا فهرست می‌شوند. روی هر وام بزنید تا جدول اقساط را ببینید و قسط را پرداخت کنید.'},
+  {sel:'#navLoans', icon:'file', title:'وام‌ها', text:'فهرست کامل وام‌ها و ثبت وام جدید یا افتتاح حساب در این بخش است.'},
+  {sel:'#navSavings', icon:'coins', title:'پس‌انداز', text:'نمودار حساب‌های آزاد و فعال و ثبت پس‌انداز ماهیانه در این بخش است.'},
+  {sel:'#navHistory', icon:'history', title:'تاریخچه', text:'وام‌های تسویه‌شده برای مراجعهٔ بعدی اینجا نگهداری می‌شوند.'},
+  {sel:'#navProfile', icon:'palette', title:'تنظیمات و تم', text:'رنگ برنامه، حالت شب، صدا، پشتیبان‌گیری و نصب برنامه روی گوشی از اینجا انجام می‌شود.'}
+];
+let tourI = 0, tourCb = null, tourSteps = [];
+function startTour(cb){
+  if (!currentUser) return; closeSheet();
+  if ($('p-home').classList.contains('active') === false){ stack = ['home']; render('home'); }
+  tourCb = typeof cb === 'function' ? cb : null; locked = true; tourI = 0;
+  tourSteps = TOUR.filter(s => !s.sel || document.querySelector(s.sel));
+  $('tour').classList.add('on'); tourShow();
+}
+function tourShow(){
+  const s = tourSteps[tourI], hole = $('tHole'), tip = $('tTip'), app = $('app').getBoundingClientRect();
+  const draw = () => {
+    let r = {left:app.width/2 - 1, top:app.height/2 - 1, width:2, height:2}, pad = 8;
+    if (s.sel){ const e = document.querySelector(s.sel).getBoundingClientRect(); r = {left:e.left - app.left, top:e.top - app.top, width:e.width, height:e.height}; }
+    else pad = 0;
+    hole.style.cssText = `left:${r.left - pad}px;top:${r.top - pad}px;width:${r.width + pad*2}px;height:${r.height + pad*2}px;${s.sel ? '' : 'outline:none;'}`;
+    tip.innerHTML = `<div class="tt"><i>${ic(s.icon,22)}</i>${s.title}</div><p>${s.text}</p><div class="t-foot"><div class="dots">${tourSteps.map((_, i) => `<i class="${i === tourI ? 'on' : ''}"></i>`).join('')}</div>${tourI < tourSteps.length - 1 ? '<button class="t-skip" onclick="endTour()">رد کردن</button>' : ''}<button class="t-next" onclick="tourNext()">${tourI < tourSteps.length - 1 ? 'بعدی' : 'شروع کنیم'}</button></div>`;
+    const th = tip.offsetHeight, below = r.top + r.height/2 < app.height * .52;
+    let top = s.sel ? (below ? r.top + r.height + pad + 16 : r.top - pad - th - 16) : (app.height - th)/2;
+    top = Math.max(12, Math.min(app.height - th - 12, top)); tip.style.top = top + 'px';
+  };
+  if (s.sel){ const e = document.querySelector(s.sel); if (!e.closest('.bottom')) e.scrollIntoView({block:'center'}); setTimeout(draw, 120); } else draw();
+}
+function tourNext(){ if (tourI < tourSteps.length - 1){ tourI++; tourShow(); } else endTour(); }
+function endTour(){
+  $('tour').classList.remove('on'); if (currentUser) lset('tour_' + currentUser.id, '1'); $('main').scrollTop = 0;
+  const cb = tourCb; tourCb = null; if (cb) cb(); else { locked = false; }
+}
+
+/* ================= نصب برنامه (PWA) ================= */
+let deferredPrompt = null;
+const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const isIOS = () => /iphone|ipad|ipod/i.test(navigator.userAgent);
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; });
+window.addEventListener('appinstalled', () => { deferredPrompt = null; $('install').classList.remove('on'); toast('برنامه با موفقیت نصب شد'); if (currentUser) render(stack[stack.length-1], true); });
+function maybeShowInstall(force){
+  if (isStandalone() || !currentUser || locked) return;
+  if (!force && Date.now() - (+lget('installDismiss', 0)) < 3 * 864e5) return;
+  $('install').classList.add('on');
+}
+function dismissInstall(){ lset('installDismiss', Date.now()); $('install').classList.remove('on'); }
+async function doInstall(){
+  if (deferredPrompt){
+    $('install').classList.remove('on'); deferredPrompt.prompt();
+    try { const c = await deferredPrompt.userChoice; if (c.outcome !== 'accepted') lset('installDismiss', Date.now()); } catch {} deferredPrompt = null; return;
+  }
+  $('install').classList.remove('on');
+  const ios = isIOS();
+  openSheet('نصب برنامه روی گوشی', `<ol class="steps">${ios
+    ? `<li>در Safari روی دکمهٔ <b>اشتراک‌گذاری</b> (مربع با فلش رو به بالا) بزنید.</li><li>گزینهٔ <b>Add to Home Screen</b> (افزودن به صفحهٔ آغازین) را انتخاب کنید.</li><li>روی <b>Add</b> بزنید؛ آیکن برنامه روی صفحهٔ اصلی ظاهر می‌شود.</li>`
+    : `<li>منوی مرورگر (⋮ بالای صفحه) را باز کنید.</li><li>گزینهٔ <b>Install app</b> یا <b>Add to Home screen</b> (نصب برنامه / افزودن به صفحهٔ اصلی) را بزنید.</li><li>تأیید کنید تا برنامه مثل یک اپ واقعی نصب شود.</li>`}</ol>
+    <div class="muted" style="font-size:.76rem;line-height:2;margin-top:6px">نصب فقط وقتی ممکن است که برنامه از یک آدرس امن (HTTPS) باز شده باشد، نه از داخل فایل ذخیره‌شده.</div>`);
+}
+if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+
+/* ================= راه‌اندازی ================= */
+function boot(){
+  applyLook(); hydrateIcons(); initLoanSelects();
+  $('splashLeaf').innerHTML = ic('leaf', 52); $('install').querySelector('.ii').innerHTML = ic('app', 26); $('install').querySelector('.ix').innerHTML = ic('x', 20);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', applyLook);
+  history.replaceState({}, '');
+  let p = 0; const t0 = performance.now(), pct = $('spPct');
+  const tick = t => { p = Math.min(100, Math.round((t - t0 - 200) / 2500 * 100)); if (p < 0) p = 0; pct.textContent = 'در حال آماده‌سازی… ' + fa(p) + '٪'; if (p < 100) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+  setTimeout(() => { $('splash').classList.add('out'); showGate(); setTimeout(() => $('splash').remove(), 700); }, 3000);
+  setInterval(checkAlarms, 60000);
+}
+boot();
+</script>
+</body>
+</html>
