@@ -10,10 +10,10 @@
 <meta name="apple-mobile-web-app-title" content="قرض‌الحسنه">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <title>قرض‌الحسنه حضرت جوادالائمه (ع)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
@@ -135,6 +135,19 @@ main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;position:relative;b
 .empty .eico{width:76px;height:76px;border-radius:50%;background:var(--asoft);color:var(--atxt);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;animation:float 3.5s ease-in-out infinite}
 
 /* ===== Promo banner ===== */
+.hcard{margin:20px 0 4px;padding:18px 16px 14px;border-radius:26px;background:linear-gradient(150deg,var(--asoft),color-mix(in srgb,var(--asoft) 40%,var(--card)));position:relative;overflow:hidden;border:1px solid color-mix(in srgb,var(--a2) 14%,transparent)}
+.hcard .hc-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.hmed{width:58px;height:58px;flex:none;position:relative;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(145deg,var(--a2),var(--a1));color:#fff;box-shadow:0 8px 20px color-mix(in srgb,var(--a2) 35%,transparent)}
+.hmed::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--a2) 55%,transparent);animation:hspin 22s linear infinite}
+.hmed svg{position:relative}
+@keyframes hspin{to{transform:rotate(360deg)}}
+.hc-who{font-weight:800;font-size:.92rem}.hc-who small{display:block;font-weight:500;color:var(--muted);font-size:.72rem;margin-top:2px}
+.hc-ar{font-family:'Amiri','Traditional Arabic',serif;font-size:1.05rem;line-height:2.1;text-align:center;color:var(--atxt);margin:2px 0 6px;direction:rtl}
+.hc-fa{font-size:.88rem;line-height:2.1;text-align:justify;min-height:5.6em;font-weight:500}
+.hc-fa.typing::after{content:"▍";color:var(--a2);animation:hblink .8s steps(1) infinite;margin-right:2px}
+@keyframes hblink{50%{opacity:0}}
+.hc-ft{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:.72rem;color:var(--muted)}
+.hc-next{border:none;background:var(--card);color:var(--atxt);border-radius:14px;padding:7px 12px;font-weight:700;font-size:.74rem;cursor:pointer;display:flex;gap:5px;align-items:center}
 .hadith{margin-top:16px;padding:13px 16px;border-radius:20px;text-align:center;font-size:.84rem;line-height:2;font-weight:500;background:var(--asoft);display:flex;align-items:center;justify-content:center;gap:8px}
 .hadith svg{color:var(--atxt)}
 .tList>.sec:first-child{margin-top:24px}
@@ -231,6 +244,8 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .donut .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .donut .mid b{font-size:1.5rem;font-weight:800;color:var(--atxt)}.donut .mid small{font-size:.68rem;color:var(--muted)}
 .legend{flex:1}.legend div{display:flex;align-items:center;gap:8px;font-size:.82rem;padding:6px 0}.legend i{width:12px;height:12px;border-radius:5px;flex:none}
+.mini-ed{border:none;background:var(--asoft);color:var(--atxt);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+.mini-acts{display:flex;gap:8px;align-items:center}
 .mini-del{border:none;background:var(--danger-soft);color:var(--danger);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
 
 /* ===== Bottom nav ===== */
@@ -371,6 +386,11 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 #tHole{position:absolute;border-radius:24px;box-shadow:0 0 0 9999px rgba(6,12,26,.76);transition:all .5s var(--ease);pointer-events:none;outline:2px solid rgba(255,255,255,.75);outline-offset:3px;animation:holePulse 1.8s infinite}
 @keyframes holePulse{50%{outline-color:rgba(255,255,255,.25);outline-offset:8px}}
 #tTip{position:absolute;left:16px;right:16px;background:var(--sheet);color:var(--ink);border-radius:26px;padding:18px 18px 14px;box-shadow:0 24px 54px rgba(0,0,0,.45);transition:top .5s var(--ease),opacity .3s}
+#tTip::after{content:"";position:absolute;left:var(--ax,50%);width:18px;height:18px;background:var(--sheet);transform:rotate(45deg);border-radius:4px;display:none}
+#tour .dots{background:var(--line);border-radius:9px;height:7px;overflow:hidden;gap:0;align-self:center}#tour .dots i{height:7px;transition:width .4s}
+#tTip.up::after{display:block;top:-8px}#tTip.down::after{display:block;bottom:-8px}
+.t-cnt{margin-right:auto;font-size:.72rem;font-weight:700;color:var(--muted)}
+#tTip{transition:top .45s var(--ease),opacity .25s}
 #tTip .tt{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem}
 #tTip .tt i{width:38px;height:38px;border-radius:13px;background:var(--asoft);color:var(--atxt);display:flex;align-items:center;justify-content:center;flex:none}
 #tTip p{margin:10px 0 14px;font-size:.88rem;line-height:2;color:var(--muted)}
@@ -539,6 +559,7 @@ const ICONS = {
   printer:'<path d="M7 9V3h10v6"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
   gem:'<path d="M6 4h12l3 5-9 11L3 9z"/><path d="M3 9h18M9 4l-2 5 5 11 5-11-2-5"/>',
   clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+  refresh:'<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/>',
   pencil:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>',
   leaf:'<path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-5 6-8 10-10"/>',
   switch:'<path d="M4 9h13l-3-3M20 15H7l3 3"/>',
@@ -649,9 +670,15 @@ const payAmt = (l, i) => l.payments[i].amount ?? l.installmentAmount;
 const paidSum = l => l.payments.reduce((s, p, i) => s + (p.paid ? payAmt(l, i) : 0), 0);
 const remaining = l => l.payments.every(p => p.paid) ? 0 : Math.max(0, l.totalLoanAmount - paidSum(l));
 const dueDate = (l, i) => addJMonths(new Date(l.id), i + 1);
+// قانون پس‌انداز: برای هر وام در هر ماه شمسی فقط یک‌بار پس‌انداز ثبت می‌شود (حتی اگر چند قسط در همان ماه پرداخت شود)
+const savOf = (l, i) => { const p = l.payments[i]; return p && p.paid ? (p.sav !== undefined ? p.sav : l.totalMonthlySaving) : 0; };
+const savSum = l => l.payments.reduce((s, p, i) => s + savOf(l, i), 0);
+const monthHasSaving = l => { const mk = monthKey(); return l.payments.some(p => p.paid && p.mk === mk && p.sav > 0); };
+const nextSav = l => monthHasSaving(l) ? 0 : l.totalMonthlySaving;
+function markPaid(l, i, sav){ const p = l.payments[i]; p.paid = true; p.date = todayStr(); p.mk = monthKey(); p.sav = sav; }
 function stats(){
   const loans = getLoans(), used = loans.reduce((s, l) => s + l.activeAccounts, 0), free = (currentUser.loanAccounts || 0) - used;
-  const active = loans.reduce((s, l) => s + l.payments.filter(p => p.paid).length * l.totalMonthlySaving, 0);
+  const active = loans.reduce((s, l) => s + savSum(l), 0);
   const settled = getSettled().reduce((s, x) => s + (x.amount || 0), 0), freeS = getFree().reduce((s, x) => s + (x.amount || 0), 0);
   return {loans, used, free, active, settled, freeS, total: active + settled + freeS};
 }
@@ -735,7 +762,7 @@ const remindDays = () => +lget('remindDays', 1);
 function getAlerts(){
   if (!currentUser) return [];
   const out = [], lim = remindDays();
-  getLoans().forEach(l => { const i = l.payments.findIndex(p => !p.paid); if (i < 0) return; const d = dueDate(l, i), left = daysUntil(d); if (left <= lim) out.push({l, i, d, left, amount: payAmt(l, i) + l.totalMonthlySaving}); });
+  getLoans().forEach(l => { const i = l.payments.findIndex(p => !p.paid); if (i < 0) return; const d = dueDate(l, i), left = daysUntil(d); if (left <= lim) out.push({l, i, d, left, amount: payAmt(l, i) + nextSav(l)}); });
   return out.sort((a, b) => a.left - b.left);
 }
 const alertWhen = a => a.left < 0 ? `${fa(-a.left)} روز معوق شده` : a.left === 0 ? 'امروز سررسید است' : a.left === 1 ? 'فردا سررسید است' : `${fa(a.left)} روز دیگر سررسید است`;
@@ -817,10 +844,42 @@ function about(){ info({icon:'leaf', title:'قرض‌الحسنه حضرت جو�
 const eyeHidden = () => lget('eyeHidden', '0') === '1';
 function toggleEye(){ lset('eyeHidden', eyeHidden() ? '0' : '1'); render('home', true); }
 function promoArt(){ return `<svg class="art" viewBox="0 0 130 110" fill="none"><ellipse cx="62" cy="96" rx="48" ry="9" fill="#000" opacity=".18"/><g><ellipse cx="62" cy="84" rx="34" ry="10" fill="#f0cf6e"/><rect x="28" y="66" width="68" height="18" fill="#d4a62a"/><ellipse cx="62" cy="66" rx="34" ry="10" fill="#f6dc8a"/><rect x="34" y="46" width="56" height="18" fill="#d4a62a"/><ellipse cx="62" cy="46" rx="28" ry="8" fill="#f6dc8a"/><circle cx="62" cy="22" r="17" fill="#f6dc8a" stroke="#c99a1d" stroke-width="3"/><path d="M62 12c-5 7-5 14 0 20 5-6 5-13 0-20z" fill="#c99a1d"/></g></svg>`; }
+/* ================= حدیث تایپی خانه ================= */
+// نمادها فقط تزئینی‌اند (بدون تصویر اشخاص): هلال و ستاره برای پیامبر (ص)، ذوالفقار برای اهل‌بیت (ع)، کتاب گشوده برای قرآن
+const HADITHS = [
+  {k:'quran', who:'قرآن کریم', src:'سورهٔ حدید، آیهٔ ۱۱', ar:'مَن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ وَلَهُ أَجْرٌ كَرِيمٌ', fa:'کیست که به خدا قرض نیکو دهد تا آن را برای او چند برابر کند، و برای او پاداشی ارجمند است؟'},
+  {k:'quran', who:'قرآن کریم', src:'سورهٔ بقره، آیهٔ ۲۴۵', ar:'مَّن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ أَضْعَافًا كَثِيرَةً', fa:'کیست که به خدا قرض نیکو دهد تا خدا آن را برای او چندین برابر کند؟'},
+  {k:'quran', who:'قرآن کریم', src:'سورهٔ تغابن، آیهٔ ۱۷', ar:'إِن تُقْرِضُوا اللَّهَ قَرْضًا حَسَنًا يُضَاعِفْهُ لَكُمْ وَيَغْفِرْ لَكُمْ', fa:'اگر به خدا قرض نیکو دهید، آن را برای شما چند برابر می‌کند و شما را می‌بخشد.'},
+  {k:'prophet', who:'پیامبر اکرم (ص)', src:'سنن ابن‌ماجه، ح ۲۴۳۰', ar:'مَا مِنْ مُسْلِمٍ يُقْرِضُ مُسْلِمًا قَرْضًا مَرَّتَيْنِ إِلَّا كَانَ كَصَدَقَتِهَا مَرَّةً', fa:'هیچ مسلمانی دو بار به مسلمانی قرض نمی‌دهد مگر آنکه پاداشش مانند یک بار صدقه دادن آن مال است.'},
+  {k:'prophet', who:'پیامبر اکرم (ص)', src:'صحیح مسلم، ح ۲۶۹۹', ar:'وَمَنْ يَسَّرَ عَلَى مُعْسِرٍ يَسَّرَ اللَّهُ عَلَيْهِ فِي الدُّنْيَا وَالْآخِرَةِ', fa:'هر که بر تنگدستی آسان بگیرد، خداوند در دنیا و آخرت بر او آسان می‌گیرد.'},
+  {k:'prophet', who:'پیامبر اکرم (ص)', src:'صحیح مسلم، ح ۳۰۰۶', ar:'مَنْ أَنْظَرَ مُعْسِرًا أَوْ وَضَعَ عَنْهُ أَظَلَّهُ اللَّهُ فِي ظِلِّهِ', fa:'هر که به بدهکار تنگدست مهلت دهد یا از بدهی‌اش بکاهد، خدا او را در سایهٔ (رحمت) خود قرار می‌دهد.'},
+  {k:'ahl', who:'امام صادق (ع)', src:'کافی، ج ۴ · باب قرض', ar:'مَكْتُوبٌ عَلَى بَابِ الْجَنَّةِ: الصَّدَقَةُ بِعَشَرَةٍ وَالْقَرْضُ بِثَمَانِيَةَ عَشَرَ', fa:'بر در بهشت نوشته شده است: صدقه ده برابر و قرض هجده برابر پاداش دارد.'}
+];
+function emblem(k){
+  const st = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+  if (k === 'quran') return `<svg width="32" height="32" viewBox="0 0 32 32" ${st}><path d="M16 9c-3-2-7-2.5-11-2v16c4-.5 8 0 11 2 3-2 7-2.5 11-2V7c-4-.5-8 0-11 2z"/><path d="M16 9v16"/><path d="M16 2v3M10 3.5l1 2M22 3.5l-1 2"/></svg>`;
+  if (k === 'prophet') return `<svg width="32" height="32" viewBox="0 0 32 32" ${st}><path d="M21 5a11 11 0 1 0 0 22 8.5 8.5 0 1 1 0-22z"/><path d="m24.5 11 1 2.3 2.5.3-1.9 1.7.5 2.5-2.1-1.3-2.1 1.3.5-2.5-1.9-1.7 2.5-.3z"/></svg>`;
+  return `<svg width="32" height="32" viewBox="0 0 32 32" ${st}><path d="M16 3v20M11 23h10M16 23v6"/><path d="M16 4c-6 2-8 9-5 15M16 4c6 2 8 9 5 15"/><path d="M16 9c-3 1-4 5-2.5 8M16 9c3 1 4 5 2.5 8"/></svg>`;
+}
+let hLast = +lget('hLast', -1), hCur = null, hIdx = 0, hDone = false, hTimer = null;
+function pickHadith(){ let i; do { i = Math.floor(Math.random() * HADITHS.length); } while (i === hLast && HADITHS.length > 1); hLast = i; lset('hLast', i); hCur = HADITHS[i]; hIdx = 0; hDone = false; }
+function hadithCard(){
+  if (!hCur) pickHadith(); const h = hCur;
+  return `<div class="hcard rise" onclick="nextHadith()"><div class="hc-top"><div class="hmed">${emblem(h.k)}</div><div class="hc-who">${h.who}<small>${h.src}</small></div></div>
+    <div class="hc-ar">${h.ar}</div><div class="hc-fa" id="hcFa"></div>
+    <div class="hc-ft"><span>${ic('sparkles',14)} قرض‌الحسنه؛ معامله با خداست</span><button class="hc-next">${ic('refresh',14)}حدیث بعدی</button></div></div>`;
+}
+function typeHadith(){
+  clearInterval(hTimer); const el = $('hcFa'); if (!el || !hCur) return; const t = hCur.fa;
+  if (hDone){ el.textContent = t; el.classList.remove('typing'); return; }
+  el.classList.add('typing'); el.textContent = t.slice(0, hIdx);
+  hTimer = setInterval(() => { const e = $('hcFa'); if (!e){ clearInterval(hTimer); return; } hIdx++; e.textContent = t.slice(0, hIdx); if (hIdx >= t.length){ clearInterval(hTimer); hDone = true; e.classList.remove('typing'); } }, 38);
+}
+function nextHadith(){ pickHadith(); const c = document.querySelector('.hcard'); if (c){ const tmp = document.createElement('div'); tmp.innerHTML = hadithCard(); c.replaceWith(tmp.firstElementChild); document.querySelector('.hcard').classList.remove('rise'); typeHadith(); } }
 function renderHome(){
   const s = stats(), canOpen = (currentUser.loanAccounts || 0) < MAX_ACCOUNTS, alerts = getAlerts(), hid = eyeHidden();
   const upcoming = [];
-  s.loans.forEach(l => { const i = l.payments.findIndex(p => !p.paid); if (i > -1){ const d = dueDate(l, i); upcoming.push({l, i, d, left: daysUntil(d), amount: payAmt(l, i) + l.totalMonthlySaving}); } });
+  s.loans.forEach(l => { const i = l.payments.findIndex(p => !p.paid); if (i > -1){ const d = dueDate(l, i); upcoming.push({l, i, d, left: daysUntil(d), amount: payAmt(l, i) + nextSav(l)}); } });
   upcoming.sort((a, b) => a.d - b.d);
   let alertHTML = '';
   if (alerts.length) alertHTML = alerts.map(a => `<div class="alarm ${alertKind(a)} rise" onclick="openLoan(${a.l.id})"><div class="a-ico">${ic('bell',24)}</div><div class="a-txt"><b>${esc(a.l.title || 'وام')} · قسط ${qn(a.i)}</b><small>${alertWhen(a)} · ${fmtDate(a.d)}<br>${fmt(a.amount)}</small></div><button class="a-btn">پرداخت</button></div>`).join('');
@@ -842,14 +901,14 @@ function renderHome(){
         <button class="stat o rise" onclick="goRoot('loans')"><span class="si">${ic('file',22)}</span><b data-n="${s.loans.length}">${fa(s.loans.length)}</b><small>وام جاری</small>${ic('file',78,'bgi')}</button>
         <button class="stat b rise" onclick="goRoot('history')"><span class="si">${ic('flag',22)}</span><b data-n="${getHist().length}">${fa(getHist().length)}</b><small>وام تسویه‌شده</small>${ic('flag',78,'bgi')}</button>
       </div>
+      ${hadithCard()}
       <div class="tList">
         <div class="sec rise">اقساط پیش‌رو</div>
         ${upcoming.length ? upcoming.slice(0, 5).map(installRow).join('') : `<div class="empty rise"><div class="eico">${ic('inbox',34)}</div>${(currentUser.loanAccounts||0) ? 'قسط فعالی وجود ندارد' : 'برای شروع، یک حساب وامی افتتاح کنید'}</div>`}
         ${s.loans.length ? `<div class="sec rise">وام‌های جاری<a onclick="goRoot('loans')">همه</a></div>${s.loans.slice(0, 3).map(loanRow).join('')}` : ''}
       </div>
-      <div class="hadith rise">${ic('sparkles',18)}${HADITH}</div>
     </div>`;
-  countUp($('heroAmount'), s.total, hid); countInts();
+  countUp($('heroAmount'), s.total, hid); countInts(); typeHadith();
 }
 function countInts(){
   document.querySelectorAll('.page.active .stat b[data-n]').forEach(b => { const to = +b.dataset.n; if (!to) return; const t0 = performance.now(); const f = t => { const k = Math.min(1, (t - t0 - 250) / 700); b.textContent = fa(Math.round(to * Math.max(0, 1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(f); }; requestAnimationFrame(f); });
@@ -885,8 +944,8 @@ function renderLoans(){
 /* ================= پس‌انداز ================= */
 function renderSavings(){
   const s = stats(), C = 339.29, accTotal = currentUser.loanAccounts || 0, fR = accTotal ? s.free / accTotal : 0, aR = accTotal ? s.used / accTotal : 0, hid = eyeHidden();
-  const freeList = getFree().map((x, i) => `<div class="row" style="cursor:default"><div class="ric green">${ic('wallet',22)}</div><div class="rmain"><b>${fmt(x.amount)}</b><small>${esc(x.date)} · ${esc(x.note || '')}</small></div><button class="mini-del" onclick="deleteFree(${i})">${ic('trash',16)}</button></div>`).join('');
-  const actList = s.loans.filter(l => l.payments.some(p => p.paid)).map(l => { const c = l.payments.filter(p => p.paid).length; return `<div class="row" style="cursor:default"><div class="ric gold">${ic('bank',22)}</div><div class="rmain"><b>${esc(l.title || 'وام')}</b><small>${esc(l.borrower)} · ${fa(c)} قسط</small></div><div class="rend"><b>${fnum(c * l.totalMonthlySaving)}</b><small>ریال</small></div></div>`; }).join('');
+  const freeList = getFree().map((x, i) => `<div class="row" style="cursor:default"><div class="ric green">${ic('wallet',22)}</div><div class="rmain"><b>${fmt(x.amount)}</b><small>${esc(x.date)} · ${esc(x.note || '')}</small></div><div class="mini-acts"><button class="mini-ed" onclick="editFree(${i})" aria-label="ویرایش">${ic('pencil',16)}</button><button class="mini-del" onclick="deleteFree(${i})" aria-label="حذف">${ic('trash',16)}</button></div></div>`).join('');
+  const actList = s.loans.filter(l => l.payments.some(p => p.paid)).map(l => { const c = l.payments.filter(p => p.paid).length; return `<div class="row" style="cursor:default"><div class="ric gold">${ic('bank',22)}</div><div class="rmain"><b>${esc(l.title || 'وام')}</b><small>${esc(l.borrower)} · ${fa(c)} قسط</small></div><div class="rend"><b>${fnum(savSum(l))}</b><small>ریال</small></div></div>`; }).join('');
   const setList = getSettled().map(x => `<div class="row" style="cursor:default"><div class="ric green">${ic('checkCircle',22)}</div><div class="rmain"><b>${esc(x.title || '')}</b><small>${esc(x.borrower)} · تسویه ${esc(x.settledAt)}</small></div><div class="rend"><b>${fnum(x.amount)}</b><small>ریال</small></div></div>`).join('');
   $('p-savings').innerHTML = `
     <div class="hd">${bar({title:'پس‌انداز'})}
@@ -914,6 +973,58 @@ async function registerFree(){
 }
 async function deleteFree(i){ const arr = getFree(); const ok = await ask({icon:'trash', kind:'danger', title:'حذف ردیف پس‌انداز', text:'این ردیف حذف شود؟', yes:'حذف'}); if (!ok) return; arr.splice(i, 1); putFree(arr); render('savings', true); }
 
+function editFree(i){
+  const x = getFree()[i]; if (!x) return;
+  openSheet('ویرایش ردیف پس‌انداز', `<div class="field"><label>مبلغ (ریال)</label><input type="number" id="efAmt" inputmode="numeric" min="0" value="${+x.amount || 0}"></div>
+    <div class="field"><label>تاریخ</label><input type="text" id="efDate" maxlength="30" value="${esc(x.date || '')}"></div>
+    <div class="field"><label>توضیح</label><input type="text" id="efNote" maxlength="60" value="${esc(x.note || '')}"></div>
+    <button class="btn" onclick="saveFree(${i})">${ic('check',19)}ذخیره تغییرات</button>`);
+}
+function saveFree(i){
+  const arr = getFree(); if (!arr[i]) return; const a = Math.round(+$('efAmt').value);
+  if (!(a >= 0) || $('efAmt').value === '') return toast('مبلغ را درست وارد کنید','warn');
+  arr[i] = {...arr[i], amount: a, date: $('efDate').value.trim() || arr[i].date, note: $('efNote').value.trim()}; putFree(arr); closeSheet(); render('savings', true); toast('ردیف پس‌انداز ویرایش شد');
+}
+function openEditProfile(){
+  const u = currentUser, used = stats().used, opts = [];
+  for (let n = Math.max(used, 0); n <= MAX_ACCOUNTS; n++) opts.push(`<option value="${n}" ${n === (u.loanAccounts || 0) ? 'selected' : ''}>${fa(n)} حساب</option>`);
+  openSheet('ویرایش اطلاعات حساب', `<div class="field"><label>نام</label><input type="text" id="epFirst" maxlength="30" value="${esc(u.firstName)}"></div>
+    <div class="field"><label>نام خانوادگی</label><input type="text" id="epLast" maxlength="40" value="${esc(u.lastName)}"></div>
+    <div class="field"><label>تعداد حساب‌های وامی</label><select id="epAcc">${opts.join('')}</select></div>
+    <div class="muted" style="font-size:.76rem;line-height:2;margin:-4px 2px 10px">${used ? `${fa(used)} حساب درگیر وام است و کمتر از آن نمی‌شود.` : ''} نام کاربری و رمز را نمی‌توان تغییر داد.</div>
+    <button class="btn" onclick="saveProfile()">${ic('check',19)}ذخیره تغییرات</button>`);
+}
+function saveProfile(){
+  const fn = $('epFirst').value.trim(), ln = $('epLast').value.trim(), acc = +$('epAcc').value;
+  if (!fn || !ln) return toast('نام و نام خانوادگی را وارد کنید','warn');
+  const old = currentUser.firstName + ' ' + currentUser.lastName; currentUser = {...currentUser, firstName: fn, lastName: ln, loanAccounts: acc};
+  const loans = getLoans(); let ch = false; loans.forEach(l => { if (l.borrower === old){ l.borrower = fn + ' ' + ln; ch = true; } }); if (ch) putLoans(loans);
+  saveUser(); closeSheet(); render(stack[stack.length-1], true); toast('اطلاعات حساب ویرایش شد');
+}
+function openEditLoan(){
+  const l = currentLoan; if (!l || viewingHistory) return;
+  const locked = l.payments.some(p => p.paid), maxA = stats().free + l.activeAccounts, per = Math.round(l.totalLoanAmount / l.activeAccounts);
+  const amts = [...new Set([10,20,30,40,50,60,70,80].map(m => m * 1e6).concat(per))].sort((a, b) => a - b);
+  const sel = (arr, cur, f) => arr.map(v => `<option value="${v}" ${v === cur ? 'selected' : ''}>${f(v)}</option>`).join('');
+  openSheet('ویرایش وام', `<div class="field"><label>عنوان وام</label><input type="text" id="elTitle" maxlength="40" value="${esc(l.title || '')}"></div>
+    <div class="field"><label>نام وام‌گیرنده</label><input type="text" id="elBorrower" maxlength="60" value="${esc(l.borrower)}"></div>
+    ${locked ? `<div class="cloud-note">${ic('lock',20)}<div>چون قسط‌هایی پرداخت شده، مبلغ، تعداد حساب و تعداد اقساط قابل تغییر نیست. برای تغییر آن‌ها وام را حذف و دوباره ثبت کنید.</div></div>` : `
+    <div class="field"><label>تعداد حساب اختصاص‌یافته</label><select id="elAcc">${sel(Array.from({length: maxA}, (_, i) => i + 1), l.activeAccounts, v => fa(v) + ' حساب')}</select></div>
+    <div class="field"><label>مبلغ وام هر حساب</label><select id="elAmt">${sel(amts, per, v => fa(v / 1e6) + ' میلیون ریال')}</select></div>
+    <div class="field"><label>تعداد اقساط</label><select id="elN">${sel(Array.from({length: 20}, (_, i) => i + 1), l.payments.length, v => fa(v) + ' قسط')}</select></div>`}
+    <button class="btn" onclick="saveEditLoan()">${ic('check',19)}ذخیره تغییرات</button>`);
+}
+function saveEditLoan(){
+  const l = currentLoan; if (!l) return;
+  l.title = $('elTitle').value.trim() || 'وام'; l.borrower = $('elBorrower').value.trim() || l.borrower;
+  if (!l.payments.some(p => p.paid) && $('elAcc')){
+    const a = +$('elAcc').value, amt = +$('elAmt').value, n = +$('elN').value, total = a * amt, each = Math.floor(total / n);
+    Object.assign(l, {activeAccounts: a, totalLoanAmount: total, installmentsCount: n, installmentAmount: each, totalMonthlySaving: a * MONTHLY_SAVING,
+      payments: Array.from({length: n}, (_, i) => ({index: i+1, paid: false, date: null, amount: i === n-1 ? total - each*(n-1) : each}))});
+  }
+  persistLoan(l); currentLoan = l; closeSheet(); render('detail', true); toast('وام ویرایش شد');
+}
+
 /* ================= تنظیمات / حساب ================= */
 function renderProfile(){
   const u = currentUser, th = THEMES.find(t => t.id === accent()) || THEMES[0], standalone = isStandalone();
@@ -940,6 +1051,7 @@ function renderProfile(){
 function openDetails(){
   const u = currentUser;
   openSheet('جزئیات حساب', `<div class="info-row"><span>نام</span><b>${esc(u.firstName)}</b></div><div class="info-row"><span>نام خانوادگی</span><b>${esc(u.lastName)}</b></div><div class="info-row"><span>نام کاربری</span><b dir="ltr">${u.username ? esc(u.username) : 'تعیین نشده'}</b></div><div class="info-row"><span>حساب‌های وامی</span><b>${fa(u.loanAccounts || 0)}</b></div><div class="info-row"><span>عضویت</span><b>${esc(u.createdAt || '—')}</b></div>
+    <button class="btn" style="margin-top:14px" onclick="openEditProfile()">${ic('pencil',19)}ویرایش اطلاعات حساب</button>
     ${u.username ? '' : `<div class="cloud-note warn" style="margin-top:12px">${ic('alert',20)}<div>این حساب هنوز نام کاربری و رمز ندارد و فقط روی همین دستگاه است. برای ورود از دستگاه‌های دیگر آن‌ها را تعیین کنید.</div></div><button class="btn" onclick="openCred()">${ic('lock',19)}تعیین نام کاربری و رمز</button>`}
     <button class="btn danger" onclick="deleteAccount()">${ic('trash',19)}حذف حساب</button>`);
 }
@@ -985,7 +1097,7 @@ async function submitRegister(){
   audio(); btn.disabled = true;
   try {
     let offline = false;
-    if (cloudOn()){ try { if (await cloudGet(un)){ toast('این نام کاربری قبلاً گرفته شده است','warn'); return; } } catch { offline = true; } }
+    if (cloudOn()){ try { const a = await rpc('qh_available', {p_user: un}); if (a.status === 'ok' && a.available === false){ toast('این نام کاربری قبلاً گرفته شده است','warn'); return; } } catch { offline = true; } }
     const salt = newSalt(), d = await derive(pw, salt);
     const u = {id: un, username: un, firstName: fn, lastName: ln, salt, verifier: d.verifier, loanAccounts: 0, createdAt: todayStr()};
     allUsers.push(u); currentUser = u; lset('sk_' + un, d.key); saveUser(); enterApp(true);
@@ -1009,7 +1121,7 @@ async function submitCred(){
   if (!hasCrypto()) return toast('این مرورگر از رمزنگاری پشتیبانی نمی‌کند','err');
   $('crBtn').disabled = true;
   try {
-    if (cloudOn()){ try { if (await cloudGet(un)){ toast('این نام کاربری قبلاً گرفته شده است','warn'); return; } } catch {} }
+    if (cloudOn()){ try { const a = await rpc('qh_available', {p_user: un}); if (a.status === 'ok' && a.available === false){ toast('این نام کاربری قبلاً گرفته شده است','warn'); return; } } catch {} }
     const salt = newSalt(), d = await derive(pw, salt), old = currentUser.id;
     migrateId(old, un);
     currentUser = {...currentUser, id: un, username: un, salt, verifier: d.verifier}; delete currentUser.legacy;
@@ -1037,13 +1149,13 @@ async function deleteAccount(){
   let ok = await ask({icon:'alert', kind:'danger', title:'حذف حساب', text:'تمام وام‌ها، تاریخچه و پس‌اندازهای این حساب برای همیشه پاک می‌شود' + (cloudToo ? ' و نسخهٔ ابری آن هم حذف خواهد شد.' : '.'), yes:'ادامه'}); if (!ok) return;
   ok = await ask({icon:'alert', kind:'danger', title:'آخرین اخطار', text:'این کار قابل بازگشت نیست. مطمئنید؟', yes:'بله، مطمئنم', no:'منصرف شدم'}); if (!ok) return;
   const id = currentUser.id, un = currentUser.username;
-  if (cloudToo){ try { await cloudDel(un); } catch { toast('حذف نسخهٔ ابری انجام نشد','warn'); } }
+  if (cloudToo){ try { const r = await rpc('qh_delete', {p_user: un, p_verifier: currentUser.verifier}); if (r.status !== 'ok' && r.status !== 'not_found') throw 0; } catch { toast('حذف نسخهٔ ابری انجام نشد','warn'); } }
   ['loans_','history_','tour_','sk_'].forEach(pf => localStorage.removeItem(pf + id));
   ['freeSavings','settledSavings','userPhotos','syncmeta'].forEach(k => { const o = readJSON(k, {}); delete o[id]; writeJSON(k, o); });
   allUsers = allUsers.filter(u => u.id !== id); writeJSON('users', allUsers); if (lget('lastUser','') === id) localStorage.removeItem('lastUser');
   currentUser = null; gateUser = null; stack = ['home']; showGate(); toast('حساب حذف شد','warn');
 }
-const BACKUP_KEY = /^(users|lastUser|userPhotos|freeSavings|settledSavings|syncmeta|accent|mode|sound|remindDays|eyeHidden|cloudUrl|loans_[a-z0-9_]+|history_[a-z0-9_]+|tour_[a-z0-9_]+)$/;
+const BACKUP_KEY = /^(users|lastUser|userPhotos|freeSavings|settledSavings|syncmeta|accent|mode|sound|remindDays|eyeHidden|cloudUrl|cloudKey|loans_[a-z0-9_]+|history_[a-z0-9_]+|tour_[a-z0-9_]+)$/;
 function exportBackup(){
   const data = {}; for (let i=0; i<localStorage.length; i++){ const k = localStorage.key(i); if (BACKUP_KEY.test(k)) data[k] = localStorage.getItem(k); }
   const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(data)], {type:'application/json'})); a.download = 'qarz-backup-' + new Date().toISOString().slice(0,10) + '.json'; a.click(); toast('نسخه پشتیبان دریافت شد');
@@ -1120,11 +1232,11 @@ function renderDetail(){
     const rest = l.payments.every(q => q.paid) ? 0 : Math.max(0, l.totalLoanAmount - paidTotal);
     const end = p.paid ? `<span class="tag done">${ic('check',12)}پرداخت شد</span>` : (isNext && !viewingHistory ? `<button class="pay-btn" onclick="payInstallment(${i})">${ic('card',16)}${isLast ? 'پرداخت و تسویه' : 'پرداخت'}</button>` : `<span class="tag soon">${ic('lock',12)}در انتظار</span>`);
     return `<div class="row inst rise ${p.paid ? 'done' : ''} ${isNext && !viewingHistory ? 'next' : ''}" style="cursor:default"><div class="ric">${p.paid ? ic('check',24) : fa(i+1)}</div>
-      <div class="rmain"><b>قسط ${qn(i)} · ${fnum(payAmt(l, i) + l.totalMonthlySaving)}</b><small>سررسید ${fmtDate(due)}${p.paid ? ' · پرداخت ' + esc(p.date) : ''}</small><small>${p.paid ? 'مانده وام: ' + fmt(rest) : 'قسط + پس‌انداز ماهیانه'}</small></div>
+      <div class="rmain"><b>قسط ${qn(i)} · ${fnum(payAmt(l, i) + (p.paid ? savOf(l, i) : (isNext ? nextSav(l) : l.totalMonthlySaving)))}</b><small>سررسید ${fmtDate(due)}${p.paid ? ' · پرداخت ' + esc(p.date) : ''}</small><small>${p.paid ? 'مانده وام: ' + fmt(rest) + (savOf(l, i) ? '' : ' · بدون پس‌انداز (این ماه ثبت شده)') : (isNext && !nextSav(l) ? 'فقط قسط · پس‌انداز این ماه قبلاً ثبت شده' : 'قسط + پس‌انداز ماهیانه')}</small></div>
       <div class="rend">${end}${late ? `<span class="tag late">${ic('alert',12)}معوق</span>` : near ? `<span class="tag warn">${ic('bell',12)}${left === 0 ? 'امروز' : 'فردا'}</span>` : ''}</div></div>`;
   }).join('');
   el.innerHTML = `
-    <div class="hd">${bar({back:true, title:'جزئیات وام', extra: viewingHistory ? '' : `<button class="bb no-print" onclick="deleteLoan(${l.id})" aria-label="حذف">${ic('trash',24)}</button>`})}
+    <div class="hd">${bar({back:true, title:'جزئیات وام', extra: viewingHistory ? '' : `<button class="bb no-print" onclick="openEditLoan()" aria-label="ویرایش">${ic('pencil',24)}</button><button class="bb no-print" onclick="deleteLoan(${l.id})" aria-label="حذف">${ic('trash',24)}</button>`})}
       <div class="bal rise"><div class="amt">${fnum(remaining(l))}<small>ریال</small></div><div class="eye" style="cursor:default">${ic('wallet',22)}<span>مانده وام «${esc(l.title || 'وام')}»</span></div></div>
       <div class="hd-chips rise"><span class="chip">${ic('user',14)}${esc(l.borrower)}</span><span class="chip">${ic('bank',14)}${fa(l.activeAccounts)} حساب</span><span class="chip">${ic('calendar',14)}${esc(l.createdAt)}</span>${viewingHistory ? `<span class="chip">${ic('flag',14)}${esc(l.settledAt || '')}</span>` : ''}</div>
       <div class="progress rise"><i data-w="${paid/n*100}"></i></div><div class="prog-text">${fa(paid)} از ${fa(n)} قسط پرداخت شده · وام کل ${fmt(l.totalLoanAmount)}</div>
@@ -1138,32 +1250,32 @@ function persistLoan(l){ const all = getLoans(), i = all.findIndex(x => x.id ===
 async function payInstallment(i){
   const l = currentLoan; if (!l || viewingHistory) return;
   if (i !== l.payments.findIndex(p => !p.paid)) return toast('ابتدا قسط‌های قبلی را پرداخت کنید','warn');
-  const isLast = i === l.payments.length - 1, amount = payAmt(l, i) + l.totalMonthlySaving;
-  const ok = await ask({icon:'card', kind:'warn', title:`پرداخت قسط ${qn(i)}`, text:`مبلغ ${fmt(amount)} (قسط + پس‌انداز)` + (isLast ? '\nاین آخرین قسط است و وام تسویه می‌شود.' : ''), yes: isLast ? 'پرداخت و تسویه' : 'پرداخت'}); if (!ok) return;
-  l.payments[i].paid = true; l.payments[i].date = todayStr();
+  const isLast = i === l.payments.length - 1, sv = nextSav(l), amount = payAmt(l, i) + sv;
+  const ok = await ask({icon:'card', kind:'warn', title:`پرداخت قسط ${qn(i)}`, text:`مبلغ ${fmt(amount)}` + (sv ? ' (قسط + پس‌انداز)' : '\nپس‌انداز این ماه برای این وام قبلاً ثبت شده و دوباره ثبت نمی‌شود.') + (isLast ? '\nاین آخرین قسط است و وام تسویه می‌شود.' : ''), yes: isLast ? 'پرداخت و تسویه' : 'پرداخت'}); if (!ok) return;
+  markPaid(l, i, sv);
   if (isLast) settleLoan(l); else { persistLoan(l); render('detail', true); playSuccess(); toast('قسط ثبت شد'); }
 }
 async function settleAll(){
   const l = currentLoan; if (!l) return; const left = l.payments.map((p, i) => p.paid ? null : i).filter(i => i !== null);
   if (!left.length) return toast('همه اقساط پرداخت شده‌اند','warn');
-  const sum = left.reduce((s, i) => s + payAmt(l, i) + l.totalMonthlySaving, 0);
-  const ok = await ask({icon:'flag', kind:'warn', title:'تسویه کامل', text:`${fa(left.length)} قسط باقی‌مانده\nمبلغ کل: ${fmt(sum)}\nهمه یکجا تسویه شود؟`, yes:'بله، تسویه کامل'}); if (!ok) return;
-  left.forEach(i => { l.payments[i].paid = true; l.payments[i].date = todayStr(); }); settleLoan(l);
+  const sv = nextSav(l), sum = left.reduce((s, i) => s + payAmt(l, i), 0) + sv;
+  const ok = await ask({icon:'flag', kind:'warn', title:'تسویه کامل', text:`${fa(left.length)} قسط باقی‌مانده\nمبلغ کل: ${fmt(sum)}` + (sv ? ' (شامل یک‌بار پس‌انداز)' : ' (پس‌انداز این ماه قبلاً ثبت شده)') + '\nهمه یکجا تسویه شود؟', yes:'بله، تسویه کامل'}); if (!ok) return;
+  left.forEach((i, k) => markPaid(l, i, k === 0 ? sv : 0)); settleLoan(l);
 }
 function settleLoan(l){
-  const paid = l.payments.filter(p => p.paid).length, sv = getSettled();
-  sv.push({loanId: l.id, borrower: l.borrower, title: l.title || 'وام', amount: paid * l.totalMonthlySaving, accounts: l.activeAccounts, settledAt: todayStr(), createdAt: l.createdAt}); putSettled(sv);
+  const sv = getSettled();
+  sv.push({loanId: l.id, borrower: l.borrower, title: l.title || 'وام', amount: savSum(l), accounts: l.activeAccounts, settledAt: todayStr(), createdAt: l.createdAt}); putSettled(sv);
   l.status = 'settled'; l.settledAt = todayStr(); const h = getHist(); h.push(l); putHist(h); putLoans(getLoans().filter(x => x.id !== l.id));
   currentLoan = null; confetti(); playSuccess(); info({icon:'check', title:'وام تسویه شد', text:'تبریک! وام به تاریخچه منتقل گردید.'}).then(() => goRoot('home'));
 }
 async function deleteLoan(id){
   const l = getLoans().find(x => x.id === id); if (!l) return; const paid = l.payments.filter(p => p.paid).length;
-  const ok = await ask({icon:'trash', kind:'danger', title:'حذف وام', text:`وام «${l.title || 'وام'}» حذف شود؟` + (paid ? `\nپس‌انداز ${fmt(paid * l.totalMonthlySaving)} مربوط به ${fa(paid)} قسط پرداخت‌شده نیز از صندوق کم می‌شود.` : ''), yes:'حذف'}); if (!ok) return;
+  const ok = await ask({icon:'trash', kind:'danger', title:'حذف وام', text:`وام «${l.title || 'وام'}» حذف شود؟` + (paid ? `\nپس‌انداز ${fmt(savSum(l))} مربوط به ${fa(paid)} قسط پرداخت‌شده نیز از صندوق کم می‌شود.` : ''), yes:'حذف'}); if (!ok) return;
   putLoans(getLoans().filter(x => x.id !== id)); toast('وام حذف شد','warn'); goRoot('home');
 }
 function exportCSV(){
   const l = currentLoan; if (!l) return; let csv = 'قسط,سررسید,مبلغ قسط,پس‌انداز,جمع,وضعیت,تاریخ پرداخت\n';
-  l.payments.forEach((p, i) => { csv += `${i+1},${fmtDate(dueDate(l, i))},${payAmt(l, i)},${l.totalMonthlySaving},${payAmt(l, i) + l.totalMonthlySaving},${p.paid ? 'پرداخت شد' : 'در انتظار'},${p.date || ''}\n`; });
+  l.payments.forEach((p, i) => { csv += `${i+1},${fmtDate(dueDate(l, i))},${payAmt(l, i)},${p.paid ? savOf(l, i) : l.totalMonthlySaving},${payAmt(l, i) + (p.paid ? savOf(l, i) : l.totalMonthlySaving)},${p.paid ? 'پرداخت شد' : 'در انتظار'},${p.date || ''}\n`; });
   const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + csv], {type:'text/csv;charset=utf-8'})); a.download = 'اقساط-' + (l.title || 'وام') + '.csv'; a.click();
 }
 function renderHistory(){
@@ -1173,11 +1285,12 @@ function renderHistory(){
 }
 
 /* ================= رمزنگاری و همگام‌سازی ابری ================= */
-// آدرس پایگاه‌دادهٔ ابری (Firebase Realtime Database) را اینجا بگذارید تا برای همهٔ دستگاه‌ها پیش‌فرض شود؛
-// یا از «تنظیمات ← همگام‌سازی ابری» (و در صفحهٔ ورود) وارد کنید.
-const CLOUD_DEFAULT = '';
-const cloudUrl = () => (lget('cloudUrl', '') || CLOUD_DEFAULT).trim().replace(/\/+$/, '');
-const cloudOn = () => !!cloudUrl();
+// اتصال به Supabase: آدرس پروژه (Project URL) و کلید عمومی (anon / publishable key) را اینجا بگذارید تا برای همهٔ دستگاه‌ها پیش‌فرض شود؛
+// یا از «تنظیمات ← همگام‌سازی ابری» (و در صفحهٔ ورود) وارد کنید. دستورهای سرور در فایل supabase.sql است.
+const CLOUD_URL_DEFAULT = '', CLOUD_KEY_DEFAULT = '';
+const cloudUrl = () => (lget('cloudUrl', '') || CLOUD_URL_DEFAULT).trim().replace(/\/+$/, '');
+const cloudKey = () => (lget('cloudKey', '') || CLOUD_KEY_DEFAULT).trim();
+const cloudOn = () => !!(cloudUrl() && cloudKey());
 const USER_RE = /^[a-z][a-z0-9_]{2,19}$/;
 const hasCrypto = () => !!(window.crypto && crypto.subtle);
 const TE = new TextEncoder(), TD = new TextDecoder();
@@ -1192,13 +1305,13 @@ async function derive(pw, salt){
 const aesKey = (k, use) => crypto.subtle.importKey('raw', unb64(k), 'AES-GCM', false, [use]);
 async function encJSON(obj, k){ const iv = crypto.getRandomValues(new Uint8Array(12)); const ct = await crypto.subtle.encrypt({name:'AES-GCM', iv}, await aesKey(k, 'encrypt'), TE.encode(JSON.stringify(obj))); return {iv: b64(iv), ct: b64(ct)}; }
 async function decJSON(bl, k){ return JSON.parse(TD.decode(await crypto.subtle.decrypt({name:'AES-GCM', iv: unb64(bl.iv)}, await aesKey(k, 'decrypt'), unb64(bl.ct)))); }
-async function cfetch(path, opt={}){
-  const ac = new AbortController(), t = setTimeout(() => ac.abort(), 9000);
-  try { const r = await fetch(cloudUrl() + path, {cache:'no-store', ...opt, signal: ac.signal}); if (!r.ok) throw new Error('http ' + r.status); return r; } finally { clearTimeout(t); }
+async function rpc(fn, args, cfg){
+  const url = (cfg ? cfg.url : cloudUrl()), key = (cfg ? cfg.key : cloudKey());
+  const ac = new AbortController(), t = setTimeout(() => ac.abort(), 12000);
+  const h = {'Content-Type':'application/json', apikey: key}; if (key.startsWith('eyJ')) h.Authorization = 'Bearer ' + key;
+  try { const r = await fetch(url + '/rest/v1/rpc/' + fn, {method:'POST', cache:'no-store', headers:h, body: JSON.stringify(args || {}), signal: ac.signal}); if (!r.ok) throw new Error('http ' + r.status); return await r.json(); }
+  finally { clearTimeout(t); }
 }
-const cloudGet = async u => (await cfetch(`/accounts/${u}.json`)).json();
-const cloudPut = (u, o) => cfetch(`/accounts/${u}.json`, {method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify(o)});
-const cloudDel = u => cfetch(`/accounts/${u}.json`, {method:'DELETE'});
 
 const metaAll = () => readJSON('syncmeta', {});
 const metaGet = id => metaAll()[id || currentUser.id] || {};
@@ -1214,23 +1327,32 @@ function syncReady(){ return currentUser && cloudOn() && currentUser.username &&
 function setSync(st, at){ lset('syncState', st); if (at) lset('syncAt', at); if (currentUser && $('p-profile').classList.contains('active')) render('profile', true); }
 function markDirty(){ if (!currentUser) return; metaSet({updatedAt: Date.now(), dirty: true}); clearTimeout(syncTimer); syncTimer = setTimeout(() => syncNow(), 1500); }
 async function flushSync(){ clearTimeout(syncTimer); if (currentUser && syncReady() && metaGet().dirty) await syncNow(); }
-async function pushCloud(key){
+async function pushCloud(key, force){
   const u = currentUser, upd = metaGet().updatedAt || Date.now();
-  await cloudPut(u.username, {u: u.username, salt: u.salt, verifier: u.verifier, v: 2, updatedAt: upd, blob: await encJSON(snapshot(), key)});
-  metaSet({dirty: false, updatedAt: upd});
+  const r = await rpc('qh_push', {p_user: u.username, p_verifier: u.verifier, p_blob: await encJSON(snapshot(), key), p_updated: upd, p_force: !!force});
+  if (r.status === 'ok') metaSet({dirty: false, updatedAt: upd});
+  return r;
 }
 async function syncNow(manual){
-  if (!syncReady()){ if (manual) toast(!cloudOn() ? 'ابتدا آدرس همگام‌سازی را وارد کنید' : 'ابتدا برای حساب نام کاربری و رمز تعیین کنید', 'warn'); return; }
+  if (!syncReady()){ if (manual) toast(!cloudOn() ? 'ابتدا اتصال همگام‌سازی را تنظیم کنید' : 'ابتدا برای حساب نام کاربری و رمز تعیین کنید', 'warn'); return; }
   if (syncBusy) return; syncBusy = true; let changed = false; const me = currentUser.id;
   try {
-    setSync('pending'); const key = lget('sk_' + me), rec = await cloudGet(currentUser.username), m = metaGet();
-    if (rec && rec.verifier !== currentUser.verifier){ setSync('conflict'); if (manual) toast('این نام کاربری در سرور متعلق به حساب دیگری است','err'); return; }
-    if (!rec){ if (!m.updatedAt) metaSet({updatedAt: Date.now()}); await pushCloud(key); }
+    setSync('pending'); const key = lget('sk_' + me), u0 = currentUser, m = metaGet();
+    const rec = await rpc('qh_login', {p_user: u0.username, p_verifier: u0.verifier});
+    if (rec.status === 'not_found'){
+      if (!m.updatedAt) metaSet({updatedAt: Date.now()});
+      const upd = metaGet().updatedAt;
+      const rr = await rpc('qh_register', {p_user: u0.username, p_salt: u0.salt, p_verifier: u0.verifier, p_blob: await encJSON(snapshot(), key), p_updated: upd});
+      if (rr.status === 'ok') metaSet({dirty: false, updatedAt: upd});
+      else { setSync(rr.status === 'taken' ? 'conflict' : 'err'); if (manual) toast(rr.status === 'taken' ? 'این نام کاربری در سرور متعلق به حساب دیگری است' : 'ثبت در سرور انجام نشد','err'); return; }
+    } else if (rec.status === 'invalid' || rec.status === 'locked'){
+      setSync('conflict'); if (manual) toast(rec.status === 'locked' ? 'به‌دلیل تلاش‌های ناموفق، چند دقیقه صبر کنید' : 'رمز یا نام کاربری با سرور هم‌خوانی ندارد','err'); return;
+    } else if (rec.status !== 'ok') throw new Error(rec.status);
     else if (rec.updatedAt > (m.updatedAt || 0)){
       const sn = await decJSON(rec.blob, key); applySnapshot(me, sn);
       const u = {...currentUser, ...sn.profile}; currentUser = u; allUsers = allUsers.map(x => x.id === me ? u : x); writeJSON('users', allUsers);
       metaSet({updatedAt: rec.updatedAt, dirty: false}); changed = true;
-    } else if (m.dirty || (m.updatedAt || 0) > rec.updatedAt) await pushCloud(key);
+    } else if (m.dirty || (m.updatedAt || 0) > rec.updatedAt){ const pr = await pushCloud(key); if (pr.status !== 'ok' && pr.status !== 'stale') throw new Error(pr.status); }
     setSync('ok', Date.now()); if (manual) toast('همگام‌سازی انجام شد');
   } catch (e){ setSync('err'); if (manual) toast('اتصال به سرور برقرار نشد','err'); }
   finally { syncBusy = false; }
@@ -1245,20 +1367,27 @@ const syncText = () => {
 function openCloud(){
   const u = currentUser;
   openSheet('همگام‌سازی ابری', `
-    <div class="cloud-note ${cloudOn() && (!u || u.username) ? '' : 'warn'}">${ic('cloud',20)}<div>${cloudOn() ? (u ? syncText() : 'آدرس تنظیم شده است') : 'اطلاعات حساب (به‌صورت رمزنگاری‌شده) روی یک پایگاه‌دادهٔ ابری ذخیره می‌شود تا با نام کاربری و رمز از هر دستگاه وارد شوید.'}</div></div>
-    <div class="field" style="margin-top:12px"><label>آدرس Firebase Realtime Database</label><input type="text" id="cloudIn" class="ltr" dir="ltr" autocapitalize="none" placeholder="https://your-project-default-rtdb.firebaseio.com" value="${esc(cloudUrl())}"></div>
+    <div class="cloud-note ${cloudOn() && (!u || u.username) ? '' : 'warn'}">${ic('cloud',20)}<div>${cloudOn() ? (u ? syncText() : 'اتصال تنظیم شده است') : 'اطلاعات حساب (به‌صورت رمزنگاری‌شده) روی Supabase ذخیره می‌شود تا با نام کاربری و رمز از هر دستگاه وارد شوید.'}</div></div>
+    <div class="field" style="margin-top:12px"><label>Project URL</label><input type="text" id="cloudIn" class="ltr" dir="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="https://xxxx.supabase.co" value="${esc(cloudUrl())}"></div>
+    <div class="field"><label>کلید عمومی (anon / publishable key)</label><input type="text" id="cloudKeyIn" class="ltr" dir="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="eyJ… یا sb_publishable_…" value="${esc(cloudKey())}"></div>
     <button class="btn" onclick="saveCloud()">${ic('check',19)}ذخیره و آزمایش اتصال</button>
     ${u && cloudOn() ? `<button class="btn ghost" onclick="syncNow(true)">${ic('upload',19)}همگام‌سازی همین حالا</button>` : ''}
-    <div class="muted" style="font-size:.76rem;line-height:2.1;margin-top:14px"><b style="color:var(--ink)">راه‌اندازی (یک‌بار، رایگان):</b><br>۱. در console.firebase.google.com یک پروژه بسازید.<br>۲. Build ← Realtime Database ← Create database.<br>۳. در تب Rules مسیر <span dir="ltr">accounts</span> را برای خواندن و نوشتن باز کنید.<br>۴. آدرس پایگاه‌داده را بالا وارد کنید. روی دستگاه جدید هم همین آدرس را در صفحهٔ ورود بزنید.<br>اطلاعات پیش از ارسال با رمز شما رمزنگاری می‌شوند.</div>`);
+    <div class="muted" style="font-size:.76rem;line-height:2.1;margin-top:14px"><b style="color:var(--ink)">راه‌اندازی (یک‌بار، رایگان):</b><br>۱. در supabase.com یک پروژه بسازید.<br>۲. از منوی SQL Editor فایل <span dir="ltr">supabase.sql</span> را کامل کپی و Run کنید.<br>۳. از Project Settings ← API مقدار Project URL و کلید anon (یا publishable) را بالا وارد کنید.<br>۴. روی دستگاه جدید هم همین دو مقدار را در صفحهٔ ورود بزنید.<br>اطلاعات پیش از ارسال با رمز شما رمزنگاری می‌شوند و رمز هرگز به سرور نمی‌رود.</div>`);
 }
-async function testCloud(url){
-  const r = await fetch(url.replace(/\/+$/, '') + '/accounts.json?shallow=true', {cache:'no-store'}); if (!r.ok) throw new Error(r.status); return true;
+async function testCloud(url, key){
+  const r = await rpc('qh_ping', {}, {url: url.replace(/\/+$/, ''), key}); if (!r || r.status !== 'ok') throw new Error('ping'); return true;
+}
+function cloudInputsOk(url, key, err){
+  if (!url && !key) return true;
+  if (!/^https:\/\/|^http:\/\/localhost|^http:\/\/127\./.test(url)){ err('آدرس باید با https شروع شود'); return false; }
+  if (!key){ err('کلید عمومی را هم وارد کنید'); return false; }
+  return true;
 }
 async function saveCloud(){
-  const url = $('cloudIn').value.trim();
-  if (url && !/^https:\/\/|^http:\/\/localhost|^http:\/\/127\./.test(url)) return toast('آدرس باید با https شروع شود','warn');
-  if (url){ try { await testCloud(url); } catch { return toast('اتصال به این آدرس برقرار نشد','err'); } }
-  lset('cloudUrl', url.replace(/\/+$/, '')); toast(url ? 'اتصال برقرار شد' : 'همگام‌سازی غیرفعال شد');
+  const url = $('cloudIn').value.trim(), key = $('cloudKeyIn').value.trim();
+  if (!cloudInputsOk(url, key, m => toast(m,'warn'))) return;
+  if (url){ try { await testCloud(url, key); } catch { return toast('اتصال برقرار نشد؛ آدرس، کلید و اجرای supabase.sql را بررسی کنید','err'); } }
+  lset('cloudUrl', url.replace(/\/+$/, '')); lset('cloudKey', key); toast(url ? 'اتصال برقرار شد' : 'همگام‌سازی غیرفعال شد');
   if (currentUser){ setSync('off'); if (url) syncNow(true); render(stack[stack.length-1], true); } closeSheet();
   if (gateMode === 'cloud') showGate(gateBack);
 }
@@ -1293,8 +1422,9 @@ function showGate(mode){
       <button class="g-link" onclick="gateRegister()">ایجاد حساب جدید</button>${cloudLink}
       ${allUsers.length && gateUser ? `<button class="g-link" style="margin-top:10px" onclick="showGate('known')">بازگشت</button>` : ''}`;
   } else if (mode === 'cloud'){
-    body = `${logo}<div class="g-sub" style="margin-top:22px;text-align:center;max-width:340px;line-height:2">آدرس پایگاه‌دادهٔ همگام‌سازی را وارد کنید تا حساب شما از این دستگاه هم در دسترس باشد.</div>
-      <div class="g-pw"><input class="g-in plain" type="text" id="cloudIn" dir="ltr" autocapitalize="none" placeholder="https://xxxx-default-rtdb.firebaseio.com" value="${esc(cloudUrl())}"></div>
+    body = `${logo}<div class="g-sub" style="margin-top:22px;text-align:center;max-width:340px;line-height:2">آدرس پروژهٔ Supabase و کلید عمومی آن را وارد کنید تا حساب شما از این دستگاه هم در دسترس باشد.</div>
+      <div class="g-pw"><input class="g-in plain" type="text" id="cloudIn" dir="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="https://xxxx.supabase.co" value="${esc(cloudUrl())}"></div>
+      <div class="g-pw"><input class="g-in plain" type="text" id="cloudKeyIn" dir="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="anon / publishable key" value="${esc(cloudKey())}"></div>
       <div class="g-err" id="gErr"></div>
       <button class="g-btn sm" onclick="saveCloudGate()">${ic('check',22)}ذخیره و آزمایش</button><button class="g-link" onclick="showGate(gateBack)">بازگشت</button>`;
   } else {
@@ -1309,11 +1439,11 @@ function showGate(mode){
 }
 function hideGate(){ $('gate').classList.remove('on'); }
 async function saveCloudGate(){
-  const url = $('cloudIn').value.trim();
-  if (!url){ lset('cloudUrl', ''); return showGate(gateBack); }
-  if (!/^https:\/\/|^http:\/\/localhost|^http:\/\/127\./.test(url)) return gateErr('آدرس باید با https شروع شود');
-  try { await testCloud(url); } catch { return gateErr('اتصال به این آدرس برقرار نشد'); }
-  lset('cloudUrl', url.replace(/\/+$/, '')); toast('اتصال برقرار شد'); showGate(gateBack);
+  const url = $('cloudIn').value.trim(), key = $('cloudKeyIn').value.trim();
+  if (!url && !key){ lset('cloudUrl', ''); lset('cloudKey', ''); return showGate(gateBack); }
+  if (!cloudInputsOk(url, key, gateErr)) return;
+  try { await testCloud(url, key); } catch { return gateErr('اتصال برقرار نشد؛ آدرس و کلید را بررسی کنید'); }
+  lset('cloudUrl', url.replace(/\/+$/, '')); lset('cloudKey', key); toast('اتصال برقرار شد'); showGate(gateBack);
 }
 async function gateLogin(){
   const btn = $('gBtn'); if (!btn || btn.disabled) return; audio();
@@ -1341,11 +1471,14 @@ async function authLogin(un, pw){
   let u = allUsers.find(x => x.id === un);
   if (u && u.verifier){ const d = await derive(pw, u.salt); if (d.verifier !== u.verifier) throw 'نام کاربری یا رمز اشتباه است'; lset('sk_' + u.id, d.key); return u; }
   if (!cloudOn()) throw 'این حساب روی این دستگاه نیست. برای ورود از دستگاه جدید، «تنظیم همگام‌سازی ابری» را بزنید.';
-  let rec; try { rec = await cloudGet(un); } catch { throw 'اتصال به سرور برقرار نشد'; }
-  if (!rec) throw 'نام کاربری یا رمز اشتباه است';
-  const d = await derive(pw, rec.salt); if (d.verifier !== rec.verifier) throw 'نام کاربری یا رمز اشتباه است';
+  let sl, rec; try { sl = await rpc('qh_salt', {p_user: un}); } catch { throw 'اتصال به سرور برقرار نشد'; }
+  if (!sl || sl.status !== 'ok') throw 'نام کاربری معتبر نیست';
+  const d = await derive(pw, sl.salt);
+  try { rec = await rpc('qh_login', {p_user: un, p_verifier: d.verifier}); } catch { throw 'اتصال به سرور برقرار نشد'; }
+  if (rec.status === 'locked') throw 'تلاش‌های ناموفق زیاد بود؛ ۱۵ دقیقه بعد دوباره امتحان کنید';
+  if (rec.status !== 'ok') throw 'نام کاربری یا رمز اشتباه است';
   let sn; try { sn = await decJSON(rec.blob, d.key); } catch { throw 'خواندن اطلاعات حساب ممکن نشد'; }
-  u = {id: un, username: un, salt: rec.salt, verifier: rec.verifier, ...sn.profile};
+  u = {id: un, username: un, salt: rec.salt, verifier: d.verifier, ...sn.profile};
   allUsers = allUsers.filter(x => x.id !== un); allUsers.push(u); writeJSON('users', allUsers); lset('sk_' + un, d.key);
   applySnapshot(un, sn); metaSet({updatedAt: rec.updatedAt, dirty: false}, un);
   return u;
@@ -1356,7 +1489,7 @@ function openRegisterFromGate(){ ['regFirst','regLast','regUser','regPw','regPw2
 /* ================= ورود، پیام خوش‌آمد، صدا ================= */
 const tourDone = () => currentUser && lget('tour_' + currentUser.id, '0') === '1';
 function enterApp(first){
-  audio(); hideGate(); stack = ['home']; history.pushState({}, ''); render('home');
+  audio(); hideGate(); pickHadith(); stack = ['home']; history.pushState({}, ''); render('home');
   playStartup(); showWelcome(); setTimeout(() => syncNow(), 900);
   setTimeout(() => {
     if (first || !tourDone()) startTour(afterTour);
@@ -1373,42 +1506,71 @@ function showWelcome(){
 
 /* ================= راهنمای اولیه (Tour) ================= */
 const TOUR = [
-  {sel:null, icon:'sparkles', title:'به برنامه خوش آمدید', text:'در چند قدم کوتاه با بخش‌های مهم برنامه آشنا می‌شوید. هر زمان خواستید می‌توانید «رد کردن» را بزنید.'},
-  {sel:'#p-home .tHero', icon:'wallet', title:'موجودی صندوق', text:'مجموع پس‌انداز شما اینجا نمایش داده می‌شود. با آیکن چشم می‌توانید مبلغ را مخفی کنید.'},
-  {sel:'#p-home .tQuick', icon:'bank', title:'دکمه‌های اصلی', text:'ابتدا «افتتاح حساب» را بزنید و حساب وامی بسازید؛ سپس با دکمهٔ بزرگ «ثبت وام» وام جدید ثبت کنید.'},
-  {sel:'#p-home .tStats', icon:'bank', title:'کادرهای وضعیت', text:'تعداد حساب‌های فعال و آزاد، وام‌های جاری و تسویه‌شده را اینجا می‌بینید. با لمس هر کادر به بخش مربوط می‌روید.'},
-  {sel:'#p-home .bell', icon:'bell', title:'آلارم اقساط', text:'یک روز قبل از سررسید هر قسط، زنگ تکان می‌خورد و آلارم پرداخت دریافت می‌کنید.'},
-  {sel:'#p-home .tList', icon:'file', title:'وام‌های جاری', text:'وام‌های شما اینجا فهرست می‌شوند. روی هر وام بزنید تا جدول اقساط را ببینید و قسط را پرداخت کنید.'},
-  {sel:'#navLoans', icon:'file', title:'وام‌ها', text:'فهرست کامل وام‌ها و ثبت وام جدید یا افتتاح حساب در این بخش است.'},
-  {sel:'#navSavings', icon:'coins', title:'پس‌انداز', text:'نمودار حساب‌های آزاد و فعال و ثبت پس‌انداز ماهیانه در این بخش است.'},
-  {sel:'#navHistory', icon:'history', title:'تاریخچه', text:'وام‌های تسویه‌شده برای مراجعهٔ بعدی اینجا نگهداری می‌شوند.'},
-  {sel:'#navProfile', icon:'palette', title:'تنظیمات و تم', text:'رنگ برنامه، حالت شب، صدا، پشتیبان‌گیری و نصب برنامه روی گوشی از اینجا انجام می‌شود.'}
+  {page:'home', sel:null, icon:'leaf', title:'به قرض‌الحسنه خوش آمدید', text:'این راهنما حدود دو دقیقه است و صفحه‌ها را یکی‌یکی نشانتان می‌دهد. هر زمان خواستید «رد کردن» را بزنید؛ بعداً از تنظیمات ← راهنما هم می‌توانید دوباره ببینید.'},
+  {sel:null, icon:'sparkles', title:'قرض‌الحسنه یعنی چه؟', text:'وامی بدون هیچ سود و کارمزد. اعضا ماهانه مبلغ کمی پس‌انداز می‌کنند، از همین صندوق وام می‌گیرند و فقط همان مبلغ را در اقساط برمی‌گردانند. پاداش آن با خداست.'},
+  {sel:null, icon:'bank', title:'روند کار برنامه', text:'۱) حساب وامی افتتاح کنید (تا ۱۴ حساب). ۲) با حساب‌های آزاد، وام ثبت کنید. ۳) هر ماه قسط را پرداخت کنید. ۴) پس از آخرین قسط یا «تسویه کامل»، وام به تاریخچه می‌رود.'},
+  {sel:'#p-home .tHero', icon:'wallet', title:'موجودی صندوق', text:'مجموع پس‌انداز شما (حساب‌های آزاد، فعال و تسویه‌شده) اینجاست. با آیکن چشم، مبلغ‌ها را در همهٔ صفحه‌ها مخفی یا نمایان کنید.'},
+  {sel:'#p-home .tQuick', icon:'plus', title:'دکمه‌های اصلی', text:'«افتتاح حساب» حساب وامی می‌سازد و پس‌انداز اولیه را ثبت می‌کند. «ثبت وام» وقتی فعال می‌شود که حساب آزاد داشته باشید. «پس‌انداز» شما را به صندوق می‌برد.'},
+  {sel:'#p-home .tStats', icon:'file', title:'کادرهای وضعیت', text:'حساب فعال یعنی درگیر وام، و حساب آزاد یعنی آمادهٔ وام. تعداد وام‌های جاری و تسویه‌شده را هم می‌بینید. با لمس هر کادر به بخش مربوط می‌روید.'},
+  {sel:'#p-home .hcard', icon:'sparkles', title:'حدیث روز', text:'هر بار که وارد می‌شوید یک آیه یا حدیث دربارهٔ قرض‌الحسنه نوشته می‌شود. روی کادر بزنید تا حدیث بعدی بیاید.'},
+  {sel:'#p-home .tList', icon:'calendar', title:'اقساط پیش‌رو و وام‌های جاری', text:'نزدیک‌ترین قسط هر وام با تاریخ و مبلغ اینجا فهرست می‌شود. روی هر مورد بزنید تا جدول اقساط باز شود و بتوانید قسط را پرداخت کنید.'},
+  {sel:'#p-home .bell', icon:'bell', title:'آلارم اقساط', text:'یک روز قبل از سررسید (و در روز سررسید یا معوقه) زنگ تکان می‌خورد، صدای هشدار می‌آید و اعلان می‌گیرید. تعداد روز یادآوری را در تنظیمات عوض کنید.'},
+  {sel:'#bottomNav', icon:'home', title:'نوار پایین', text:'با این پنج دکمه بین بخش‌ها جابه‌جا می‌شوید: خانه، وام‌ها، پس‌انداز، تاریخچه و تنظیمات. حالا با هم سراغ هر کدام می‌رویم.'},
+  {page:'loans', sel:'#p-loans .hd', icon:'file', title:'وام‌ها', text:'مانده کل وام‌های جاری بالا نوشته شده و پایین‌تر فهرست وام‌ها با نوار پیشرفت است. وام را باز کنید تا اقساط را ببینید.'},
+  {sel:'#p-loans .sheet', icon:'pencil', title:'پرداخت و ویرایش وام', text:'داخل هر وام می‌توانید قسط را پرداخت کنید، «تسویه کامل» بزنید، خروجی Excel یا چاپ بگیرید و با مداد، عنوان و مشخصات وام را ویرایش کنید. تا قسطی پرداخت نشده، مبلغ و تعداد اقساط هم قابل تغییر است.'},
+  {page:'savings', sel:'#p-savings .donut-card', icon:'coins', title:'پس‌انداز', text:'نمودار نسبت حساب‌های آزاد و فعال. به ازای هر حساب، ماهی ۵۰۰٬۰۰۰ ریال پس‌انداز ثبت می‌شود. برای هر وام در هر ماه فقط یک‌بار پس‌انداز ثبت می‌شود، حتی اگر چند قسط را در همان ماه بدهید؛ در «تسویه کامل» هم فقط یک‌بار.'},
+  {sel:'#p-savings .btn.soft', icon:'plus', title:'ثبت پس‌انداز حساب آزاد', text:'پس‌انداز ماهانهٔ حساب‌هایی که وام ندارند را با این دکمه ثبت کنید. ردیف‌ها را می‌توانید با مداد ویرایش یا با سطل زباله حذف کنید.'},
+  {page:'history', sel:'#p-history .hd', icon:'history', title:'تاریخچه', text:'وام‌های تسویه‌شده با تاریخ تسویه اینجا می‌مانند. هر کدام را بزنید تا جدول کامل اقساطش را ببینید.'},
+  {page:'profile', sel:'#p-profile .pf-av', icon:'user', title:'حساب و جزئیات', text:'روی عکس بزنید تا تصویر پروفایل بگذارید. در «جزئیات حساب» نام و تعداد حساب‌ها را ویرایش کنید. با لمس نام، می‌توانید بین حساب‌های کاربری جابه‌جا شوید.'},
+  {sel:'#p-profile .promo', icon:'palette', title:'تم و ظاهر', text:'هشت رنگ و سه حالت روشن، تیره و خودکار. صدا و زمان یادآوری را هم از همین بخش تنظیم کنید.'},
+  {sel:'#p-profile .row:has(.sync-dot)', icon:'cloud', title:'ورود از هر دستگاه', text:'با «همگام‌سازی ابری» اطلاعات شما رمزنگاری‌شده روی سرور ذخیره می‌شود. با همان نام کاربری و رمز از دستگاه دیگر وارد شوید. رمز فراموش‌شده قابل بازیابی نیست، پس آن را نگه دارید. پشتیبان‌گیری هم همین‌جاست.'},
+  {sel:null, icon:'download', title:'نصب روی گوشی', text:'از تنظیمات ← «نصب برنامه» آن را مثل یک اپ روی صفحهٔ اصلی بگذارید تا بدون مرورگر و حتی آفلاین باز شود.'},
+  {page:'home', sel:'#bottomNav', icon:'check', title:'آماده‌اید!', text:'برای شروع، «افتتاح حساب» را بزنید. اگر جایی گیر کردید، دکمهٔ علامت سؤال بالای هر صفحه راهنما را دوباره باز می‌کند.'}
 ];
-let tourI = 0, tourCb = null, tourSteps = [];
+let tourI = 0, tourCb = null, tourSteps = [], tourTok = 0;
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 function startTour(cb){
   if (!currentUser) return; closeSheet();
-  if ($('p-home').classList.contains('active') === false){ stack = ['home']; render('home'); }
   tourCb = typeof cb === 'function' ? cb : null; locked = true; tourI = 0;
-  tourSteps = TOUR.filter(s => !s.sel || document.querySelector(s.sel));
-  $('tour').classList.add('on'); tourShow();
+  tourSteps = TOUR; $('tour').classList.add('on'); $('tTip').style.opacity = 0; $('tHole').style.opacity = 0; tourShow();
 }
-function tourShow(){
-  const s = tourSteps[tourI], hole = $('tHole'), tip = $('tTip'), app = $('app').getBoundingClientRect();
-  const draw = () => {
-    let r = {left:app.width/2 - 1, top:app.height/2 - 1, width:2, height:2}, pad = 8;
-    if (s.sel){ const e = document.querySelector(s.sel).getBoundingClientRect(); r = {left:e.left - app.left, top:e.top - app.top, width:e.width, height:e.height}; }
-    else pad = 0;
-    hole.style.cssText = `left:${r.left - pad}px;top:${r.top - pad}px;width:${r.width + pad*2}px;height:${r.height + pad*2}px;${s.sel ? '' : 'outline:none;'}`;
-    tip.innerHTML = `<div class="tt"><i>${ic(s.icon,22)}</i>${s.title}</div><p>${s.text}</p><div class="t-foot"><div class="dots">${tourSteps.map((_, i) => `<i class="${i === tourI ? 'on' : ''}"></i>`).join('')}</div>${tourI < tourSteps.length - 1 ? '<button class="t-skip" onclick="endTour()">رد کردن</button>' : ''}<button class="t-next" onclick="tourNext()">${tourI < tourSteps.length - 1 ? 'بعدی' : 'شروع کنیم'}</button></div>`;
-    const th = tip.offsetHeight, below = r.top + r.height/2 < app.height * .52;
-    let top = s.sel ? (below ? r.top + r.height + pad + 16 : r.top - pad - th - 16) : (app.height - th)/2;
-    top = Math.max(12, Math.min(app.height - th - 12, top)); tip.style.top = top + 'px';
-  };
-  if (s.sel){ const e = document.querySelector(s.sel); if (!e.closest('.bottom')) e.scrollIntoView({block:'center'}); setTimeout(draw, 120); } else draw();
+async function tourShow(){
+  const tok = ++tourTok, s = tourSteps[tourI], hole = $('tHole'), tip = $('tTip'), app = $('app'), main = $('main');
+  tip.style.opacity = 0;
+  if (s.page && !$('p-' + s.page).classList.contains('active')){ stack = s.page === 'home' ? ['home'] : ['home', s.page]; render(s.page); await sleep(650); if (tok !== tourTok) return; }
+  app.scrollTop = 0; app.scrollLeft = 0;
+  let el = s.sel ? document.querySelector(s.sel) : null;
+  if (s.sel && !el){ if (tourI < tourSteps.length - 1){ tourI++; return tourShow(); } el = null; }
+  if (el && !el.closest('.bottom')){
+    const mr = main.getBoundingClientRect(), er = el.getBoundingClientRect(), h = Math.min(er.height, mr.height * .42);
+    const want = main.scrollTop + (er.top - mr.top) - Math.max(8, (mr.height - h) / 2 - 40);
+    main.scrollTo({top: Math.max(0, want), behavior: 'smooth'}); await sleep(520); if (tok !== tourTok) return;
+    app.scrollTop = 0;
+  } else await sleep(120);
+  const A = app.getBoundingClientRect(); let r, pad = 8;
+  if (el){
+    const e = el.getBoundingClientRect(), mr = main.getBoundingClientRect(), top = Math.max(e.top, el.closest('.bottom') ? e.top : mr.top + 4);
+    let hgt = Math.min(e.bottom, el.closest('.bottom') ? e.bottom : mr.bottom - 4) - top; hgt = Math.min(hgt, A.height * .42);
+    r = {left: e.left - A.left, top: top - A.top, width: e.width, height: Math.max(24, hgt)};
+  } else { r = {left: A.width / 2, top: A.height / 2, width: 0, height: 0}; pad = 0; }
+  hole.style.opacity = el ? 1 : 0;
+  hole.style.cssText = `left:${r.left - pad}px;top:${r.top - pad}px;width:${r.width + pad*2}px;height:${r.height + pad*2}px;opacity:${el ? 1 : 0};${el ? '' : 'outline:none;'}`;
+  const last = tourI === tourSteps.length - 1;
+  tip.innerHTML = `<div class="tt"><i>${ic(s.icon,22)}</i>${s.title}<span class="t-cnt">${fa(tourI + 1)}/${fa(tourSteps.length)}</span></div><p>${s.text}</p><div class="t-foot"><div class="dots"><i style="width:${(tourI + 1) / tourSteps.length * 100}%;background:var(--a2);border-radius:9px"></i></div>${!last ? '<button class="t-skip" onclick="endTour()">رد کردن</button>' : ''}${tourI > 0 ? '<button class="t-skip" onclick="tourPrev()">قبلی</button>' : ''}<button class="t-next" onclick="tourNext()">${!last ? 'بعدی' : 'شروع کنیم'}</button></div>`;
+  const th = tip.offsetHeight, gap = 18, spaceAbove = r.top - pad, spaceBelow = A.height - (r.top + r.height + pad);
+  let top, dir = '';
+  if (!el) top = (A.height - th) / 2;
+  else if (spaceBelow >= th + gap + 8 || spaceBelow >= spaceAbove){ top = r.top + r.height + pad + gap; dir = 'up'; }
+  else { top = r.top - pad - th - gap; dir = 'down'; }
+  top = Math.max(10, Math.min(A.height - th - 10, top));
+  const cx = r.left + r.width / 2 - 16; tip.className = dir; tip.style.setProperty('--ax', Math.max(26, Math.min(A.width - 32 - 26, cx)) + 'px');
+  tip.style.top = top + 'px'; tip.style.opacity = 1;
 }
 function tourNext(){ if (tourI < tourSteps.length - 1){ tourI++; tourShow(); } else endTour(); }
+function tourPrev(){ if (tourI > 0){ tourI--; tourShow(); } }
 function endTour(){
-  $('tour').classList.remove('on'); if (currentUser) lset('tour_' + currentUser.id, '1'); $('main').scrollTop = 0;
+  tourTok++; $('tour').classList.remove('on'); if (currentUser) lset('tour_' + currentUser.id, '1');
+  stack = ['home']; render('home', true); $('main').scrollTop = 0; $('app').scrollTop = 0;
   const cb = tourCb; tourCb = null; if (cb) cb(); else { locked = false; }
 }
 
