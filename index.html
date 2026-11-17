@@ -33,6 +33,10 @@
 [data-accent=teal]{--a1:#0a6272;--a2:#17b0c4;--a3:#6dd6e3}
 [data-accent=gold]{--a1:#7c5a06;--a2:#c99a1d;--a3:#e8c767}
 [data-accent=graphite]{--a1:#161d2b;--a2:#3b4b66;--a3:#7f90ad}
+[data-accent=ruby]{--a1:#7a0f1c;--a2:#d63444;--a3:#f08a93}
+[data-accent=indigo]{--a1:#1b2470;--a2:#4a56d6;--a3:#8f98ef}
+[data-accent=sunset]{--a1:#a8185c;--a2:#f2663f;--a3:#ffb07a}
+[data-accent=mocha]{--a1:#4a2c17;--a2:#9a6340;--a3:#d1a07c}
 [data-theme=dark]{
   --bg:#0a0e16;--sheet:#111925;--card:#162131;--ink:#e8eef7;--muted:#8b99af;--line:#223046;--rowbg:#1a2738;
   --atxt:var(--a3);--gold-soft:#2b2712;--danger-soft:#3a1f1c;--ok-soft:#14352a;--shadow:0 8px 24px rgba(0,0,0,.35);
@@ -135,6 +139,12 @@ main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;position:relative;b
 .empty .eico{width:76px;height:76px;border-radius:50%;background:var(--asoft);color:var(--atxt);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;animation:float 3.5s ease-in-out infinite}
 
 /* ===== Promo banner ===== */
+.hpromo{cursor:pointer;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;min-height:112px;padding:14px 16px}
+.hpromo .bgart{position:absolute;left:-18px;bottom:-26px;opacity:.15;color:#fff;animation:hspin 40s linear infinite}
+.hp-top{display:flex;align-items:center;gap:10px;position:relative;z-index:1}.hp-em{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex:none}
+.hp-who{font-weight:800;font-size:.88rem}.hp-who small{display:block;font-weight:500;opacity:.8;font-size:.68rem;margin-top:1px}
+.hp-fa{position:relative;z-index:1;font-size:.8rem;line-height:1.95;min-height:3.9em;font-weight:500}
+.hp-fa.typing::after{content:"▍";animation:hblink .8s steps(1) infinite;margin-right:2px}
 .hcard{margin:20px 0 4px;padding:18px 16px 14px;border-radius:26px;background:linear-gradient(150deg,var(--asoft),color-mix(in srgb,var(--asoft) 40%,var(--card)));position:relative;overflow:hidden;border:1px solid color-mix(in srgb,var(--a2) 14%,transparent)}
 .hcard .hc-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .hmed{width:58px;height:58px;flex:none;position:relative;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(145deg,var(--a2),var(--a1));color:#fff;box-shadow:0 8px 20px color-mix(in srgb,var(--a2) 35%,transparent)}
@@ -244,6 +254,22 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .donut .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .donut .mid b{font-size:1.5rem;font-weight:800;color:var(--atxt)}.donut .mid small{font-size:.68rem;color:var(--muted)}
 .legend{flex:1}.legend div{display:flex;align-items:center;gap:8px;font-size:.82rem;padding:6px 0}.legend i{width:12px;height:12px;border-radius:5px;flex:none}
+.imtabs{display:flex;gap:6px;background:var(--rowbg);border-radius:16px;padding:4px;margin:12px 0}
+.imtabs button{flex:1;border:none;background:none;border-radius:12px;padding:9px 2px;font-weight:700;font-size:.74rem;color:var(--muted);cursor:pointer;font-family:inherit;transition:.3s}
+.imtabs button.on{background:var(--sheet);color:var(--atxt);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.two .btn{margin-top:0}
+.imta{width:100%;border:1.5px solid var(--line);background:var(--rowbg);color:var(--ink);border-radius:16px;padding:12px;font-family:inherit;font-size:.84rem;margin-bottom:10px;direction:rtl;resize:vertical}
+#exitDlg{position:fixed;inset:0;z-index:520;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(8,14,30,.6);backdrop-filter:blur(8px)}
+#exitDlg.on{display:flex;animation:fadeIn .3s}
+.ex-card,.ex-bye{width:100%;max-width:340px;background:var(--sheet);border-radius:34px;padding:0 22px 22px;text-align:center;overflow:hidden;animation:pop .5s var(--ease)}
+.ex-art{height:120px;margin:0 -22px 14px;background:linear-gradient(150deg,var(--a1),var(--a2));display:flex;align-items:center;justify-content:center;position:relative}
+.ex-art::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.3),transparent 65%);animation:float 4s ease-in-out infinite}
+.ex-em{position:relative;width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.2);border:2px dashed rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;color:#fff;animation:hspin 24s linear infinite}
+.ex-em svg{animation:hspin 24s linear infinite reverse}
+.ex-t1{font-size:1.2rem;font-weight:800}.ex-t2{color:var(--muted);font-size:.82rem;line-height:2;margin:8px 0}.ex-hd{color:var(--atxt);font-weight:700;font-size:.8rem;margin-bottom:6px}
+.ex-bye{display:none;padding-top:30px}#exitDlg.bye .ex-card{display:none}#exitDlg.bye .ex-bye{display:block}
+.ex-bye .ex-em.big{margin:0 auto 14px;background:linear-gradient(145deg,var(--a2),var(--a1));border-color:var(--a3)}.ex-bye b{display:block;font-size:1.2rem}.ex-bye small{display:block;color:var(--muted);margin:6px 0 14px}
+@keyframes pop{from{transform:scale(.85) translateY(20px);opacity:0}}
 .mini-ed{border:none;background:var(--asoft);color:var(--atxt);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
 .mini-acts{display:flex;gap:8px;align-items:center}
 .mini-del{border:none;background:var(--danger-soft);color:var(--danger);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
@@ -265,6 +291,26 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .bsheet.on{transform:none;visibility:visible;transition-delay:0s;box-shadow:0 -16px 40px rgba(0,0,0,.3)}
 .grab{width:46px;height:5px;border-radius:9px;background:var(--line);margin:0 auto 14px}
 .bs-title{font-size:1.1rem;font-weight:800;margin:0 2px 8px}
+.tprev{border-radius:24px;padding:16px;background:linear-gradient(150deg,var(--a1),var(--a2));color:#fff;position:relative;overflow:hidden;box-shadow:0 14px 30px color-mix(in srgb,var(--a2) 40%,transparent);transition:background .5s}
+.tprev::before{content:"";position:absolute;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.28),transparent 70%);top:-60px;left:-40px;animation:float 5s ease-in-out infinite}
+.tp-top{position:relative;display:flex;flex-direction:column;gap:4px}.tp-top small{opacity:.8;font-size:.7rem}.tp-top b{font-size:1.35rem}.tp-top span{align-self:flex-start;background:rgba(255,255,255,.2);padding:3px 11px;border-radius:12px;font-size:.72rem;font-weight:700;margin-top:4px}
+.tp-box{display:flex;gap:10px;margin-top:14px}.tp-box i{flex:1;height:44px;border-radius:14px;background:rgba(255,255,255,.18)}
+.tp-nav{display:flex;justify-content:space-around;margin-top:12px;background:rgba(255,255,255,.16);border-radius:16px;padding:9px}.tp-nav u{width:22px;height:6px;border-radius:6px;background:rgba(255,255,255,.4)}.tp-nav u.on{width:34px;background:#fff}
+.tsec{font-size:.82rem;font-weight:700;color:var(--muted);margin:16px 2px 8px}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px}
+.tcard{position:relative;border:2px solid transparent;background:var(--rowbg);border-radius:18px;padding:8px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:var(--ink);transition:transform .35s var(--ease),border-color .3s,background .3s}
+.tcard:active{transform:scale(.94)}.tcard.on{border-color:var(--a2);background:var(--asoft);transform:translateY(-3px)}
+.tn{font-size:.7rem;font-weight:700}.tk{position:absolute;top:-6px;right:-5px;width:22px;height:22px;border-radius:50%;background:var(--a2);color:#fff;display:flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .35s var(--ease)}.tcard.on .tk{transform:scale(1)}
+.mp{width:52px;height:78px;border-radius:12px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 6px 14px rgba(0,0,0,.18);border:1px solid rgba(0,0,0,.06)}
+.mp-h{height:36%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px}.mp-h b{width:22px;height:5px;border-radius:5px;opacity:.9}
+.mp-b{flex:1;display:flex;gap:4px;padding:5px}.mp-b i{flex:1;border-radius:5px}.mp-n{display:flex;justify-content:space-around;padding:4px 5px 5px}.mp-n u{width:9px;height:4px;border-radius:3px}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mcard{border:2px solid transparent;background:var(--rowbg);border-radius:18px;padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;color:var(--ink);transition:.3s}
+.mcard.on{border-color:var(--a2);background:var(--asoft);color:var(--atxt)}
+.mc-art{width:100%;height:56px;border-radius:12px;display:flex;gap:6px;padding:10px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.07)}.mc-art i{flex:1;border-radius:7px}
+.mc-art.light{background:#fff}.mc-art.light i{background:#e6ecf5}.mc-art.dark{background:#121722}.mc-art.dark i{background:#222c40}
+.mc-art.auto{background:linear-gradient(100deg,#fff 50%,#121722 50%)}.mc-art.auto i:first-child{background:#e6ecf5}.mc-art.auto i:last-child{background:#222c40}
+.mc-n{display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700}
 .themes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 8px;margin:10px 0 6px}
 .th{border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:.72rem;font-weight:600;color:var(--ink);cursor:pointer}
 .th i{position:relative;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 16px rgba(0,0,0,.2);transition:transform .35s var(--ease);border:3px solid transparent}
@@ -501,6 +547,11 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
   <div class="scrim2" id="sheetScrim" onclick="closeSheet()"></div>
   <div class="bsheet" id="bsheet"><div class="grab"></div><div class="bs-title" id="bsTitle"></div><div id="bsBody"></div></div>
 
+  <div id="exitDlg"><div class="ex-card"><div class="ex-art"><div class="ex-em"></div></div>
+    <div class="ex-t1">خروج از برنامه؟</div><div class="ex-t2">اطلاعات شما ذخیره و همگام‌سازی شده است. هر زمان برگردید، همین‌جا منتظرتان هستیم.</div>
+    <div class="ex-hd">«قرض‌الحسنه؛ معامله با خداست»</div>
+    <button class="btn" onclick="hideExit()">ماندن در برنامه</button><button class="btn ghost" onclick="doExit()">خروج</button></div>
+    <div class="ex-bye"><div class="ex-em big"></div><b>خدا نگهدار</b><small>اکنون می‌توانید برنامه را ببندید.</small><button class="btn" onclick="exiting=false;hideExit()">بازگشت به برنامه</button></div></div>
   <div class="modal" id="modal"><div class="m-box" id="mBox">
     <div class="m-badge" id="mIcon"></div><div class="m-title" id="mTitle"></div><div class="m-text" id="mText"></div>
     <div class="m-btns"><button class="btn ghost" id="mNo" onclick="closeModal(false)">انصراف</button><button class="btn" id="mYes" onclick="closeModal(true)">تأیید</button></div>
@@ -526,7 +577,6 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
   </div>
 
   <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="handlePhoto(event)">
-  <input type="file" id="restoreInput" accept="application/json,.json" style="display:none" onchange="restoreBackup(event)">
 </div>
 
 <script>
@@ -685,8 +735,12 @@ function stats(){
 
 /* ================= تم ================= */
 const THEMES = [
-  {id:'blue', name:'آبی', c:'#2f6fe0'}, {id:'emerald', name:'زمردی', c:'#14935f'}, {id:'purple', name:'بنفش', c:'#7a4fe0'}, {id:'orange', name:'نارنجی', c:'#ee7a22'},
-  {id:'rose', name:'صورتی', c:'#e8457f'}, {id:'teal', name:'فیروزه‌ای', c:'#17b0c4'}, {id:'gold', name:'طلایی', c:'#c99a1d'}, {id:'graphite', name:'گرافیت', c:'#3b4b66'}
+  {id:'blue', name:'آبی', a1:'#1648b0', a2:'#2f6fe0', a3:'#7fa6f0'}, {id:'emerald', name:'زمردی', a1:'#0a5a3a', a2:'#14935f', a3:'#4fc79a'},
+  {id:'purple', name:'بنفش', a1:'#43249a', a2:'#7a4fe0', a3:'#a98af0'}, {id:'orange', name:'نارنجی', a1:'#b8420c', a2:'#ee7a22', a3:'#f7a66a'},
+  {id:'rose', name:'صورتی', a1:'#a3154a', a2:'#e8457f', a3:'#f48bae'}, {id:'teal', name:'فیروزه‌ای', a1:'#0a6272', a2:'#17b0c4', a3:'#6dd6e3'},
+  {id:'gold', name:'طلایی', a1:'#7c5a06', a2:'#c99a1d', a3:'#e8c767'}, {id:'graphite', name:'گرافیت', a1:'#161d2b', a2:'#3b4b66', a3:'#7f90ad'},
+  {id:'ruby', name:'یاقوتی', a1:'#7a0f1c', a2:'#d63444', a3:'#f08a93'}, {id:'indigo', name:'نیلی', a1:'#1b2470', a2:'#4a56d6', a3:'#8f98ef'},
+  {id:'sunset', name:'غروب', a1:'#a8185c', a2:'#f2663f', a3:'#ffb07a'}, {id:'mocha', name:'موکا', a1:'#4a2c17', a2:'#9a6340', a3:'#d1a07c'}
 ];
 const accent = () => lget('accent', 'blue');
 const mode = () => lget('mode', 'auto');
@@ -698,13 +752,23 @@ function applyLook(){
 }
 function setAccent(id){ lset('accent', id); applyLook(); openThemeSheet(true); }
 function setMode(m){ lset('mode', m); applyLook(); openThemeSheet(true); }
+function miniPhone(a1, a2, a3, dark){
+  const bg = dark ? '#121722' : '#ffffff', box = dark ? '#1d2535' : '#eef2f8';
+  return `<span class="mp" style="background:${bg}"><span class="mp-h" style="background:linear-gradient(160deg,${a1},${a2})"><b style="background:${a3}"></b></span><span class="mp-b"><i style="background:${box}"></i><i style="background:${box}"></i></span><span class="mp-n"><u style="background:${a2}"></u><u style="background:${box}"></u><u style="background:${box}"></u></span></span>`;
+}
 function openThemeSheet(keep){
-  const a = accent(), m = mode();
+  const a = accent(), m = mode(), cur = THEMES.find(t => t.id === a) || THEMES[0];
+  const mm = [['light', 'روشن', 'sun'], ['auto', 'خودکار', 'half'], ['dark', 'تیره', 'moon']];
+  const modeIc = k => k === 'sun' ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg>'
+    : k === 'moon' ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>'
+    : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>';
   openSheet('نمایش و تم برنامه', `
-    <div class="muted" style="font-size:.8rem;margin:0 2px">رنگ برنامه را انتخاب کنید</div>
-    <div class="themes">${THEMES.map(t => `<button class="th ${t.id === a ? 'on' : ''}" onclick="setAccent('${t.id}')"><i style="background:linear-gradient(135deg,${t.c},${t.c}cc)">${ic('check',24)}</i>${t.name}</button>`).join('')}</div>
-    <div class="muted" style="font-size:.8rem;margin:14px 2px 0">حالت نمایش</div>
-    <div class="seg3"><button class="${m==='light'?'on':''}" onclick="setMode('light')">روز</button><button class="${m==='auto'?'on':''}" onclick="setMode('auto')">خودکار</button><button class="${m==='dark'?'on':''}" onclick="setMode('dark')">شب</button></div>`, keep);
+    <div class="tprev"><div class="tp-top"><small>پیش‌نمایش زنده</small><b>۲٬۲۳۴٬۰۰۰ ریال</b><span>تم ${cur.name}</span></div>
+      <div class="tp-box"><i></i><i></i></div><div class="tp-nav"><u class="on"></u><u></u><u></u><u></u></div></div>
+    <div class="tsec">رنگ برنامه</div>
+    <div class="tgrid">${THEMES.map(t => `<button class="tcard ${t.id === a ? 'on' : ''}" onclick="setAccent('${t.id}')">${miniPhone(t.a1, t.a2, t.a3, document.documentElement.dataset.theme === 'dark')}<span class="tn">${t.name}</span><span class="tk">${ic('check',14)}</span></button>`).join('')}</div>
+    <div class="tsec">حالت نمایش</div>
+    <div class="mgrid">${mm.map(([k, n, i]) => `<button class="mcard ${m === k ? 'on' : ''}" onclick="setMode('${k}')"><span class="mc-art ${k}"><i></i><i></i></span><span class="mc-n">${modeIc(i)}${n}</span></button>`).join('')}</div>`, keep);
 }
 
 /* ================= رابط: اعلان‌ها و مودال ================= */
@@ -828,10 +892,20 @@ function needUser(){ if (!currentUser){ toast('ابتدا وارد شوید','wa
 function go(id){ if (stack[stack.length-1] !== id){ stack.push(id); history.pushState({}, ''); } render(id); }
 function goRoot(id){ if (!needUser()) return; stack = id === 'home' ? ['home'] : ['home', id]; history.pushState({}, ''); render(id); }
 function back(){
+  if ($('modal').classList.contains('active')){ closeModal(false); return; }
+  if ($('exitDlg').classList.contains('on')){ hideExit(); return; }
   if ($('bsheet').classList.contains('on')){ closeSheet(); return; }
-  if (stack.length > 1){ stack.pop(); render(stack[stack.length-1]); } else if (!currentUser) showGate();
+  if (stack.length > 1){ stack.pop(); render(stack[stack.length-1]); } else if (!currentUser) showGate(); else showExit();
 }
-window.addEventListener('popstate', () => { if (!locked) back(); });
+let exiting = false;
+function showExit(){ document.querySelectorAll('#exitDlg .ex-em').forEach((e, i) => e.innerHTML = emblem(i ? 'prophet' : 'quran', i ? 34 : 34)); $('exitDlg').classList.add('on'); }
+function hideExit(){ $('exitDlg').classList.remove('on', 'bye'); }
+async function doExit(){
+  exiting = true; try { await flushSync(); } catch {} try { window.close(); } catch {}
+  try { history.go(-history.length); } catch {}
+  setTimeout(() => { $('exitDlg').classList.add('bye'); }, 500);
+}
+window.addEventListener('popstate', () => { if (exiting) return; if (!locked){ back(); if (currentUser) history.pushState({}, ''); } });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
 document.addEventListener('visibilitychange', () => { if (!document.hidden){ checkAlarms(); if (currentUser && !locked) syncNow(); } });
 function openHelp(){
@@ -855,19 +929,19 @@ const HADITHS = [
   {k:'prophet', who:'پیامبر اکرم (ص)', src:'صحیح مسلم، ح ۳۰۰۶', ar:'مَنْ أَنْظَرَ مُعْسِرًا أَوْ وَضَعَ عَنْهُ أَظَلَّهُ اللَّهُ فِي ظِلِّهِ', fa:'هر که به بدهکار تنگدست مهلت دهد یا از بدهی‌اش بکاهد، خدا او را در سایهٔ (رحمت) خود قرار می‌دهد.'},
   {k:'ahl', who:'امام صادق (ع)', src:'کافی، ج ۴ · باب قرض', ar:'مَكْتُوبٌ عَلَى بَابِ الْجَنَّةِ: الصَّدَقَةُ بِعَشَرَةٍ وَالْقَرْضُ بِثَمَانِيَةَ عَشَرَ', fa:'بر در بهشت نوشته شده است: صدقه ده برابر و قرض هجده برابر پاداش دارد.'}
 ];
-function emblem(k){
+function emblem(k, sz = 32){
   const st = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
-  if (k === 'quran') return `<svg width="32" height="32" viewBox="0 0 32 32" ${st}><path d="M16 9c-3-2-7-2.5-11-2v16c4-.5 8 0 11 2 3-2 7-2.5 11-2V7c-4-.5-8 0-11 2z"/><path d="M16 9v16"/><path d="M16 2v3M10 3.5l1 2M22 3.5l-1 2"/></svg>`;
-  if (k === 'prophet') return `<svg width="32" height="32" viewBox="0 0 32 32" ${st}><path d="M21 5a11 11 0 1 0 0 22 8.5 8.5 0 1 1 0-22z"/><path d="m24.5 11 1 2.3 2.5.3-1.9 1.7.5 2.5-2.1-1.3-2.1 1.3.5-2.5-1.9-1.7 2.5-.3z"/></svg>`;
-  return `<svg width="32" height="32" viewBox="0 0 32 32" ${st}><path d="M16 3v20M11 23h10M16 23v6"/><path d="M16 4c-6 2-8 9-5 15M16 4c6 2 8 9 5 15"/><path d="M16 9c-3 1-4 5-2.5 8M16 9c3 1 4 5 2.5 8"/></svg>`;
+  if (k === 'quran') return `<svg width="${sz}" height="${sz}" viewBox="0 0 32 32" ${st}><path d="M16 9c-3-2-7-2.5-11-2v16c4-.5 8 0 11 2 3-2 7-2.5 11-2V7c-4-.5-8 0-11 2z"/><path d="M16 9v16"/><path d="M16 2v3M10 3.5l1 2M22 3.5l-1 2"/></svg>`;
+  if (k === 'prophet') return `<svg width="${sz}" height="${sz}" viewBox="0 0 32 32" ${st}><path d="M21 5a11 11 0 1 0 0 22 8.5 8.5 0 1 1 0-22z"/><path d="m24.5 11 1 2.3 2.5.3-1.9 1.7.5 2.5-2.1-1.3-2.1 1.3.5-2.5-1.9-1.7 2.5-.3z"/></svg>`;
+  return `<svg width="${sz}" height="${sz}" viewBox="0 0 32 32" ${st}><path d="M16 3v20M11 23h10M16 23v6"/><path d="M16 4c-6 2-8 9-5 15M16 4c6 2 8 9 5 15"/><path d="M16 9c-3 1-4 5-2.5 8M16 9c3 1 4 5 2.5 8"/></svg>`;
 }
 let hLast = +lget('hLast', -1), hCur = null, hIdx = 0, hDone = false, hTimer = null;
 function pickHadith(){ let i; do { i = Math.floor(Math.random() * HADITHS.length); } while (i === hLast && HADITHS.length > 1); hLast = i; lset('hLast', i); hCur = HADITHS[i]; hIdx = 0; hDone = false; }
 function hadithCard(){
   if (!hCur) pickHadith(); const h = hCur;
-  return `<div class="hcard rise" onclick="nextHadith()"><div class="hc-top"><div class="hmed">${emblem(h.k)}</div><div class="hc-who">${h.who}<small>${h.src}</small></div></div>
-    <div class="hc-ar">${h.ar}</div><div class="hc-fa" id="hcFa"></div>
-    <div class="hc-ft"><span>${ic('sparkles',14)} قرض‌الحسنه؛ معامله با خداست</span><button class="hc-next">${ic('refresh',14)}حدیث بعدی</button></div></div>`;
+  return `<div class="promo hpromo" id="hpromo" onclick="nextHadith()"><div class="bgart">${emblem(h.k, 120)}</div>
+    <div class="hp-top"><div class="hp-em">${emblem(h.k, 22)}</div><div class="hp-who">${h.who}<small>${h.src}</small></div></div>
+    <div class="hp-fa" id="hcFa"></div></div>`;
 }
 function typeHadith(){
   clearInterval(hTimer); const el = $('hcFa'); if (!el || !hCur) return; const t = hCur.fa;
@@ -875,7 +949,7 @@ function typeHadith(){
   el.classList.add('typing'); el.textContent = t.slice(0, hIdx);
   hTimer = setInterval(() => { const e = $('hcFa'); if (!e){ clearInterval(hTimer); return; } hIdx++; e.textContent = t.slice(0, hIdx); if (hIdx >= t.length){ clearInterval(hTimer); hDone = true; e.classList.remove('typing'); } }, 38);
 }
-function nextHadith(){ pickHadith(); const c = document.querySelector('.hcard'); if (c){ const tmp = document.createElement('div'); tmp.innerHTML = hadithCard(); c.replaceWith(tmp.firstElementChild); document.querySelector('.hcard').classList.remove('rise'); typeHadith(); } }
+function nextHadith(){ pickHadith(); const c = $('hpromo'); if (c){ c.outerHTML = hadithCard(); typeHadith(); } }
 function renderHome(){
   const s = stats(), canOpen = (currentUser.loanAccounts || 0) < MAX_ACCOUNTS, alerts = getAlerts(), hid = eyeHidden();
   const upcoming = [];
@@ -901,14 +975,13 @@ function renderHome(){
         <button class="stat o rise" onclick="goRoot('loans')"><span class="si">${ic('file',22)}</span><b data-n="${s.loans.length}">${fa(s.loans.length)}</b><small>وام جاری</small>${ic('file',78,'bgi')}</button>
         <button class="stat b rise" onclick="goRoot('history')"><span class="si">${ic('flag',22)}</span><b data-n="${getHist().length}">${fa(getHist().length)}</b><small>وام تسویه‌شده</small>${ic('flag',78,'bgi')}</button>
       </div>
-      ${hadithCard()}
       <div class="tList">
         <div class="sec rise">اقساط پیش‌رو</div>
         ${upcoming.length ? upcoming.slice(0, 5).map(installRow).join('') : `<div class="empty rise"><div class="eico">${ic('inbox',34)}</div>${(currentUser.loanAccounts||0) ? 'قسط فعالی وجود ندارد' : 'برای شروع، یک حساب وامی افتتاح کنید'}</div>`}
         ${s.loans.length ? `<div class="sec rise">وام‌های جاری<a onclick="goRoot('loans')">همه</a></div>${s.loans.slice(0, 3).map(loanRow).join('')}` : ''}
       </div>
     </div>`;
-  countUp($('heroAmount'), s.total, hid); countInts(); typeHadith();
+  countUp($('heroAmount'), s.total, hid); countInts();
 }
 function countInts(){
   document.querySelectorAll('.page.active .stat b[data-n]').forEach(b => { const to = +b.dataset.n; if (!to) return; const t0 = performance.now(); const f = t => { const k = Math.min(1, (t - t0 - 250) / 700); b.textContent = fa(Math.round(to * Math.max(0, 1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(f); }; requestAnimationFrame(f); });
@@ -1025,6 +1098,147 @@ function saveEditLoan(){
   persistLoan(l); currentLoan = l; closeSheet(); render('detail', true); toast('وام ویرایش شد');
 }
 
+/* ================= ورود اطلاعات قبلی (دفتر / Excel) ================= */
+function j2g(jy, jm, jd){
+  jy += 1595; let days = -355668 + (365 * jy) + Math.floor(jy / 33) * 8 + Math.floor(((jy % 33) + 3) / 4) + jd + ((jm < 7) ? (jm - 1) * 31 : ((jm - 7) * 30) + 186);
+  let gy = 400 * Math.floor(days / 146097); days %= 146097;
+  if (days > 36524){ days--; gy += 100 * Math.floor(days / 36524); days %= 36524; if (days >= 365) days++; }
+  gy += 4 * Math.floor(days / 1461); days %= 1461;
+  if (days > 365){ gy += Math.floor((days - 1) / 365); days = (days - 1) % 365; }
+  let gd = days + 1; const sal = [0, 31, ((gy % 4 === 0 && gy % 100 !== 0) || gy % 400 === 0) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; let gm;
+  for (gm = 0; gm < 13 && gd > sal[gm]; gm++) gd -= sal[gm];
+  return new Date(gy, gm - 1, gd, 12, 0, 0);
+}
+function parseNum(t){ const v = normDigits(String(t == null ? "" : t)).trim().replace(/[,٬،\s]/g, ''); return v !== '' && /^\d+$/.test(v) ? +v : NaN; }
+function parseJDate(t){
+  const p = normDigits(String(t == null ? "" : t)).trim().split(/[\/\-.]/).map(x => parseInt(x, 10)); if (p.length !== 3 || p.some(isNaN)) return null;
+  let [y, m, d] = p; if (y < 100) y += 1400; if (y < 1300 || y > 1500 || m < 1 || m > 12 || d < 1 || d > (m <= 6 ? 31 : 30)) return null;
+  const dt = j2g(y, m, d), q = jparts(dt); return (q.y === y && q.m === m && q.d === d) ? dt : null;
+}
+const mkOf = d => { const p = jparts(d); return p.y + '-' + p.m; };
+const IMP_COLS = {
+  loan: ['عنوان وام', 'نام وام‌گیرنده', 'تعداد حساب', 'مبلغ کل وام (ریال)', 'تعداد اقساط', 'اقساط پرداخت‌شده', 'تاریخ شروع (۱۴۰۵/۰۸/۲۳)'],
+  settled: ['عنوان وام', 'نام وام‌گیرنده', 'تعداد حساب', 'مبلغ کل وام (ریال)', 'تعداد اقساط', 'پس‌انداز ثبت‌شده (ریال)', 'تاریخ تسویه (۱۴۰۵/۰۸/۲۳)'],
+  free: ['مبلغ پس‌انداز (ریال)', 'تاریخ (۱۴۰۵/۰۸/۲۳)', 'توضیح']
+};
+let impTab = 'loan', impPaste = 'loan';
+function openImport(tab, keep){
+  if (!needUser()) return; if (tab) impTab = tab; const s = stats(), t = impTab;
+  const tabs = [['loan', 'وام جاری'], ['settled', 'وام تسویه‌شده'], ['free', 'پس‌انداز آزاد'], ['paste', 'از Excel']];
+  const fld = (id, label, ph = '', val = '', ty = 'text', ex = '') => `<div class="field"><label>${label}</label><input type="${ty}" id="${id}" placeholder="${ph}" value="${esc(val)}" ${ex === 'num' ? 'inputmode="numeric"' : ''} autocomplete="off"></div>`;
+  const name = currentUser.firstName + ' ' + currentUser.lastName;
+  let form = '';
+  if (t === 'loan') form = `${fld('imTitle', 'عنوان وام', 'مثلاً وام خرید', 'وام قبلی')}${fld('imBor', 'نام وام‌گیرنده', '', name)}
+    <div class="two">${fld('imAcc', 'تعداد حساب', '', '1', 'number')}${fld('imN', 'تعداد اقساط', '', '10', 'number')}</div>
+    ${fld('imTotal', 'مبلغ کل وام (ریال)', '200000000', '', 'text', 'num')}
+    <div class="two">${fld('imPaid', 'اقساط پرداخت‌شده تاکنون', '', '0', 'number')}${fld('imDate', 'تاریخ شروع وام', '۱۴۰۵/۰۸/۲۳')}</div>
+    <button class="btn" onclick="importForm('loan')">${ic('check',19)}افزودن وام</button>`;
+  else if (t === 'settled') form = `${fld('imTitle', 'عنوان وام', '', 'وام تسویه‌شده')}${fld('imBor', 'نام وام‌گیرنده', '', name)}
+    <div class="two">${fld('imAcc', 'تعداد حساب', '', '1', 'number')}${fld('imN', 'تعداد اقساط', '', '10', 'number')}</div>
+    ${fld('imTotal', 'مبلغ کل وام (ریال)', '200000000', '', 'text', 'num')}
+    <div class="two">${fld('imSav', 'پس‌انداز ثبت‌شده (ریال)', '5000000', '', 'text', 'num')}${fld('imDate', 'تاریخ تسویه', '۱۴۰۵/۰۸/۲۳')}</div>
+    <button class="btn" onclick="importForm('settled')">${ic('check',19)}افزودن به تاریخچه</button>`;
+  else if (t === 'free') form = `${fld('imAmt', 'مبلغ پس‌انداز (ریال)', '5000000', '', 'text', 'num')}${fld('imDate', 'تاریخ', '۱۴۰۵/۰۸/۲۳')}${fld('imNote', 'توضیح', 'اختیاری', 'پس‌انداز قبلی')}
+    <button class="btn" onclick="importForm('free')">${ic('check',19)}افزودن پس‌انداز</button>`;
+  else form = `<div class="seg3" style="margin:0 0 10px">${[['loan', 'وام جاری'], ['settled', 'تسویه‌شده'], ['free', 'پس‌انداز']].map(([k, n]) => `<button class="${impPaste === k ? 'on' : ''}" onclick="impPaste='${k}';openImport('paste',true)">${n}</button>`).join('')}</div>
+    <div class="muted" style="font-size:.76rem;line-height:2;margin:0 2px 8px">ستون‌ها را در Excel به این ترتیب بچینید، ردیف‌ها را کپی و اینجا بچسبانید (یا فایل CSV بدهید):<br><b style="color:var(--ink)">${IMP_COLS[impPaste].join(' ┃ ')}</b></div>
+    <textarea id="imText" class="imta" rows="6" placeholder="هر خط یک ردیف؛ ستون‌ها با Tab یا کاما جدا شوند"></textarea>
+    <div class="two"><button class="btn ghost" onclick="impTemplate()">${ic('download',19)}نمونه CSV</button><button class="btn ghost" onclick="$('impFile').click()">${ic('upload',19)}انتخاب فایل</button></div>
+    <button class="btn" onclick="importPaste()">${ic('check',19)}بررسی و ثبت</button>
+    <input type="file" id="impFile" accept=".csv,.txt,text/csv,text/plain" style="display:none" onchange="impFileLoad(event)">`;
+  openSheet('ورود اطلاعات قبلی', `<div class="cloud-note">${ic('info',20)}<div>اگر وام‌ها یا پس‌اندازهایتان را قبلاً در دفتر یا Excel می‌نوشتید، اینجا وارد کنید. حساب‌های وامی: <b>${fa(currentUser.loanAccounts || 0)}</b> (آزاد: ${fa(s.free)}). اگر حساب کم باشد خودکار زیاد می‌شود (حداکثر ${fa(MAX_ACCOUNTS)}).</div></div>
+    <div class="imtabs">${tabs.map(([k, n]) => `<button class="${t === k ? 'on' : ''}" onclick="openImport('${k}',true)">${n}</button>`).join('')}</div>${form}`, keep);
+}
+// ساخت یک وام از مقادیر ورودی؛ نتیجه {err} یا {loan, settled}
+function buildImported(kind, o, ctx){
+  const n = o.n, total = o.total, acc = o.acc;
+  if (!o.title) o.title = kind === 'settled' ? 'وام تسویه‌شده' : 'وام قبلی';
+  if (!o.bor) o.bor = currentUser.firstName + ' ' + currentUser.lastName;
+  if (!(acc >= 1 && acc <= MAX_ACCOUNTS)) return {err: 'تعداد حساب باید بین ۱ تا ' + fa(MAX_ACCOUNTS) + ' باشد'};
+  if (!(n >= 1 && n <= 60)) return {err: 'تعداد اقساط باید بین ۱ تا ۶۰ باشد'};
+  if (!(total > 0)) return {err: 'مبلغ کل وام نامعتبر است'};
+  const dt = parseJDate(o.date); if (!dt) return {err: 'تاریخ نامعتبر است (مثل ۱۴۰۵/۰۸/۲۳)'};
+  const each = Math.floor(total / n);
+  const loan = {id: dt.getTime() + ctx.k++, lender: LENDER, borrower: o.bor, title: o.title, activeAccounts: acc, totalLoanAmount: total, installmentsCount: n, installmentAmount: each,
+    totalMonthlySaving: acc * MONTHLY_SAVING, createdAt: fmtDate(dt), status: 'active', imported: true,
+    payments: Array.from({length: n}, (_, i) => ({index: i + 1, paid: false, date: null, amount: i === n - 1 ? total - each * (n - 1) : each}))};
+  if (kind === 'settled'){
+    if (!(o.sav >= 0)) return {err: 'مبلغ پس‌انداز نامعتبر است'};
+    loan.payments.forEach((p, i) => { p.paid = true; p.date = fmtDate(dt); p.mk = mkOf(dt); p.sav = i === 0 ? o.sav : 0; });
+    loan.status = 'settled'; loan.settledAt = fmtDate(dt);
+    return {loan, settled: {loanId: loan.id, borrower: loan.borrower, title: loan.title, amount: o.sav, accounts: acc, settledAt: loan.settledAt, createdAt: loan.createdAt}};
+  }
+  const paid = o.paid; if (!(paid >= 0 && paid <= n)) return {err: 'تعداد اقساط پرداخت‌شده نامعتبر است'};
+  const seen = {};
+  for (let i = 0; i < paid; i++){ const due = dueDate(loan, i), mk = mkOf(due), p = loan.payments[i]; p.paid = true; p.date = fmtDate(due); p.mk = mk; p.sav = seen[mk] ? 0 : loan.totalMonthlySaving; seen[mk] = 1; }
+  if (paid === n){
+    loan.status = 'settled'; loan.settledAt = loan.payments[n - 1].date;
+    return {loan, settled: {loanId: loan.id, borrower: loan.borrower, title: loan.title, amount: savSum(loan), accounts: acc, settledAt: loan.settledAt, createdAt: loan.createdAt}};
+  }
+  return {loan};
+}
+// ثبت دسته‌ای: rows = [{kind, ...}] ؛ خروجی {ok, errs, raised}
+function importRows(rows){
+  const loans = getLoans(), hist = getHist(), sett = getSettled(), free = getFree(), ctx = {k: 0}, errs = []; let ok = 0, raised = 0;
+  let used = loans.reduce((s, l) => s + l.activeAccounts, 0), accounts = currentUser.loanAccounts || 0;
+  rows.forEach((r, idx) => {
+    const tag = 'ردیف ' + fa(r.line || idx + 1) + ': ';
+    if (r.kind === 'free'){
+      if (!(r.amt > 0)) return errs.push(tag + 'مبلغ نامعتبر است');
+      const dt = parseJDate(r.date); if (!dt) return errs.push(tag + 'تاریخ نامعتبر است');
+      free.push({date: fmtDate(dt), amount: r.amt, note: r.note || 'پس‌انداز قبلی', type: 'imported'}); return ok++;
+    }
+    const res = buildImported(r.kind, r, ctx); if (res.err) return errs.push(tag + res.err);
+    if (res.loan.status === 'active'){
+      const need = used + res.loan.activeAccounts;
+      if (need > MAX_ACCOUNTS) return errs.push(tag + 'مجموع حساب‌های درگیر از ' + fa(MAX_ACCOUNTS) + ' بیشتر می‌شود');
+      if (need > accounts){ raised += need - accounts; accounts = need; }
+      used = need; loans.push(res.loan);
+    } else { hist.push(res.loan); sett.push(res.settled); }
+    ok++;
+  });
+  if (ok){ putLoans(loans); putHist(hist); putSettled(sett); putFree(free); if (raised){ currentUser = {...currentUser, loanAccounts: accounts}; saveUser(); } }
+  return {ok, errs, raised};
+}
+async function importDone(r){
+  if (!r.ok){ return info({icon:'alert', kind:'warn', title:'چیزی ثبت نشد', text: r.errs.slice(0, 6).join('\n') || 'اطلاعاتی برای ثبت نبود'}); }
+  closeSheet(); playSuccess(); render(stack[stack.length-1], true);
+  await info({icon:'check', title:`${fa(r.ok)} مورد ثبت شد`, text: (r.raised ? `تعداد حساب‌های وامی ${fa(r.raised)} عدد زیاد شد.\n` : '') + (r.errs.length ? `${fa(r.errs.length)} ردیف ثبت نشد:\n` + r.errs.slice(0, 5).join('\n') : 'همه چیز با موفقیت وارد شد.')});
+}
+function importForm(kind){
+  const g = id => ($(id) ? $(id).value : ''), row = {kind, title: g('imTitle').trim(), bor: g('imBor').trim(), acc: parseNum(g('imAcc')), n: parseNum(g('imN')), total: parseNum(g('imTotal')), paid: parseNum(g('imPaid')), sav: parseNum(g('imSav')), date: g('imDate'), amt: parseNum(g('imAmt')), note: g('imNote').trim()};
+  if (kind === 'loan' && isNaN(row.paid)) row.paid = 0;
+  importDone(importRows([row]));
+}
+function parseImportText(text, kind){
+  const rows = []; const lines = text.replace(/\r/g, '').split('\n').map(x => x.trim()).filter(Boolean);
+  lines.forEach((ln, i) => {
+    const c = ln.split(ln.includes('\t') ? '\t' : /[,،;؛]/).map(x => x.trim().replace(/^"|"$/g, ''));
+    if (kind === 'free'){
+      if (isNaN(parseNum(c[0])) && i === 0) return;   // سطر عنوان
+      rows.push({kind, line: i + 1, amt: parseNum(c[0]), date: c[1] || '', note: c[2] || ''});
+    } else {
+      if (isNaN(parseNum(c[2])) && i === 0) return;
+      const o = {kind, line: i + 1, title: c[0] || '', bor: c[1] || '', acc: parseNum(c[2]), total: parseNum(c[3]), n: parseNum(c[4]), date: c[6] || ''};
+      const x = parseNum(c[5]); if (kind === 'loan') o.paid = isNaN(x) ? 0 : x; else o.sav = isNaN(x) ? 0 : x;
+      rows.push(o);
+    }
+  });
+  return rows;
+}
+async function importPaste(){
+  const txt = $('imText').value; if (!txt.trim()) return toast('ابتدا ردیف‌ها را بچسبانید','warn');
+  const rows = parseImportText(txt, impPaste); if (!rows.length) return toast('ردیف قابل‌خواندن پیدا نشد','warn');
+  const ok = await ask({icon:'upload', kind:'warn', title:'ثبت اطلاعات', text:`${fa(rows.length)} ردیف خوانده شد. ثبت شود؟`, yes:'ثبت'}); if (!ok) return;
+  importDone(importRows(rows));
+}
+function impTemplate(){
+  const ex = {loan: ['وام خرید ماشین', 'علی رضایی', 2, 200000000, 10, 3, '1405/05/10'], settled: ['وام قدیمی', 'علی رضایی', 1, 100000000, 10, 5000000, '1404/12/20'], free: [5000000, '1405/08/01', 'پس‌انداز ماه آبان']}[impPaste];
+  const csv = '﻿' + IMP_COLS[impPaste].join(',') + '\n' + ex.join(',') + '\n';
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8'})); a.download = 'qarz-import-' + impPaste + '.csv'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+}
+function impFileLoad(e){ const f = e.target.files[0]; e.target.value = ''; if (!f) return; const r = new FileReader(); r.onload = ev => { $('imText').value = String(ev.target.result).replace(/^﻿/, ''); toast('فایل خوانده شد؛ «بررسی و ثبت» را بزنید'); }; r.readAsText(f); }
+
 /* ================= تنظیمات / حساب ================= */
 function renderProfile(){
   const u = currentUser, th = THEMES.find(t => t.id === accent()) || THEMES[0], standalone = isStandalone();
@@ -1034,19 +1248,19 @@ function renderProfile(){
       <div class="pf-av rise"><div class="pf-wrap"><div class="avatar" onclick="$('photoInput').click()">${avatarHTML(u)}</div><div class="pf-edit">${ic('pencil',14)}</div></div>
         <button class="name-pill" onclick="openAccounts()">${ic('chevd',20)}${esc(u.firstName)} ${esc(u.lastName)}</button><div class="pf-sub">${uname(u)}</div></div></div>
     <div class="sheet">
-      <div class="promo rise" style="margin-top:0"><div class="pt"><b>تم ${th.name} فعال است</b><small>رنگ و حالت برنامه را از «نمایش و تم» تغییر دهید</small></div>${promoArt()}</div>
+      ${hadithCard().replace('class="promo hpromo"', 'class="promo hpromo rise" style="margin-top:0"')}
       <div class="sec rise">تنظیمات</div>
       ${R('book','راهنمای برنامه','آموزش گام‌به‌گام بخش‌ها','startTour()')}
       ${standalone ? '' : R('app','نصب برنامه','افزودن به صفحهٔ اصلی گوشی','doInstall()')}
       ${R('user','جزئیات حساب','اطلاعات شخصی و حساب‌ها','openDetails()')}
+      ${R('upload','ورود اطلاعات قبلی','وام‌ها و پس‌اندازهای دفتر یا Excel','openImport()')}
       ${R('palette','نمایش و تم','رنگ برنامه، حالت روز و شب','openThemeSheet()')}
       ${R('bell','یادآوری اقساط','آلارم و اعلان سررسید','openReminderSheet()')}
       ${R('volume','افکت صدا','صدای ورود و پرداخت','', true, `<label class="sw"><input type="checkbox" ${soundOn() ? 'checked' : ''} onchange="setSound(this.checked)"><i></i></label>`)}
-      ${R('cloud','همگام‌سازی ابری', `<span class="sync-dot ${cloudOn() && u.username ? lget('syncState','off') : ''}"></span>${syncText()}`,'openCloud()')}
-      ${R('shield','پشتیبان‌گیری','دریافت و بازیابی اطلاعات','openBackup()')}
       ${R('info','دربارهٔ ما','قرض‌الحسنه حضرت جوادالائمه (ع)','about()')}
       ${R('logout','خروج از حساب','اطلاعات حفظ می‌شود','logout()', 'red')}
     </div>`;
+  typeHadith();
 }
 function openDetails(){
   const u = currentUser;
@@ -1054,10 +1268,6 @@ function openDetails(){
     <button class="btn" style="margin-top:14px" onclick="openEditProfile()">${ic('pencil',19)}ویرایش اطلاعات حساب</button>
     ${u.username ? '' : `<div class="cloud-note warn" style="margin-top:12px">${ic('alert',20)}<div>این حساب هنوز نام کاربری و رمز ندارد و فقط روی همین دستگاه است. برای ورود از دستگاه‌های دیگر آن‌ها را تعیین کنید.</div></div><button class="btn" onclick="openCred()">${ic('lock',19)}تعیین نام کاربری و رمز</button>`}
     <button class="btn danger" onclick="deleteAccount()">${ic('trash',19)}حذف حساب</button>`);
-}
-function openBackup(){
-  openSheet('پشتیبان‌گیری', `<div class="muted" style="font-size:.8rem;line-height:2;margin:0 2px 6px">نسخهٔ پشتیبان یک فایل از اطلاعات همین دستگاه است. برای ورود از دستگاه‌های دیگر از «همگام‌سازی ابری» استفاده کنید.</div>
-    <button class="btn" onclick="exportBackup()">${ic('download',19)}دریافت نسخه پشتیبان</button><button class="btn ghost" onclick="$('restoreInput').click()">${ic('upload',19)}بازیابی از نسخه پشتیبان</button>`);
 }
 function openAccounts(){
   openSheet('حساب‌های کاربری', allUsers.map(u => `<div class="row" onclick="switchUser('${u.id}')"><div class="avatar" style="border-color:var(--line)">${avatarHTML(u)}</div><div class="rmain"><b>${esc(u.firstName)} ${esc(u.lastName)}</b><small dir="auto">${uname(u)}</small></div><div class="rend">${currentUser && currentUser.id === u.id ? `<span class="tag done">${ic('check',12)}فعال</span>` : ic('chev',18)}</div></div>`).join('')
@@ -1071,7 +1281,7 @@ async function switchUser(id){
 function openRegister(){ ['regFirst','regLast','regUser','regPw','regPw2'].forEach(i => $(i).value = ''); $('pwBar').style.width = '0'; $('userHint').className = 'hint'; $('pwHint').className = 'hint'; cloudNote(); go('register'); }
 function cloudNote(){
   $('cloudNote').className = 'cloud-note rise' + (cloudOn() ? '' : ' warn');
-  $('cloudNote').innerHTML = cloudOn() ? `${ic('cloud',20)}<div>همگام‌سازی ابری فعال است؛ با همین نام کاربری و رمز از دستگاه‌های دیگر هم وارد می‌شوید.</div>` : `${ic('alert',20)}<div>همگام‌سازی ابری تنظیم نشده است و حساب فعلاً فقط روی همین دستگاه می‌ماند. <a onclick="openCloud()">تنظیم همگام‌سازی</a></div>`;
+  $('cloudNote').innerHTML = cloudOn() ? `${ic('cloud',20)}<div>با همین نام کاربری و رمز از هر گوشی یا رایانه‌ای وارد می‌شوید؛ اطلاعات شما روی سرور ذخیره می‌شود.</div>` : `${ic('alert',20)}<div>اتصال به سرور تنظیم نشده است و حساب فعلاً فقط روی همین دستگاه می‌ماند.</div>`;
 }
 function togglePw(id, btn){ const el = $(id), show = el.type === 'password'; el.type = show ? 'text' : 'password'; btn.innerHTML = ic(show ? 'eyeOff' : 'eye', 20); }
 function chkUser(){
@@ -1155,21 +1365,6 @@ async function deleteAccount(){
   allUsers = allUsers.filter(u => u.id !== id); writeJSON('users', allUsers); if (lget('lastUser','') === id) localStorage.removeItem('lastUser');
   currentUser = null; gateUser = null; stack = ['home']; showGate(); toast('حساب حذف شد','warn');
 }
-const BACKUP_KEY = /^(users|lastUser|userPhotos|freeSavings|settledSavings|syncmeta|accent|mode|sound|remindDays|eyeHidden|cloudUrl|cloudKey|loans_[a-z0-9_]+|history_[a-z0-9_]+|tour_[a-z0-9_]+)$/;
-function exportBackup(){
-  const data = {}; for (let i=0; i<localStorage.length; i++){ const k = localStorage.key(i); if (BACKUP_KEY.test(k)) data[k] = localStorage.getItem(k); }
-  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(data)], {type:'application/json'})); a.download = 'qarz-backup-' + new Date().toISOString().slice(0,10) + '.json'; a.click(); toast('نسخه پشتیبان دریافت شد');
-}
-function restoreBackup(e){
-  const f = e.target.files[0]; e.target.value = ''; if (!f) return; const r = new FileReader();
-  r.onload = async ev => {
-    let data; try { data = JSON.parse(ev.target.result); } catch { return toast('فایل پشتیبان معتبر نیست','err'); }
-    const keys = Object.keys(data).filter(k => BACKUP_KEY.test(k)); if (!keys.includes('users')) return toast('فایل پشتیبان معتبر نیست','err');
-    const ok = await ask({icon:'upload', kind:'warn', title:'بازیابی اطلاعات', text:'اطلاعات فعلی با نسخه پشتیبان جایگزین می‌شود. ادامه می‌دهید؟', yes:'بازیابی'}); if (!ok) return;
-    keys.forEach(k => localStorage.setItem(k, data[k])); location.reload();
-  }; r.readAsText(f);
-}
-
 /* ================= افتتاح حساب / وام ================= */
 function setSliderFill(el){ const mn = +el.min, mx = +el.max; el.style.setProperty('--p', ((el.value - mn) / ((mx - mn) || 1) * 100) + '%'); }
 function bump(id){ const e = $(id); e.classList.remove('bump'); void e.offsetWidth; e.classList.add('bump'); }
@@ -1236,7 +1431,7 @@ function renderDetail(){
       <div class="rend">${end}${late ? `<span class="tag late">${ic('alert',12)}معوق</span>` : near ? `<span class="tag warn">${ic('bell',12)}${left === 0 ? 'امروز' : 'فردا'}</span>` : ''}</div></div>`;
   }).join('');
   el.innerHTML = `
-    <div class="hd">${bar({back:true, title:'جزئیات وام', extra: viewingHistory ? '' : `<button class="bb no-print" onclick="openEditLoan()" aria-label="ویرایش">${ic('pencil',24)}</button><button class="bb no-print" onclick="deleteLoan(${l.id})" aria-label="حذف">${ic('trash',24)}</button>`})}
+    <div class="hd">${bar({back:true, title:'جزئیات وام', extra: viewingHistory ? `<button class="bb no-print" onclick="deleteHistLoan(${l.id})" aria-label="حذف">${ic('trash',24)}</button>` : `<button class="bb no-print" onclick="openEditLoan()" aria-label="ویرایش">${ic('pencil',24)}</button><button class="bb no-print" onclick="deleteLoan(${l.id})" aria-label="حذف">${ic('trash',24)}</button>`})}
       <div class="bal rise"><div class="amt">${fnum(remaining(l))}<small>ریال</small></div><div class="eye" style="cursor:default">${ic('wallet',22)}<span>مانده وام «${esc(l.title || 'وام')}»</span></div></div>
       <div class="hd-chips rise"><span class="chip">${ic('user',14)}${esc(l.borrower)}</span><span class="chip">${ic('bank',14)}${fa(l.activeAccounts)} حساب</span><span class="chip">${ic('calendar',14)}${esc(l.createdAt)}</span>${viewingHistory ? `<span class="chip">${ic('flag',14)}${esc(l.settledAt || '')}</span>` : ''}</div>
       <div class="progress rise"><i data-w="${paid/n*100}"></i></div><div class="prog-text">${fa(paid)} از ${fa(n)} قسط پرداخت شده · وام کل ${fmt(l.totalLoanAmount)}</div>
@@ -1278,18 +1473,28 @@ function exportCSV(){
   l.payments.forEach((p, i) => { csv += `${i+1},${fmtDate(dueDate(l, i))},${payAmt(l, i)},${p.paid ? savOf(l, i) : l.totalMonthlySaving},${payAmt(l, i) + (p.paid ? savOf(l, i) : l.totalMonthlySaving)},${p.paid ? 'پرداخت شد' : 'در انتظار'},${p.date || ''}\n`; });
   const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + csv], {type:'text/csv;charset=utf-8'})); a.download = 'اقساط-' + (l.title || 'وام') + '.csv'; a.click();
 }
+async function deleteHistLoan(id){
+  const l = getHist().find(x => x.id === id); if (!l) return;
+  const sv = getSettled().filter(x => x.loanId === id).reduce((s, x) => s + (x.amount || 0), 0);
+  const ok = await ask({icon:'trash', kind:'danger', title:'حذف از تاریخچه', text:`وام «${l.title || 'وام'}» از تاریخچه حذف می‌شود.` + (sv ? `\nپس‌انداز ${fmt(sv)} مربوط به این وام هم از صندوق کم می‌شود.` : '') + '\nاین کار قابل بازگشت نیست.', yes:'حذف', no:'انصراف'});
+  if (!ok) return;
+  putHist(getHist().filter(x => x.id !== id)); putSettled(getSettled().filter(x => x.loanId !== id));
+  if (currentLoan && currentLoan.id === id){ currentLoan = null; viewingHistory = false; if (stack[stack.length-1] === 'detail'){ stack.pop(); } }
+  render(stack[stack.length-1], true); toast('وام از تاریخچه حذف شد و موجودی به‌روز شد');
+}
 function renderHistory(){
   const h = getHist().slice().reverse();
   $('p-history').innerHTML = `<div class="hd">${bar({title:'تاریخچه'})}<div class="bal rise"><div class="amt">${fa(h.length)}<small>وام</small></div><div class="eye" style="cursor:default">${ic('history',22)}<span>وام‌های تسویه‌شده</span></div></div></div>
-    <div class="sheet">${h.length ? h.map(l => `<div class="row rise" onclick="openHistoryLoan(${l.id})"><div class="ric green">${ic('checkCircle',24)}</div><div class="rmain"><b>${esc(l.title || 'وام')}</b><small>${esc(l.borrower)} · تسویه ${esc(l.settledAt || '')}</small></div><div class="rend"><b>${fnum(l.totalLoanAmount)}</b><small>ریال · ${fa(l.activeAccounts)} حساب</small></div></div>`).join('') : `<div class="empty rise"><div class="eico">${ic('inbox',34)}</div>هنوز وامی تسویه نشده است</div>`}</div>`;
+    <div class="sheet">${h.length ? h.map(l => `<div class="row rise" onclick="openHistoryLoan(${l.id})"><div class="ric green">${ic('checkCircle',24)}</div><div class="rmain"><b>${esc(l.title || 'وام')}</b><small>${esc(l.borrower)} · تسویه ${esc(l.settledAt || '')}</small></div><div class="rend"><b>${fnum(l.totalLoanAmount)}</b><small>ریال · ${fa(l.activeAccounts)} حساب</small></div><button class="mini-del" style="margin-right:8px" onclick="event.stopPropagation();deleteHistLoan(${l.id})" aria-label="حذف">${ic('trash',16)}</button></div>`).join('') : `<div class="empty rise"><div class="eico">${ic('inbox',34)}</div>هنوز وامی تسویه نشده است</div>`}</div>`;
 }
 
 /* ================= رمزنگاری و همگام‌سازی ابری ================= */
-// اتصال به Supabase: آدرس پروژه (Project URL) و کلید عمومی (anon / publishable key) را اینجا بگذارید تا برای همهٔ دستگاه‌ها پیش‌فرض شود؛
-// یا از «تنظیمات ← همگام‌سازی ابری» (و در صفحهٔ ورود) وارد کنید. دستورهای سرور در فایل supabase.sql است.
+// ===== اتصال به Supabase (فقط یک‌بار) =====
+// مقدار Project URL و کلید عمومی (anon / publishable) پروژهٔ خودتان را بین گیومه‌ها بگذارید (Supabase ← Project Settings ← API).
+// دستورهای سرور در فایل supabase.sql است. اگر خالی بماند، برنامه فقط روی همین دستگاه کار می‌کند.
 const CLOUD_URL_DEFAULT = '', CLOUD_KEY_DEFAULT = '';
-const cloudUrl = () => (lget('cloudUrl', '') || CLOUD_URL_DEFAULT).trim().replace(/\/+$/, '');
-const cloudKey = () => (lget('cloudKey', '') || CLOUD_KEY_DEFAULT).trim();
+const cloudUrl = () => CLOUD_URL_DEFAULT.trim().replace(/\/+$/, '');
+const cloudKey = () => CLOUD_KEY_DEFAULT.trim();
 const cloudOn = () => !!(cloudUrl() && cloudKey());
 const USER_RE = /^[a-z][a-z0-9_]{2,19}$/;
 const hasCrypto = () => !!(window.crypto && crypto.subtle);
@@ -1323,13 +1528,13 @@ function applySnapshot(id, sn){
   setMap('freeSavings', sn.free || []); setMap('settledSavings', sn.settled || []); setMap('userPhotos', sn.photo || null);
 }
 let syncTimer = null, syncBusy = false;
-function syncReady(){ return currentUser && cloudOn() && currentUser.username && hasCrypto() && lget('sk_' + currentUser.id, ''); }
+function syncReady(){ return !!(currentUser && cloudOn() && currentUser.username); }
 function setSync(st, at){ lset('syncState', st); if (at) lset('syncAt', at); if (currentUser && $('p-profile').classList.contains('active')) render('profile', true); }
 function markDirty(){ if (!currentUser) return; metaSet({updatedAt: Date.now(), dirty: true}); clearTimeout(syncTimer); syncTimer = setTimeout(() => syncNow(), 1500); }
 async function flushSync(){ clearTimeout(syncTimer); if (currentUser && syncReady() && metaGet().dirty) await syncNow(); }
 async function pushCloud(key, force){
   const u = currentUser, upd = metaGet().updatedAt || Date.now();
-  const r = await rpc('qh_push', {p_user: u.username, p_verifier: u.verifier, p_blob: await encJSON(snapshot(), key), p_updated: upd, p_force: !!force});
+  const r = await rpc('qh_push', {p_user: u.username, p_verifier: u.verifier, p_snapshot: snapshot(), p_updated: upd, p_force: !!force});
   if (r.status === 'ok') metaSet({dirty: false, updatedAt: upd});
   return r;
 }
@@ -1342,14 +1547,14 @@ async function syncNow(manual){
     if (rec.status === 'not_found'){
       if (!m.updatedAt) metaSet({updatedAt: Date.now()});
       const upd = metaGet().updatedAt;
-      const rr = await rpc('qh_register', {p_user: u0.username, p_salt: u0.salt, p_verifier: u0.verifier, p_blob: await encJSON(snapshot(), key), p_updated: upd});
+      const rr = await rpc('qh_register', {p_user: u0.username, p_salt: u0.salt, p_verifier: u0.verifier, p_snapshot: snapshot(), p_updated: upd});
       if (rr.status === 'ok') metaSet({dirty: false, updatedAt: upd});
       else { setSync(rr.status === 'taken' ? 'conflict' : 'err'); if (manual) toast(rr.status === 'taken' ? 'این نام کاربری در سرور متعلق به حساب دیگری است' : 'ثبت در سرور انجام نشد','err'); return; }
     } else if (rec.status === 'invalid' || rec.status === 'locked'){
       setSync('conflict'); if (manual) toast(rec.status === 'locked' ? 'به‌دلیل تلاش‌های ناموفق، چند دقیقه صبر کنید' : 'رمز یا نام کاربری با سرور هم‌خوانی ندارد','err'); return;
     } else if (rec.status !== 'ok') throw new Error(rec.status);
     else if (rec.updatedAt > (m.updatedAt || 0)){
-      const sn = await decJSON(rec.blob, key); applySnapshot(me, sn);
+      const sn = rec.snapshot; applySnapshot(me, sn);
       const u = {...currentUser, ...sn.profile}; currentUser = u; allUsers = allUsers.map(x => x.id === me ? u : x); writeJSON('users', allUsers);
       metaSet({updatedAt: rec.updatedAt, dirty: false}); changed = true;
     } else if (m.dirty || (m.updatedAt || 0) > rec.updatedAt){ const pr = await pushCloud(key); if (pr.status !== 'ok' && pr.status !== 'stale') throw new Error(pr.status); }
@@ -1364,34 +1569,6 @@ const syncText = () => {
   const st = lget('syncState', 'off'), at = +lget('syncAt', 0), t = at ? new Date(at).toLocaleTimeString('fa-IR', {hour:'2-digit', minute:'2-digit'}) : '';
   return ({ok:'فعال · آخرین همگام‌سازی ' + t, pending:'در حال همگام‌سازی…', err:'خطا در اتصال · دوباره تلاش می‌شود', conflict:'تعارض نام کاربری با سرور', off:'فعال'})[st] || 'فعال';
 };
-function openCloud(){
-  const u = currentUser;
-  openSheet('همگام‌سازی ابری', `
-    <div class="cloud-note ${cloudOn() && (!u || u.username) ? '' : 'warn'}">${ic('cloud',20)}<div>${cloudOn() ? (u ? syncText() : 'اتصال تنظیم شده است') : 'اطلاعات حساب (به‌صورت رمزنگاری‌شده) روی Supabase ذخیره می‌شود تا با نام کاربری و رمز از هر دستگاه وارد شوید.'}</div></div>
-    <div class="field" style="margin-top:12px"><label>Project URL</label><input type="text" id="cloudIn" class="ltr" dir="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="https://xxxx.supabase.co" value="${esc(cloudUrl())}"></div>
-    <div class="field"><label>کلید عمومی (anon / publishable key)</label><input type="text" id="cloudKeyIn" class="ltr" dir="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="eyJ… یا sb_publishable_…" value="${esc(cloudKey())}"></div>
-    <button class="btn" onclick="saveCloud()">${ic('check',19)}ذخیره و آزمایش اتصال</button>
-    ${u && cloudOn() ? `<button class="btn ghost" onclick="syncNow(true)">${ic('upload',19)}همگام‌سازی همین حالا</button>` : ''}
-    <div class="muted" style="font-size:.76rem;line-height:2.1;margin-top:14px"><b style="color:var(--ink)">راه‌اندازی (یک‌بار، رایگان):</b><br>۱. در supabase.com یک پروژه بسازید.<br>۲. از منوی SQL Editor فایل <span dir="ltr">supabase.sql</span> را کامل کپی و Run کنید.<br>۳. از Project Settings ← API مقدار Project URL و کلید anon (یا publishable) را بالا وارد کنید.<br>۴. روی دستگاه جدید هم همین دو مقدار را در صفحهٔ ورود بزنید.<br>اطلاعات پیش از ارسال با رمز شما رمزنگاری می‌شوند و رمز هرگز به سرور نمی‌رود.</div>`);
-}
-async function testCloud(url, key){
-  const r = await rpc('qh_ping', {}, {url: url.replace(/\/+$/, ''), key}); if (!r || r.status !== 'ok') throw new Error('ping'); return true;
-}
-function cloudInputsOk(url, key, err){
-  if (!url && !key) return true;
-  if (!/^https:\/\/|^http:\/\/localhost|^http:\/\/127\./.test(url)){ err('آدرس باید با https شروع شود'); return false; }
-  if (!key){ err('کلید عمومی را هم وارد کنید'); return false; }
-  return true;
-}
-async function saveCloud(){
-  const url = $('cloudIn').value.trim(), key = $('cloudKeyIn').value.trim();
-  if (!cloudInputsOk(url, key, m => toast(m,'warn'))) return;
-  if (url){ try { await testCloud(url, key); } catch { return toast('اتصال برقرار نشد؛ آدرس، کلید و اجرای supabase.sql را بررسی کنید','err'); } }
-  lset('cloudUrl', url.replace(/\/+$/, '')); lset('cloudKey', key); toast(url ? 'اتصال برقرار شد' : 'همگام‌سازی غیرفعال شد');
-  if (currentUser){ setSync('off'); if (url) syncNow(true); render(stack[stack.length-1], true); } closeSheet();
-  if (gateMode === 'cloud') showGate(gateBack);
-}
-
 /* ================= صفحه ورود (Gate) ================= */
 let gateUser = null, gateMode = 'welcome', gateBack = 'welcome';
 const eyeBtn = id => `<button type="button" class="g-eye" onclick="togglePw('${id}',this)">${ic('eye',20)}</button>`;
@@ -1400,11 +1577,11 @@ function showGate(mode){
   locked = true; closeSheet(); $('bottomNav').classList.add('hide'); $('install').classList.remove('on');
   if (!mode){ gateUser = allUsers.find(u => u.id === lget('lastUser', '')) || null; mode = gateUser ? 'known' : (allUsers.length ? 'full' : 'welcome'); }
   if (mode === 'known' && !gateUser) mode = allUsers.length ? 'full' : 'welcome';
-  gateMode = mode; if (mode !== 'cloud') gateBack = mode;
+  gateMode = mode; gateBack = mode;
   const g = $('gate'), logo = `<div class="g-logo">${ic('leaf',46)}</div><div class="g-title">قرض‌الحسنه حضرت جوادالائمه (ع)</div>`;
   const foot = `<div class="g-hadith">${HADITH}<div class="g-ver">نسخه ۵٫۰</div></div>`;
   const enter = 'onkeydown="if(event.key===\'Enter\')gateLogin()"';
-  const cloudLink = `<button class="g-link" style="margin-top:12px;font-size:.8rem" onclick="showGate('cloud')">${cloudOn() ? 'تغییر آدرس همگام‌سازی' : 'تنظیم همگام‌سازی ابری'}</button>`;
+  const cloudLink = cloudOn() ? '' : `<div class="g-sub" style="margin-top:14px;font-size:.74rem;color:#ffd9a0;text-align:center;max-width:320px;line-height:1.9">اتصال به سرور تنظیم نشده است؛ حساب‌ها فقط روی همین دستگاه می‌مانند.</div>`;
   let body;
   if (mode === 'known'){
     const u = gateUser, needPw = !!u.verifier;
@@ -1421,12 +1598,6 @@ function showGate(mode){
       <button class="g-btn sm" id="gBtn" onclick="gateLogin()">${ic('finger',26)}ورود</button>
       <button class="g-link" onclick="gateRegister()">ایجاد حساب جدید</button>${cloudLink}
       ${allUsers.length && gateUser ? `<button class="g-link" style="margin-top:10px" onclick="showGate('known')">بازگشت</button>` : ''}`;
-  } else if (mode === 'cloud'){
-    body = `${logo}<div class="g-sub" style="margin-top:22px;text-align:center;max-width:340px;line-height:2">آدرس پروژهٔ Supabase و کلید عمومی آن را وارد کنید تا حساب شما از این دستگاه هم در دسترس باشد.</div>
-      <div class="g-pw"><input class="g-in plain" type="text" id="cloudIn" dir="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="https://xxxx.supabase.co" value="${esc(cloudUrl())}"></div>
-      <div class="g-pw"><input class="g-in plain" type="text" id="cloudKeyIn" dir="ltr" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="anon / publishable key" value="${esc(cloudKey())}"></div>
-      <div class="g-err" id="gErr"></div>
-      <button class="g-btn sm" onclick="saveCloudGate()">${ic('check',22)}ذخیره و آزمایش</button><button class="g-link" onclick="showGate(gateBack)">بازگشت</button>`;
   } else {
     body = `${logo}<div class="g-feats">
       <div class="g-feat" style="animation-delay:.1s"><div class="fi">${ic('bank',22)}</div><div><b>حساب‌های وامی</b><small>تا ۱۴ حساب با پس‌انداز ماهیانه</small></div></div>
@@ -1438,13 +1609,6 @@ function showGate(mode){
   g.innerHTML = `<div class="orb o1"></div><div class="orb o2"></div>${body}${foot}`; g.classList.add('on');
 }
 function hideGate(){ $('gate').classList.remove('on'); }
-async function saveCloudGate(){
-  const url = $('cloudIn').value.trim(), key = $('cloudKeyIn').value.trim();
-  if (!url && !key){ lset('cloudUrl', ''); lset('cloudKey', ''); return showGate(gateBack); }
-  if (!cloudInputsOk(url, key, gateErr)) return;
-  try { await testCloud(url, key); } catch { return gateErr('اتصال برقرار نشد؛ آدرس و کلید را بررسی کنید'); }
-  lset('cloudUrl', url.replace(/\/+$/, '')); lset('cloudKey', key); toast('اتصال برقرار شد'); showGate(gateBack);
-}
 async function gateLogin(){
   const btn = $('gBtn'); if (!btn || btn.disabled) return; audio();
   const label = btn.innerHTML; btn.disabled = true; btn.textContent = 'در حال بررسی…';
@@ -1477,7 +1641,7 @@ async function authLogin(un, pw){
   try { rec = await rpc('qh_login', {p_user: un, p_verifier: d.verifier}); } catch { throw 'اتصال به سرور برقرار نشد'; }
   if (rec.status === 'locked') throw 'تلاش‌های ناموفق زیاد بود؛ ۱۵ دقیقه بعد دوباره امتحان کنید';
   if (rec.status !== 'ok') throw 'نام کاربری یا رمز اشتباه است';
-  let sn; try { sn = await decJSON(rec.blob, d.key); } catch { throw 'خواندن اطلاعات حساب ممکن نشد'; }
+  const sn = rec.snapshot; if (!sn || !sn.profile) throw 'خواندن اطلاعات حساب ممکن نشد';
   u = {id: un, username: un, salt: rec.salt, verifier: d.verifier, ...sn.profile};
   allUsers = allUsers.filter(x => x.id !== un); allUsers.push(u); writeJSON('users', allUsers); lset('sk_' + un, d.key);
   applySnapshot(un, sn); metaSet({updatedAt: rec.updatedAt, dirty: false}, un);
@@ -1512,7 +1676,6 @@ const TOUR = [
   {sel:'#p-home .tHero', icon:'wallet', title:'موجودی صندوق', text:'مجموع پس‌انداز شما (حساب‌های آزاد، فعال و تسویه‌شده) اینجاست. با آیکن چشم، مبلغ‌ها را در همهٔ صفحه‌ها مخفی یا نمایان کنید.'},
   {sel:'#p-home .tQuick', icon:'plus', title:'دکمه‌های اصلی', text:'«افتتاح حساب» حساب وامی می‌سازد و پس‌انداز اولیه را ثبت می‌کند. «ثبت وام» وقتی فعال می‌شود که حساب آزاد داشته باشید. «پس‌انداز» شما را به صندوق می‌برد.'},
   {sel:'#p-home .tStats', icon:'file', title:'کادرهای وضعیت', text:'حساب فعال یعنی درگیر وام، و حساب آزاد یعنی آمادهٔ وام. تعداد وام‌های جاری و تسویه‌شده را هم می‌بینید. با لمس هر کادر به بخش مربوط می‌روید.'},
-  {sel:'#p-home .hcard', icon:'sparkles', title:'حدیث روز', text:'هر بار که وارد می‌شوید یک آیه یا حدیث دربارهٔ قرض‌الحسنه نوشته می‌شود. روی کادر بزنید تا حدیث بعدی بیاید.'},
   {sel:'#p-home .tList', icon:'calendar', title:'اقساط پیش‌رو و وام‌های جاری', text:'نزدیک‌ترین قسط هر وام با تاریخ و مبلغ اینجا فهرست می‌شود. روی هر مورد بزنید تا جدول اقساط باز شود و بتوانید قسط را پرداخت کنید.'},
   {sel:'#p-home .bell', icon:'bell', title:'آلارم اقساط', text:'یک روز قبل از سررسید (و در روز سررسید یا معوقه) زنگ تکان می‌خورد، صدای هشدار می‌آید و اعلان می‌گیرید. تعداد روز یادآوری را در تنظیمات عوض کنید.'},
   {sel:'#bottomNav', icon:'home', title:'نوار پایین', text:'با این پنج دکمه بین بخش‌ها جابه‌جا می‌شوید: خانه، وام‌ها، پس‌انداز، تاریخچه و تنظیمات. حالا با هم سراغ هر کدام می‌رویم.'},
@@ -1520,10 +1683,12 @@ const TOUR = [
   {sel:'#p-loans .sheet', icon:'pencil', title:'پرداخت و ویرایش وام', text:'داخل هر وام می‌توانید قسط را پرداخت کنید، «تسویه کامل» بزنید، خروجی Excel یا چاپ بگیرید و با مداد، عنوان و مشخصات وام را ویرایش کنید. تا قسطی پرداخت نشده، مبلغ و تعداد اقساط هم قابل تغییر است.'},
   {page:'savings', sel:'#p-savings .donut-card', icon:'coins', title:'پس‌انداز', text:'نمودار نسبت حساب‌های آزاد و فعال. به ازای هر حساب، ماهی ۵۰۰٬۰۰۰ ریال پس‌انداز ثبت می‌شود. برای هر وام در هر ماه فقط یک‌بار پس‌انداز ثبت می‌شود، حتی اگر چند قسط را در همان ماه بدهید؛ در «تسویه کامل» هم فقط یک‌بار.'},
   {sel:'#p-savings .btn.soft', icon:'plus', title:'ثبت پس‌انداز حساب آزاد', text:'پس‌انداز ماهانهٔ حساب‌هایی که وام ندارند را با این دکمه ثبت کنید. ردیف‌ها را می‌توانید با مداد ویرایش یا با سطل زباله حذف کنید.'},
-  {page:'history', sel:'#p-history .hd', icon:'history', title:'تاریخچه', text:'وام‌های تسویه‌شده با تاریخ تسویه اینجا می‌مانند. هر کدام را بزنید تا جدول کامل اقساطش را ببینید.'},
+  {page:'history', sel:'#p-history .hd', icon:'history', title:'تاریخچه', text:'وام‌های تسویه‌شده با تاریخ تسویه اینجا می‌مانند. هر کدام را بزنید تا جدول کامل اقساطش را ببینید. با سطل زباله می‌توانید یک وام را از تاریخچه حذف کنید؛ پس‌اندازش هم از صندوق کم می‌شود.'},
   {page:'profile', sel:'#p-profile .pf-av', icon:'user', title:'حساب و جزئیات', text:'روی عکس بزنید تا تصویر پروفایل بگذارید. در «جزئیات حساب» نام و تعداد حساب‌ها را ویرایش کنید. با لمس نام، می‌توانید بین حساب‌های کاربری جابه‌جا شوید.'},
-  {sel:'#p-profile .promo', icon:'palette', title:'تم و ظاهر', text:'هشت رنگ و سه حالت روشن، تیره و خودکار. صدا و زمان یادآوری را هم از همین بخش تنظیم کنید.'},
-  {sel:'#p-profile .row:has(.sync-dot)', icon:'cloud', title:'ورود از هر دستگاه', text:'با «همگام‌سازی ابری» اطلاعات شما رمزنگاری‌شده روی سرور ذخیره می‌شود. با همان نام کاربری و رمز از دستگاه دیگر وارد شوید. رمز فراموش‌شده قابل بازیابی نیست، پس آن را نگه دارید. پشتیبان‌گیری هم همین‌جاست.'},
+  {sel:'#p-profile .hpromo', icon:'sparkles', title:'حدیث روز', text:'هر بار که تنظیمات را باز می‌کنید یک آیه یا حدیث دربارهٔ قرض‌الحسنه نوشته می‌شود. روی کادر بزنید تا مورد بعدی بیاید.'},
+  {sel:'#p-profile .row[onclick^="openThemeSheet"]', icon:'palette', title:'تم و ظاهر', text:'دوازده رنگ با پیش‌نمایش زنده و سه حالت روشن، تیره و خودکار. هر رنگ را که بزنید همان لحظه روی کل برنامه اعمال می‌شود.'},
+  {sel:'#p-profile .row[onclick^="openImport"]', icon:'upload', title:'ورود اطلاعات قبلی', text:'اگر وام‌ها و پس‌اندازهایتان را در دفتر یا Excel می‌نوشتید، اینجا وارد کنید: فرم تکی، یا چسباندن ردیف‌ها از Excel / فایل CSV.'},
+  {sel:'#p-profile .pf-av', icon:'cloud', title:'ورود از هر دستگاه', text:'اطلاعات شما خودکار روی سرور ذخیره می‌شود. با همان نام کاربری و رمز، از هر گوشی یا رایانه وارد شوید. رمز فراموش‌شده قابل بازیابی نیست، پس آن را نگه دارید.'},
   {sel:null, icon:'download', title:'نصب روی گوشی', text:'از تنظیمات ← «نصب برنامه» آن را مثل یک اپ روی صفحهٔ اصلی بگذارید تا بدون مرورگر و حتی آفلاین باز شود.'},
   {page:'home', sel:'#bottomNav', icon:'check', title:'آماده‌اید!', text:'برای شروع، «افتتاح حساب» را بزنید. اگر جایی گیر کردید، دکمهٔ علامت سؤال بالای هر صفحه راهنما را دوباره باز می‌کند.'}
 ];
