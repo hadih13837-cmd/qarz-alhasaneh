@@ -254,6 +254,19 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .donut .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .donut .mid b{font-size:1.5rem;font-weight:800;color:var(--atxt)}.donut .mid small{font-size:.68rem;color:var(--muted)}
 .legend{flex:1}.legend div{display:flex;align-items:center;gap:8px;font-size:.82rem;padding:6px 0}.legend i{width:12px;height:12px;border-radius:5px;flex:none}
+.lchart{background:var(--rowbg);border-radius:22px;padding:14px 12px 10px;margin-bottom:14px}
+.lc-sum{display:flex;gap:10px}.lc-sum>div{flex:1;background:var(--sheet);border-radius:16px;padding:10px 12px;display:flex;flex-direction:column;gap:2px}
+.lc-sum small{font-size:.66rem;color:var(--muted)}.lc-sum b{font-size:1.05rem;color:var(--atxt)}
+.lc-bars{display:flex;gap:6px;align-items:flex-end;margin-top:14px;height:150px}
+.lc-col{flex:1;height:100%;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
+.lc-v{font-size:.6rem;font-weight:700;color:var(--atxt);height:14px;white-space:nowrap}
+.lc-bar{flex:1;width:100%;display:flex;align-items:flex-end;justify-content:center}
+.lc-bar i{display:block;width:70%;max-width:34px;border-radius:9px 9px 5px 5px;background:linear-gradient(180deg,var(--a3),var(--a2));transform-origin:bottom;animation:lcgrow .8s var(--ease) both}
+.lc-bar i.z{background:var(--line);opacity:.7}
+@keyframes lcgrow{from{transform:scaleY(0)}}
+.lc-n{font-size:.6rem;color:var(--muted);white-space:nowrap}.lc-c{font-size:.56rem;color:var(--muted);height:12px;white-space:nowrap}
+.lc-note{text-align:center;font-size:.64rem;color:var(--muted);margin-top:8px}
+*{scrollbar-width:none;-ms-overflow-style:none}*::-webkit-scrollbar{display:none;width:0;height:0}
 .imtabs{display:flex;gap:6px;background:var(--rowbg);border-radius:16px;padding:4px;margin:12px 0}
 .imtabs button{flex:1;border:none;background:none;border-radius:12px;padding:9px 2px;font-weight:700;font-size:.74rem;color:var(--muted);cursor:pointer;font-family:inherit;transition:.3s}
 .imtabs button.on{background:var(--sheet);color:var(--atxt);box-shadow:0 4px 12px rgba(0,0,0,.12)}
@@ -290,20 +303,20 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .bsheet{position:absolute;left:0;right:0;bottom:0;max-height:86%;overflow-y:auto;background:var(--sheet);z-index:61;border-radius:30px 30px 0 0;padding:12px 18px calc(24px + env(safe-area-inset-bottom));transform:translateY(130%);visibility:hidden;transition:transform .5s cubic-bezier(.2,.9,.25,1),visibility 0s .5s}
 .bsheet.on{transform:none;visibility:visible;transition-delay:0s;box-shadow:0 -16px 40px rgba(0,0,0,.3)}
 .grab{width:46px;height:5px;border-radius:9px;background:var(--line);margin:0 auto 14px}
-.bs-title{font-size:1.1rem;font-weight:800;margin:0 2px 8px}
-.tprev{border-radius:24px;padding:16px;background:linear-gradient(150deg,var(--a1),var(--a2));color:#fff;position:relative;overflow:hidden;box-shadow:0 14px 30px color-mix(in srgb,var(--a2) 40%,transparent);transition:background .5s}
+.bs-title{font-size:1.1rem;font-weight:800;margin:0 -18px 8px;padding:4px 20px 8px;position:sticky;top:0;background:var(--sheet);z-index:3}
+.tprev{border-radius:22px;padding:13px 15px;background:linear-gradient(150deg,var(--a1),var(--a2));color:#fff;position:relative;overflow:hidden;box-shadow:0 14px 30px color-mix(in srgb,var(--a2) 40%,transparent);transition:background .5s}
 .tprev::before{content:"";position:absolute;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.28),transparent 70%);top:-60px;left:-40px;animation:float 5s ease-in-out infinite}
-.tp-top{position:relative;display:flex;flex-direction:column;gap:4px}.tp-top small{opacity:.8;font-size:.7rem}.tp-top b{font-size:1.35rem}.tp-top span{align-self:flex-start;background:rgba(255,255,255,.2);padding:3px 11px;border-radius:12px;font-size:.72rem;font-weight:700;margin-top:4px}
-.tp-box{display:flex;gap:10px;margin-top:14px}.tp-box i{flex:1;height:44px;border-radius:14px;background:rgba(255,255,255,.18)}
-.tp-nav{display:flex;justify-content:space-around;margin-top:12px;background:rgba(255,255,255,.16);border-radius:16px;padding:9px}.tp-nav u{width:22px;height:6px;border-radius:6px;background:rgba(255,255,255,.4)}.tp-nav u.on{width:34px;background:#fff}
+.tp-top{position:relative;display:flex;flex-direction:column;gap:4px}.tp-top small{opacity:.8;font-size:.7rem}.tp-top b{font-size:1.2rem}.tp-top span{align-self:flex-start;background:rgba(255,255,255,.2);padding:3px 11px;border-radius:12px;font-size:.72rem;font-weight:700;margin-top:4px}
+.tp-box{display:flex;gap:8px;margin-top:10px}.tp-box i{flex:1;height:34px;border-radius:12px;background:rgba(255,255,255,.2);font-style:normal;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:5px}
+.tp-nav{display:flex;justify-content:space-around;margin-top:9px;background:rgba(255,255,255,.16);border-radius:14px;padding:7px}.tp-nav u{width:22px;height:6px;border-radius:6px;background:rgba(255,255,255,.4)}.tp-nav u.on{width:34px;background:#fff}
 .tsec{font-size:.82rem;font-weight:700;color:var(--muted);margin:16px 2px 8px}
-.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px}
-.tcard{position:relative;border:2px solid transparent;background:var(--rowbg);border-radius:18px;padding:8px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:var(--ink);transition:transform .35s var(--ease),border-color .3s,background .3s}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px 8px}
+.tcard{position:relative;border:2px solid transparent;background:var(--rowbg);border-radius:18px;padding:8px 2px 7px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:var(--ink);transition:transform .35s var(--ease),border-color .3s,background .3s}
 .tcard:active{transform:scale(.94)}.tcard.on{border-color:var(--a2);background:var(--asoft);transform:translateY(-3px)}
 .tn{font-size:.7rem;font-weight:700}.tk{position:absolute;top:-6px;right:-5px;width:22px;height:22px;border-radius:50%;background:var(--a2);color:#fff;display:flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .35s var(--ease)}.tcard.on .tk{transform:scale(1)}
-.mp{width:52px;height:78px;border-radius:12px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 6px 14px rgba(0,0,0,.18);border:1px solid rgba(0,0,0,.06)}
-.mp-h{height:36%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px}.mp-h b{width:22px;height:5px;border-radius:5px;opacity:.9}
-.mp-b{flex:1;display:flex;gap:4px;padding:5px}.mp-b i{flex:1;border-radius:5px}.mp-n{display:flex;justify-content:space-around;padding:4px 5px 5px}.mp-n u{width:9px;height:4px;border-radius:3px}
+.mp{width:44px;height:64px;border-radius:12px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 6px 14px rgba(0,0,0,.18);border:1px solid rgba(0,0,0,.06)}
+.mp-h{height:36%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px}.mp-h b{width:18px;height:5px;border-radius:5px;opacity:.9}
+.mp-b{flex:1;display:flex;gap:3px;padding:4px}.mp-b i{flex:1;border-radius:5px}.mp-n{display:flex;justify-content:space-around;padding:4px 5px 5px}.mp-n u{width:9px;height:4px;border-radius:3px}
 .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .mcard{border:2px solid transparent;background:var(--rowbg);border-radius:18px;padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;color:var(--ink);transition:.3s}
 .mcard.on{border-color:var(--a2);background:var(--asoft);color:var(--atxt)}
@@ -446,6 +459,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .t-next{border:none;border-radius:14px;background:linear-gradient(135deg,var(--a2),var(--a1));color:#fff;font-weight:800;font-size:.86rem;padding:10px 22px;cursor:pointer}
 
 /* ===== Install banner ===== */
+body.sheetopen #install{display:none!important}
 #install{position:absolute;left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:90;display:none;align-items:center;gap:12px;padding:12px 14px;border-radius:24px;background:var(--sheet);box-shadow:0 18px 44px rgba(0,0,0,.35);border:1px solid var(--line)}
 #install.on{display:flex;animation:installIn .7s var(--ease)}
 @keyframes installIn{from{transform:translateY(140%);opacity:0}to{transform:none;opacity:1}}
@@ -719,7 +733,9 @@ function saveUser(){ const i = allUsers.findIndex(u => u.id === currentUser.id);
 const payAmt = (l, i) => l.payments[i].amount ?? l.installmentAmount;
 const paidSum = l => l.payments.reduce((s, p, i) => s + (p.paid ? payAmt(l, i) : 0), 0);
 const remaining = l => l.payments.every(p => p.paid) ? 0 : Math.max(0, l.totalLoanAmount - paidSum(l));
-const dueDate = (l, i) => addJMonths(new Date(l.id), i + 1);
+// سررسید هر قسط: بازهٔ ۱ تا ۵ هر ماه شمسی (آخرین مهلت: روز پنجم)
+const dueDate = (l, i) => { const p = jparts(new Date(l.id)), idx = p.y * 12 + (p.m - 1) + i + 1; return j2g(Math.floor(idx / 12), idx % 12 + 1, 5); };
+const dueLabel = d => '۱ تا ۵ ' + new Date(d).toLocaleDateString('fa-IR', {month:'long'}) + ' ' + fa(jparts(new Date(d)).y);
 // قانون پس‌انداز: برای هر وام در هر ماه شمسی فقط یک‌بار پس‌انداز ثبت می‌شود (حتی اگر چند قسط در همان ماه پرداخت شود)
 const savOf = (l, i) => { const p = l.payments[i]; return p && p.paid ? (p.sav !== undefined ? p.sav : l.totalMonthlySaving) : 0; };
 const savSum = l => l.payments.reduce((s, p, i) => s + savOf(l, i), 0);
@@ -764,7 +780,7 @@ function openThemeSheet(keep){
     : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>';
   openSheet('نمایش و تم برنامه', `
     <div class="tprev"><div class="tp-top"><small>پیش‌نمایش زنده</small><b>۲٬۲۳۴٬۰۰۰ ریال</b><span>تم ${cur.name}</span></div>
-      <div class="tp-box"><i></i><i></i></div><div class="tp-nav"><u class="on"></u><u></u><u></u><u></u></div></div>
+      <div class="tp-box"><i>${ic('file',14)}وام‌ها</i><i>${ic('coins',14)}پس‌انداز</i></div><div class="tp-nav"><u class="on"></u><u></u><u></u><u></u></div></div>
     <div class="tsec">رنگ برنامه</div>
     <div class="tgrid">${THEMES.map(t => `<button class="tcard ${t.id === a ? 'on' : ''}" onclick="setAccent('${t.id}')">${miniPhone(t.a1, t.a2, t.a3, document.documentElement.dataset.theme === 'dark')}<span class="tn">${t.name}</span><span class="tk">${ic('check',14)}</span></button>`).join('')}</div>
     <div class="tsec">حالت نمایش</div>
@@ -791,8 +807,8 @@ function ask({icon='help', title='', text='', yes='تأیید', no='انصراف
 }
 const info = o => ask({...o, single:true, yes:o.yes || 'باشه'});
 function closeModal(v){ $('modal').classList.remove('active'); const r = modalResolve; modalResolve = null; if (r) r(v); }
-function openSheet(title, html, keep){ $('bsTitle').textContent = title; $('bsBody').innerHTML = html; $('bsheet').classList.add('on'); $('sheetScrim').classList.add('on'); if (!keep) $('bsheet').scrollTop = 0; }
-function closeSheet(){ $('bsheet').classList.remove('on'); $('sheetScrim').classList.remove('on'); }
+function openSheet(title, html, keep){ document.body.classList.add('sheetopen'); $('bsTitle').textContent = title; $('bsBody').innerHTML = html; $('bsheet').classList.add('on'); $('sheetScrim').classList.add('on'); if (!keep) $('bsheet').scrollTop = 0; }
+function closeSheet(){ document.body.classList.remove('sheetopen'); $('bsheet').classList.remove('on'); $('sheetScrim').classList.remove('on'); }
 function confetti(){
   const box = $('confetti'), cols = ['#f2d070','#ffffff','#2f6fe0','#14935f','#d4a62a'];
   for (let i=0; i<80; i++){ const s = document.createElement('i'); s.style.cssText = `left:${Math.random()*100}%;background:${cols[i%5]};animation-duration:${1.8+Math.random()*1.6}s;animation-delay:${Math.random()*.5}s;transform:rotate(${Math.random()*360}deg)`; box.appendChild(s); }
@@ -956,7 +972,7 @@ function renderHome(){
   s.loans.forEach(l => { const i = l.payments.findIndex(p => !p.paid); if (i > -1){ const d = dueDate(l, i); upcoming.push({l, i, d, left: daysUntil(d), amount: payAmt(l, i) + nextSav(l)}); } });
   upcoming.sort((a, b) => a.d - b.d);
   let alertHTML = '';
-  if (alerts.length) alertHTML = alerts.map(a => `<div class="alarm ${alertKind(a)} rise" onclick="openLoan(${a.l.id})"><div class="a-ico">${ic('bell',24)}</div><div class="a-txt"><b>${esc(a.l.title || 'وام')} · قسط ${qn(a.i)}</b><small>${alertWhen(a)} · ${fmtDate(a.d)}<br>${fmt(a.amount)}</small></div><button class="a-btn">پرداخت</button></div>`).join('');
+  if (alerts.length) alertHTML = alerts.map(a => `<div class="alarm ${alertKind(a)} rise" onclick="openLoan(${a.l.id})"><div class="a-ico">${ic('bell',24)}</div><div class="a-txt"><b>${esc(a.l.title || 'وام')} · قسط ${qn(a.i)}</b><small>${alertWhen(a)} · مهلت تا ${fmtDate(a.d)}<br>${fmt(a.amount)}</small></div><button class="a-btn">پرداخت</button></div>`).join('');
   $('p-home').innerHTML = `
     <div class="hd">${bar()}
       <div class="bal tHero rise"><div class="amt" id="heroAmount"></div>
@@ -989,28 +1005,40 @@ function countInts(){
 function installRow(a){
   const late = a.left < 0, near = a.left >= 0 && a.left <= 1;
   return `<div class="row rise" onclick="openLoan(${a.l.id})"><div class="ric ${late ? 'red' : near ? 'gold' : 'soft'}">${ic(late ? 'alert' : near ? 'bell' : 'calendar', 24)}</div>
-    <div class="rmain"><b>قسط ${qn(a.i)} · ${esc(a.l.title || 'وام')}</b><small>${fmtDate(a.d)}</small></div>
+    <div class="rmain"><b>قسط ${qn(a.i)} · ${esc(a.l.title || 'وام')}</b><small>${dueLabel(a.d)}</small></div>
     <div class="rend"><b>${fnum(a.amount)}</b>${late ? `<span class="tag late">${ic('alert',12)}معوق</span>` : near ? `<span class="tag warn">${ic('bell',12)}${a.left === 0 ? 'امروز' : 'فردا'}</span>` : `<span class="tag acc">${fa(a.left)} روز دیگر</span>`}</div></div>`;
 }
 function loanRow(l){
   const n = l.payments.length, paid = l.payments.filter(p => p.paid).length, i = l.payments.findIndex(p => !p.paid);
   let tag = '', sub = '';
-  if (i > -1){ const d = dueDate(l, i), left = daysUntil(d); sub = 'قسط بعدی: ' + fmtDate(d); tag = left < 0 ? `<span class="tag late">${ic('alert',12)}معوق</span>` : left <= 1 ? `<span class="tag warn">${ic('bell',12)}${left === 0 ? 'امروز' : 'فردا'}</span>` : ''; }
+  if (i > -1){ const d = dueDate(l, i), left = daysUntil(d); sub = 'قسط بعدی: ' + dueLabel(d); tag = left < 0 ? `<span class="tag late">${ic('alert',12)}معوق</span>` : left <= 1 ? `<span class="tag warn">${ic('bell',12)}${left === 0 ? 'امروز' : 'فردا'}</span>` : ''; }
   return `<div class="row rise" onclick="openLoan(${l.id})"><div class="ric soft">${ic('file',24)}</div>
     <div class="rmain"><b>${esc(l.title || 'وام')}</b><small>${esc(l.borrower)} · ${sub}</small><div class="mprog"><i data-w="${paid/n*100}"></i></div></div>
     <div class="rend"><b>${fnum(remaining(l))}</b><small>ریال مانده · ${fa(paid)}/${fa(n)}</small>${tag}</div></div>`;
 }
 
 /* ================= وام‌ها ================= */
+function loanChart(){
+  const all = [...getLoans(), ...getHist()], now = jparts(new Date()), cols = [];
+  for (let k = 5; k >= 0; k--){ const idx = now.y * 12 + (now.m - 1) - k, y = Math.floor(idx / 12), m = idx % 12 + 1; cols.push({key: y + '-' + m, name: j2g(y, m, 15).toLocaleDateString('fa-IR', {month:'long'}), v: 0, c: 0}); }
+  all.forEach(l => { const p = jparts(new Date(l.id)), c = cols.find(x => x.key === p.y + '-' + p.m); if (c){ c.v += l.totalLoanAmount; c.c++; } });
+  const total = all.reduce((t, l) => t + l.totalLoanAmount, 0), max = Math.max(...cols.map(c => c.v), 1), hid = eyeHidden();
+  const mil = v => v >= 1e9 ? fa((v / 1e9).toFixed(1).replace(/\.0$/, '')) + ' م‌م' : fa(Math.round(v / 1e6)) + ' م';
+  return `<div class="lchart rise"><div class="lc-sum"><div><small>تعداد وام‌های دریافتی</small><b>${fa(all.length)}</b></div><div><small>مجموع مبلغ دریافتی</small><b>${hid ? '••••' : fnum(total)}</b><small>ریال</small></div></div>
+    ${all.length ? `<div class="lc-bars">${cols.map((c, i) => `<div class="lc-col"><span class="lc-v">${c.v ? (hid ? '•' : mil(c.v)) : ''}</span><div class="lc-bar"><i style="height:${Math.max(c.v ? 8 : 3, c.v / max * 100)}%;animation-delay:${i * 80}ms" class="${c.v ? '' : 'z'}"></i></div><span class="lc-n">${c.name}</span>${c.c ? `<span class="lc-c">${fa(c.c)} وام</span>` : '<span class="lc-c"></span>'}</div>`).join('')}</div>
+    <div class="lc-note">مبلغ وام‌های دریافتی در ۶ ماه اخیر (م = میلیون ریال)</div>` : '<div class="empty" style="padding:14px">با ثبت اولین وام، نمودار اینجا نمایش داده می‌شود</div>'}</div>`;
+}
 function renderLoans(){
   const s = stats(), canOpen = (currentUser.loanAccounts || 0) < MAX_ACCOUNTS, hid = eyeHidden(), rest = s.loans.reduce((t, l) => t + remaining(l), 0);
   $('p-loans').innerHTML = `
     <div class="hd">${bar({title:'وام‌های من'})}
       <div class="bal rise"><div class="amt">${hid ? '••••••' : fnum(rest)}<small>ریال</small></div><div class="eye" style="cursor:default">${ic('wallet',22)}<span>مانده کل وام‌های جاری</span></div></div></div>
     <div class="sheet">
+      ${loanChart()}
       ${s.loans.length ? s.loans.map(loanRow).join('') : `<div class="empty rise"><div class="eico">${ic('inbox',34)}</div>هنوز وامی ثبت نشده است</div>`}
       <button class="btn rise" onclick="openLoanForm()" ${s.free > 0 ? '' : 'disabled'}>${ic('filePlus',20)}ثبت وام جدید${s.free > 0 ? '' : ' (حساب آزاد ندارید)'}</button>
       <button class="btn ghost rise" onclick="openAccForm()" ${canOpen ? '' : 'disabled'}>${ic('bank',20)}افتتاح حساب وامی</button>
+      <button class="btn ghost rise" onclick="openCloseAcc()" ${s.free > 0 ? '' : 'disabled'}>${ic('lock',20)}بستن حساب آزاد</button>
     </div>`;
 }
 
@@ -1032,10 +1060,22 @@ function renderSavings(){
         <div class="legend"><div><i style="background:var(--a2)"></i>آزاد: <b>${fa(s.free)}</b></div><div><i style="background:#f2d070"></i>فعال: <b>${fa(s.used)}</b></div><div class="muted" style="font-size:.72rem">آزاد: ${hid ? '••••' : fmt(s.freeS)}<br>فعال: ${hid ? '••••' : fmt(s.active + s.settled)}</div></div></div>
       <div class="sec rise">حساب‌های آزاد · ${hid ? '••••' : fmt(s.freeS)}</div>
       <button class="btn soft rise" style="margin-top:4px" onclick="registerFree()" ${s.free > 0 ? '' : 'disabled'}>${ic(s.free > 0 ? 'plus' : 'lock', 19)}${s.free > 0 ? 'ثبت پس‌انداز این ماه' : 'حساب آزادی وجود ندارد'}</button>
+      <button class="btn ghost rise" onclick="openCloseAcc()" ${s.free > 0 ? '' : 'disabled'}>${ic('lock',19)}بستن حساب آزاد</button>
       ${freeList || '<div class="empty" style="padding:16px">هنوز ثبت نشده</div>'}
       <div class="sec rise">حساب‌های فعال · ${hid ? '••••' : fmt(s.active + s.settled)}</div>${actList + setList || '<div class="empty" style="padding:16px">هنوز پرداختی ثبت نشده</div>'}
     </div>`;
   countUp($('savAmt'), s.total, hid);
+}
+function openCloseAcc(){
+  const f = stats().free; if (f <= 0) return toast('حساب آزاد ندارید؛ حساب درگیر وام را نمی‌توان بست','warn');
+  openSheet('بستن حساب وامی', `<div class="cloud-note warn">${ic('alert',20)}<div>فقط حساب‌های آزاد (بدون وام) بسته می‌شوند. پس‌اندازهای ثبت‌شده در صندوق باقی می‌ماند و فقط تعداد حساب‌ها کم می‌شود. بعداً می‌توانید دوباره حساب باز کنید.</div></div>
+    <div class="field" style="margin-top:12px"><label>چند حساب بسته شود؟ (آزاد: ${fa(f)})</label><select id="caN">${Array.from({length: f}, (_, i) => `<option value="${i+1}">${fa(i+1)} حساب</option>`).join('')}</select></div>
+    <button class="btn" style="background:linear-gradient(135deg,var(--danger2),var(--danger))" onclick="closeAcc()">${ic('lock',19)}بستن حساب</button>`);
+}
+async function closeAcc(){
+  const n = +$('caN').value, f = stats().free; if (!(n >= 1 && n <= f)) return;
+  const ok = await ask({icon:'lock', kind:'danger', title:'بستن حساب', text:`${fa(n)} حساب آزاد بسته شود؟`, yes:'بله، ببند'}); if (!ok) return;
+  currentUser = {...currentUser, loanAccounts: (currentUser.loanAccounts || 0) - n}; saveUser(); closeSheet(); render(stack[stack.length-1], true); toast(fa(n) + ' حساب بسته شد');
 }
 async function registerFree(){
   const s = stats(); if (s.free <= 0){ toast('حساب آزادی وجود ندارد','warn'); return; }
@@ -1141,11 +1181,11 @@ function openImport(tab, keep){
   else if (t === 'free') form = `${fld('imAmt', 'مبلغ پس‌انداز (ریال)', '5000000', '', 'text', 'num')}${fld('imDate', 'تاریخ', '۱۴۰۵/۰۸/۲۳')}${fld('imNote', 'توضیح', 'اختیاری', 'پس‌انداز قبلی')}
     <button class="btn" onclick="importForm('free')">${ic('check',19)}افزودن پس‌انداز</button>`;
   else form = `<div class="seg3" style="margin:0 0 10px">${[['loan', 'وام جاری'], ['settled', 'تسویه‌شده'], ['free', 'پس‌انداز']].map(([k, n]) => `<button class="${impPaste === k ? 'on' : ''}" onclick="impPaste='${k}';openImport('paste',true)">${n}</button>`).join('')}</div>
-    <div class="muted" style="font-size:.76rem;line-height:2;margin:0 2px 8px">ستون‌ها را در Excel به این ترتیب بچینید، ردیف‌ها را کپی و اینجا بچسبانید (یا فایل CSV بدهید):<br><b style="color:var(--ink)">${IMP_COLS[impPaste].join(' ┃ ')}</b></div>
+    <div class="muted" style="font-size:.76rem;line-height:2;margin:0 2px 8px">ستون‌ها را در Excel به این ترتیب بچینید، ردیف‌ها را کپی و اینجا بچسبانید (یا فایل Excel بدهید):<br><b style="color:var(--ink)">${IMP_COLS[impPaste].join(' ┃ ')}</b></div>
     <textarea id="imText" class="imta" rows="6" placeholder="هر خط یک ردیف؛ ستون‌ها با Tab یا کاما جدا شوند"></textarea>
-    <div class="two"><button class="btn ghost" onclick="impTemplate()">${ic('download',19)}نمونه CSV</button><button class="btn ghost" onclick="$('impFile').click()">${ic('upload',19)}انتخاب فایل</button></div>
+    <div class="two"><button class="btn ghost" onclick="impTemplate()">${ic('download',19)}نمونه Excel</button><button class="btn ghost" onclick="$('impFile').click()">${ic('upload',19)}انتخاب فایل</button></div>
     <button class="btn" onclick="importPaste()">${ic('check',19)}بررسی و ثبت</button>
-    <input type="file" id="impFile" accept=".csv,.txt,text/csv,text/plain" style="display:none" onchange="impFileLoad(event)">`;
+    <input type="file" id="impFile" accept=".xlsx,.csv,.txt" style="display:none" onchange="impFileLoad(event)">`;
   openSheet('ورود اطلاعات قبلی', `<div class="cloud-note">${ic('info',20)}<div>اگر وام‌ها یا پس‌اندازهایتان را قبلاً در دفتر یا Excel می‌نوشتید، اینجا وارد کنید. حساب‌های وامی: <b>${fa(currentUser.loanAccounts || 0)}</b> (آزاد: ${fa(s.free)}). اگر حساب کم باشد خودکار زیاد می‌شود (حداکثر ${fa(MAX_ACCOUNTS)}).</div></div>
     <div class="imtabs">${tabs.map(([k, n]) => `<button class="${t === k ? 'on' : ''}" onclick="openImport('${k}',true)">${n}</button>`).join('')}</div>${form}`, keep);
 }
@@ -1234,10 +1274,15 @@ async function importPaste(){
 }
 function impTemplate(){
   const ex = {loan: ['وام خرید ماشین', 'علی رضایی', 2, 200000000, 10, 3, '1405/05/10'], settled: ['وام قدیمی', 'علی رضایی', 1, 100000000, 10, 5000000, '1404/12/20'], free: [5000000, '1405/08/01', 'پس‌انداز ماه آبان']}[impPaste];
-  const csv = '﻿' + IMP_COLS[impPaste].join(',') + '\n' + ex.join(',') + '\n';
-  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8'})); a.download = 'qarz-import-' + impPaste + '.csv'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+  downloadBlob(makeXlsx('ورود اطلاعات', [IMP_COLS[impPaste], ex], IMP_COLS[impPaste].map(() => 24)), 'qarz-import-' + impPaste + '.xlsx');
 }
-function impFileLoad(e){ const f = e.target.files[0]; e.target.value = ''; if (!f) return; const r = new FileReader(); r.onload = ev => { $('imText').value = String(ev.target.result).replace(/^﻿/, ''); toast('فایل خوانده شد؛ «بررسی و ثبت» را بزنید'); }; r.readAsText(f); }
+async function impFileLoad(e){
+  const f = e.target.files[0]; e.target.value = ''; if (!f) return;
+  try {
+    let t; if (/\.xlsx$/i.test(f.name)) t = await readXlsx(f); else t = await new Promise((res, rej) => { const r = new FileReader(); r.onload = ev => res(String(ev.target.result).replace(/^\ufeff/, '')); r.onerror = rej; r.readAsText(f); });
+    $('imText').value = t; toast('فایل خوانده شد؛ «بررسی و ثبت» را بزنید');
+  } catch { toast('خواندن فایل ممکن نشد؛ فایل .xlsx یا .csv بدهید','err'); }
+}
 
 /* ================= تنظیمات / حساب ================= */
 function renderProfile(){
@@ -1427,7 +1472,7 @@ function renderDetail(){
     const rest = l.payments.every(q => q.paid) ? 0 : Math.max(0, l.totalLoanAmount - paidTotal);
     const end = p.paid ? `<span class="tag done">${ic('check',12)}پرداخت شد</span>` : (isNext && !viewingHistory ? `<button class="pay-btn" onclick="payInstallment(${i})">${ic('card',16)}${isLast ? 'پرداخت و تسویه' : 'پرداخت'}</button>` : `<span class="tag soon">${ic('lock',12)}در انتظار</span>`);
     return `<div class="row inst rise ${p.paid ? 'done' : ''} ${isNext && !viewingHistory ? 'next' : ''}" style="cursor:default"><div class="ric">${p.paid ? ic('check',24) : fa(i+1)}</div>
-      <div class="rmain"><b>قسط ${qn(i)} · ${fnum(payAmt(l, i) + (p.paid ? savOf(l, i) : (isNext ? nextSav(l) : l.totalMonthlySaving)))}</b><small>سررسید ${fmtDate(due)}${p.paid ? ' · پرداخت ' + esc(p.date) : ''}</small><small>${p.paid ? 'مانده وام: ' + fmt(rest) + (savOf(l, i) ? '' : ' · بدون پس‌انداز (این ماه ثبت شده)') : (isNext && !nextSav(l) ? 'فقط قسط · پس‌انداز این ماه قبلاً ثبت شده' : 'قسط + پس‌انداز ماهیانه')}</small></div>
+      <div class="rmain"><b>قسط ${qn(i)} · ${fnum(payAmt(l, i) + (p.paid ? savOf(l, i) : (isNext ? nextSav(l) : l.totalMonthlySaving)))}</b><small>سررسید ${dueLabel(due)}${p.paid ? ' · پرداخت ' + esc(p.date) : ''}</small><small>${p.paid ? 'مانده وام: ' + fmt(rest) + (savOf(l, i) ? '' : ' · بدون پس‌انداز (این ماه ثبت شده)') : (isNext && !nextSav(l) ? 'فقط قسط · پس‌انداز این ماه قبلاً ثبت شده' : 'قسط + پس‌انداز ماهیانه')}</small></div>
       <div class="rend">${end}${late ? `<span class="tag late">${ic('alert',12)}معوق</span>` : near ? `<span class="tag warn">${ic('bell',12)}${left === 0 ? 'امروز' : 'فردا'}</span>` : ''}</div></div>`;
   }).join('');
   el.innerHTML = `
@@ -1442,19 +1487,27 @@ function renderDetail(){
     <div class="sheet"><div class="sec rise">اقساط</div>${rows}</div>`;
 }
 function persistLoan(l){ const all = getLoans(), i = all.findIndex(x => x.id === l.id); if (i > -1){ all[i] = l; putLoans(all); } }
+// وقتی در همین ماه برای این وام پس‌انداز ثبت شده، از کاربر می‌پرسیم برای این پرداخت هم ثبت شود یا نه
+async function askSaving(){
+  const yes = await ask({icon:'coins', kind:'warn', title:'پس‌انداز این ماه', text:'برای این وام در همین ماه شمسی قبلاً پس‌انداز ثبت شده است.\nبرای این پرداخت هم پس‌انداز ثبت شود؟\n(مثلاً اگر قسط اول را اول ماه و دومی را آخر همین ماه می‌دهید، معمولاً نیازی نیست.)', yes:'بله، ثبت شود', no:'نه، فقط قسط'});
+  return yes ? currentLoan.totalMonthlySaving : 0;
+}
 async function payInstallment(i){
   const l = currentLoan; if (!l || viewingHistory) return;
   if (i !== l.payments.findIndex(p => !p.paid)) return toast('ابتدا قسط‌های قبلی را پرداخت کنید','warn');
-  const isLast = i === l.payments.length - 1, sv = nextSav(l), amount = payAmt(l, i) + sv;
-  const ok = await ask({icon:'card', kind:'warn', title:`پرداخت قسط ${qn(i)}`, text:`مبلغ ${fmt(amount)}` + (sv ? ' (قسط + پس‌انداز)' : '\nپس‌انداز این ماه برای این وام قبلاً ثبت شده و دوباره ثبت نمی‌شود.') + (isLast ? '\nاین آخرین قسط است و وام تسویه می‌شود.' : ''), yes: isLast ? 'پرداخت و تسویه' : 'پرداخت'}); if (!ok) return;
+  const isLast = i === l.payments.length - 1; let sv = l.totalMonthlySaving;
+  if (monthHasSaving(l)) sv = await askSaving();
+  const amount = payAmt(l, i) + sv;
+  const ok = await ask({icon:'card', kind:'warn', title:`پرداخت قسط ${qn(i)}`, text:`مبلغ ${fmt(amount)}` + (sv ? ' (قسط + پس‌انداز)' : ' (فقط قسط، بدون پس‌انداز)') + (isLast ? '\nاین آخرین قسط است و وام تسویه می‌شود.' : ''), yes: isLast ? 'پرداخت و تسویه' : 'پرداخت'}); if (!ok) return;
   markPaid(l, i, sv);
   if (isLast) settleLoan(l); else { persistLoan(l); render('detail', true); playSuccess(); toast('قسط ثبت شد'); }
 }
 async function settleAll(){
   const l = currentLoan; if (!l) return; const left = l.payments.map((p, i) => p.paid ? null : i).filter(i => i !== null);
   if (!left.length) return toast('همه اقساط پرداخت شده‌اند','warn');
-  const sv = nextSav(l), sum = left.reduce((s, i) => s + payAmt(l, i), 0) + sv;
-  const ok = await ask({icon:'flag', kind:'warn', title:'تسویه کامل', text:`${fa(left.length)} قسط باقی‌مانده\nمبلغ کل: ${fmt(sum)}` + (sv ? ' (شامل یک‌بار پس‌انداز)' : ' (پس‌انداز این ماه قبلاً ثبت شده)') + '\nهمه یکجا تسویه شود؟', yes:'بله، تسویه کامل'}); if (!ok) return;
+  let sv = l.totalMonthlySaving; if (monthHasSaving(l)) sv = await askSaving();
+  const sum = left.reduce((s, i) => s + payAmt(l, i), 0) + sv;
+  const ok = await ask({icon:'flag', kind:'warn', title:'تسویه کامل', text:`${fa(left.length)} قسط باقی‌مانده\nمبلغ کل: ${fmt(sum)}` + (sv ? ' (شامل یک‌بار پس‌انداز)' : ' (بدون پس‌انداز)') + '\nهمه یکجا تسویه شود؟', yes:'بله، تسویه کامل'}); if (!ok) return;
   left.forEach((i, k) => markPaid(l, i, k === 0 ? sv : 0)); settleLoan(l);
 }
 function settleLoan(l){
@@ -1468,10 +1521,67 @@ async function deleteLoan(id){
   const ok = await ask({icon:'trash', kind:'danger', title:'حذف وام', text:`وام «${l.title || 'وام'}» حذف شود؟` + (paid ? `\nپس‌انداز ${fmt(savSum(l))} مربوط به ${fa(paid)} قسط پرداخت‌شده نیز از صندوق کم می‌شود.` : ''), yes:'حذف'}); if (!ok) return;
   putLoans(getLoans().filter(x => x.id !== id)); toast('وام حذف شد','warn'); goRoot('home');
 }
+/* ================= فایل Excel واقعی (xlsx) ================= */
+const _crcT = (() => { const t = []; for (let n = 0; n < 256; n++){ let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+const crc32 = u => { let c = -1; for (let i = 0; i < u.length; i++) c = _crcT[(c ^ u[i]) & 255] ^ (c >>> 8); return (~c) >>> 0; };
+function zipStore(files){
+  const enc = new TextEncoder(), parts = [], cd = []; let off = 0;
+  files.forEach(f => {
+    const nm = enc.encode(f.name), data = enc.encode(f.text), crc = crc32(data), sz = data.length;
+    const h = new DataView(new ArrayBuffer(30)); h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x0800, true); h.setUint16(12, 0x21, true); h.setUint32(14, crc, true); h.setUint32(18, sz, true); h.setUint32(22, sz, true); h.setUint16(26, nm.length, true);
+    parts.push(new Uint8Array(h.buffer), nm, data);
+    const c = new DataView(new ArrayBuffer(46)); c.setUint32(0, 0x02014b50, true); c.setUint16(4, 20, true); c.setUint16(6, 20, true); c.setUint16(8, 0x0800, true); c.setUint16(14, 0x21, true); c.setUint32(16, crc, true); c.setUint32(20, sz, true); c.setUint32(24, sz, true); c.setUint16(28, nm.length, true); c.setUint32(42, off, true);
+    cd.push(new Uint8Array(c.buffer), nm); off += 30 + nm.length + sz;
+  });
+  const cds = cd.reduce((t, x) => t + x.length, 0), e = new DataView(new ArrayBuffer(22)); e.setUint32(0, 0x06054b50, true); e.setUint16(8, files.length, true); e.setUint16(10, files.length, true); e.setUint32(12, cds, true); e.setUint32(16, off, true);
+  return new Blob([...parts, ...cd, new Uint8Array(e.buffer)], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+}
+const xmlEsc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])).replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '');
+const colName = i => { let n = '', k = i + 1; while (k > 0){ const r = (k - 1) % 26; n = String.fromCharCode(65 + r) + n; k = Math.floor((k - 1) / 26); } return n; };
+// rows: آرایه‌ای از آرایه‌ها (ردیف اول عنوان)؛ عدد → سلول عددی، متن → متنی؛ widths: عرض ستون‌ها
+function makeXlsx(sheet, rows, widths){
+  const sr = rows.map((r, ri) => `<row r="${ri + 1}"${ri === 0 ? ' ht="24" customHeight="1"' : ''}>` + r.map((v, ci) => {
+    const ref = colName(ci) + (ri + 1), st = ri === 0 ? 1 : (typeof v === 'number' ? 2 : 3);
+    if (v === '' || v == null) return `<c r="${ref}" s="${st}"/>`;
+    return typeof v === 'number' ? `<c r="${ref}" s="${st}"><v>${v}</v></c>` : `<c r="${ref}" s="${st}" t="inlineStr"><is><t xml:space="preserve">${xmlEsc(v)}</t></is></c>`;
+  }).join('') + '</row>').join('');
+  const cols = (widths || []).map((w, i) => `<col min="${i + 1}" max="${i + 1}" width="${w}" customWidth="1"/>`).join('');
+  const X = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n';
+  return zipStore([
+    {name: '[Content_Types].xml', text: X + '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>'},
+    {name: '_rels/.rels', text: X + '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>'},
+    {name: 'xl/workbook.xml', text: X + `<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="${xmlEsc(sheet).slice(0, 31)}" sheetId="1" r:id="rId1"/></sheets></workbook>`},
+    {name: 'xl/_rels/workbook.xml.rels', text: X + '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>'},
+    {name: 'xl/styles.xml', text: X + '<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF1648B0"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="2"><border><left/><right/><top/><bottom/><diagonal/></border><border><left style="thin"><color rgb="FFD5DCE8"/></left><right style="thin"><color rgb="FFD5DCE8"/></right><top style="thin"><color rgb="FFD5DCE8"/></top><bottom style="thin"><color rgb="FFD5DCE8"/></bottom><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="4"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf><xf numFmtId="3" fontId="0" fillId="0" borderId="1" xfId="0" applyNumberFormat="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf><xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf></cellXfs></styleSheet>'},
+    {name: 'xl/worksheets/sheet1.xml', text: X + `<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView rightToLeft="1" workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><sheetFormatPr defaultRowHeight="18"/><cols>${cols}</cols><sheetData>${sr}</sheetData></worksheet>`}
+  ]);
+}
+function downloadBlob(blob, name){ const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); }
+// خواندن فایل xlsx (ZIP با deflate) و برگرداندن ردیف‌ها به‌صورت متن جداشده با Tab
+async function readXlsx(file){
+  const buf = new Uint8Array(await file.arrayBuffer()), dv = new DataView(buf.buffer); let e = buf.length - 22;
+  while (e >= 0 && dv.getUint32(e, true) !== 0x06054b50) e--; if (e < 0) throw new Error('zip');
+  const n = dv.getUint16(e + 10, true); let p = dv.getUint32(e + 16, true); const ent = {}, dec = new TextDecoder();
+  for (let i = 0; i < n; i++){ const m = dv.getUint16(p + 10, true), cs = dv.getUint32(p + 20, true), nl = dv.getUint16(p + 28, true), el = dv.getUint16(p + 30, true), cl = dv.getUint16(p + 32, true), lo = dv.getUint32(p + 42, true); ent[dec.decode(buf.slice(p + 46, p + 46 + nl))] = {m, cs, lo}; p += 46 + nl + el + cl; }
+  const get = async name => { const f = ent[name]; if (!f) return null; const lh = f.lo, st = lh + 30 + dv.getUint16(lh + 26, true) + dv.getUint16(lh + 28, true), raw = buf.slice(st, st + f.cs);
+    if (f.m === 0) return dec.decode(raw); const ds = new DecompressionStream('deflate-raw'), w = ds.writable.getWriter(); w.write(raw); w.close(); return dec.decode(await new Response(ds.readable).arrayBuffer()); };
+  const sheetName = Object.keys(ent).filter(k => /^xl\/worksheets\/sheet\d+\.xml$/.test(k)).sort()[0]; if (!sheetName) throw new Error('sheet');
+  const ssx = await get('xl/sharedStrings.xml'), sh = await get(sheetName), dp = new DOMParser(), ss = [];
+  if (ssx) dp.parseFromString(ssx, 'application/xml').querySelectorAll('si').forEach(si => ss.push([...si.querySelectorAll('t')].map(t => t.textContent).join('')));
+  const lines = []; dp.parseFromString(sh, 'application/xml').querySelectorAll('row').forEach(r => {
+    const cells = []; r.querySelectorAll('c').forEach(c => { const ref = c.getAttribute('r') || '', col = ref.replace(/\d+/g, '').split('').reduce((a, ch) => a * 26 + ch.charCodeAt(0) - 64, 0) - 1, t = c.getAttribute('t'), v = c.querySelector('v');
+      let val = ''; if (t === 'inlineStr') val = [...c.querySelectorAll('t')].map(x => x.textContent).join(''); else if (v) val = t === 's' ? (ss[+v.textContent] || '') : v.textContent; cells[col < 0 ? cells.length : col] = val; });
+    lines.push(Array.from(cells, x => x == null ? '' : String(x).replace(/[\t\n]/g, ' ')).join('\t')); });
+  return lines.join('\n');
+}
+
 function exportCSV(){
-  const l = currentLoan; if (!l) return; let csv = 'قسط,سررسید,مبلغ قسط,پس‌انداز,جمع,وضعیت,تاریخ پرداخت\n';
-  l.payments.forEach((p, i) => { csv += `${i+1},${fmtDate(dueDate(l, i))},${payAmt(l, i)},${p.paid ? savOf(l, i) : l.totalMonthlySaving},${payAmt(l, i) + (p.paid ? savOf(l, i) : l.totalMonthlySaving)},${p.paid ? 'پرداخت شد' : 'در انتظار'},${p.date || ''}\n`; });
-  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + csv], {type:'text/csv;charset=utf-8'})); a.download = 'اقساط-' + (l.title || 'وام') + '.csv'; a.click();
+  const l = currentLoan; if (!l) return;
+  const rows = [['قسط', 'سررسید', 'مبلغ قسط (ریال)', 'پس‌انداز (ریال)', 'جمع (ریال)', 'وضعیت', 'تاریخ پرداخت']];
+  let tq = 0, ts = 0;
+  l.payments.forEach((p, i) => { const sv = p.paid ? savOf(l, i) : l.totalMonthlySaving; tq += payAmt(l, i); ts += sv; rows.push([i + 1, dueLabel(dueDate(l, i)), payAmt(l, i), sv, payAmt(l, i) + sv, p.paid ? 'پرداخت شد' : 'در انتظار', p.date || '']); });
+  rows.push(['جمع', '', tq, ts, tq + ts, '', '']);
+  downloadBlob(makeXlsx((l.title || 'اقساط'), rows, [8, 22, 18, 18, 18, 14, 18]), 'qarz-installments-' + (() => { const p = jparts(new Date()); return p.y + '-' + p.m + '-' + p.d; })() + '.xlsx'); toast('فایل Excel ساخته شد');
 }
 async function deleteHistLoan(id){
   const l = getHist().find(x => x.id === id); if (!l) return;
